@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>维修接待</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="header">
+	</div>
+	<div class="wrap">
+		<div class="mainnav">
+		</div>
+		<div class="content" ms-controller="edit" class="ms-controller">
+			<div class="opt-tit"></div>
+			<div class="opt">
+				<div class="item" ms-repeat="item" ms-include="edittpl">
+				</div>
+			</div>
+			<div class="video">
+				<div class="btns">
+					<a href="javascript:;" class="btn btn-ok">打开视频</a>
+					<a href="javascript:;" class="btn btn-cancel">关闭视频</a>
+				</div>
+				<div class="video-show">
+				</div>	
+			</div>
+			<div class="process-tit">
+			</div>
+			<div class="process">
+				<p class="step1 over"><em>预约已处理</em><span></span></p>
+				<p class="step2 over"><em>项目确认</em><span></span></p>
+				<p class="step3 on"><em>领料</em><span></span></p>
+				<p class="step4"><em>出库</em><span></span></p>
+				<p class="step5"><em>在修</em><span></span></p>
+				<p class="step6"><em>已修</em><span></span></p>
+				<p class="step7"><em>内部交车</em><span></span></p>
+				<p class="step8"><em>结算</em><span></span></p>
+				<p class="step9"><em>客户提车</em><span></span></p>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer">
+	</div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/avalon.js"></script>
+	<script type="text/javascript" src="js/head.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/chejianguanli.js"></script>
+	<script type="text/javascript">
+		// var obj = [{name: '登录用户ID',type: 0},{
+		// 	name: '企业ID'},{
+		// 	name: '企业名称'},{
+		// 	name: '维修单ID'},{
+		// 	name: '维修类型',type:1,option:['保养','维修','美容']},{
+		// 	name: '客户真实姓名'},{
+		// 	name: '状态'},{
+		// 	name: '发动机码'},{
+		// 	name: '油表状态',type:1,option:['半满','满']},{
+		// 	name: '公里数'},{
+		// 	name: '车牌'},{
+		// 	name: 'QQ'},{
+		// 	name: '手机'},{
+		// 	name: '颜色'},{
+		// 	name: '车品牌'},{
+		// 	name: '车系'},{
+		// 	name: '接车时间'}];
+		// COMMON.addTpl({edit:1});
+		// var model = avalon.define({
+		// 	$id: 'edit',
+		// 	item: obj
+		// });
+	</script>
+</body>
+</html>

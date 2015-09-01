@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+html,body,div,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,table,tr,th,td,span,a{margin:0px;padding:0px;}
+ul{list-style:none;}
+a{text-decoration:none;outline: none;}
+html,body{height:100%;height: auto;}
+body{font:normal 12px/16px "Microsoft Yahei","SimSun";}
+img{border: none;}
+input{vertical-align: middle;}
+
+
+/* common */
+.pointer{cursor: pointer;}
+.clear{clear:both;float:none;}
+.child-none *,.none{display: none!important;}
+.nowrap{white-space:nowrap; text-overflow:ellipsis; -o-text-overflow:ellipsis; overflow:hidden;}
+.clear-fix{overflow:hidden;_zoom:1;}
