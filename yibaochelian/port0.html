@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>对下接口</title>
+	<style type="text/css">
+	p{margin:0;padding:0;}
+	.red {
+		color: #f30;
+	}
+		.item {
+			padding: 20px 0;
+		}
+		.tit {
+			font-size: 18px;
+			font-weight: bold;
+		}
+		.con {
+			padding: 20px;
+		}
+		.name {
+			padding-top: 20px;
+			font-weight: bold;
+		}
+		.tip{
+			color: #f00;
+		}
+		.over {
+			color: #eee;
+		}
+		.in {
+			color: #0a0;
+		}
+		.start {
+			color: #00a;
+		}
+	</style>
+</head>
+<body>
+<div class="item">
+	<div class="tit">
+		维修接待
+	</div>
+	<div class="con">
+		<ul>
+			<li>
+				<p class="name">列表<span class="red">查询返回的data为空</span></p>
+				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=2&pageNum=1&pageSize=10</p>
+			</li>
+			<li>
+				<p class="name">查看维修列表内容</p>
+				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=2&maintainfortNum=1234</p>
+			</li>
+			<li>
+				<p class="name">新建维修</p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=2</p>
+			</li>
+			<li>
+
+				<p class="name">保存维修<span class="red">返回提示虽保存成功，但刷新页面还是原来的数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?facilitatorID=2&platenumber=11&phone=22.....</p>
+			</li>
+			<li>
+				<p class="name">删除维修<span class="red">没有删除掉数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDelete.do?facilitatorID=2&maintainformNum=123</p>
+			</li>
+			<li>
+				<p class="name">查看维修下的预约项目<span class="red">没有数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=jQuery1830653513690456748_1441180170837&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171044</p>
+				<p class="tip">不明白：勾选维修项目的窗口列表<br/>
+				* http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do<br/>
+				* http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemDoSave.do
+				* 保存维修单相关的项目，同时修改单据信息和费用合计内容
+				<br/>
+				打开某个维修单<br/>
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=2&mainId=SR.201508200005
+				</p>
+				
+				<p class="name">查看维修下的项目领料<span class="red">没有数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=2&mainId=SR.201508200005</p>
+				<p class="tip">
+					勾选好领用材料<br/>
+					http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompentDoSave.do? callback=listdetail&facilitatorID=2&mainId=SR.201508200005&productIds=选择的商品的ID
+				</p>
+				<p class="name">查看维修下的单据信息<span class="red">没有数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery1830653513690456748_1441180170839&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171050</p>
+				<p class="name">查看维修下的费用合计<span class="red">没有数据</span></p>
+				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery1830653513690456748_1441180170840&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171052</p>
+			</li>
+			<li>
+				<p class="name">不明白其他的接口维修</p>
+				<p class="port">
+					维修项目添加：serviceItemInput.do?
+					维修项目取消：maintainformCancel.do 这个没必要
+				</p>
+			</li>
+		</ul>
+	</div>
+
+
+	<div class="tit">预约接待</div>
+	<div class="con">
+		<ul>
+			<li>
+				<p class="name">预约接待列表：</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?callback=jQuery183043228539917618036_1441186466357&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441186466539</p>
+				<p class="name">预约查看某一条的详情<span class="red">500错误</span></p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1</p>
+			</li>
+		</ul>
+	</div>
+	<div class="tit">车间管理</div>
+	<div class="con">
+		<ul>
+			<li>
+				<p class="name">车间列表：</p>
+				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery1830012241053627803922_1441180388622&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441180389961</p>
+				<p class="name in">获取单条信息</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18308283175881952047_1441183481615&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441183481745</p>
+				<p class="name">保存单条信息<span class="red">获取的单条信息里没有接口里的这些参数，还都是必填的</span></p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80</p>
+
+				<p class="name">删除单条信息</p>
+				<p class="port">取消了此功能</p>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
