@@ -96,8 +96,8 @@
 			</li>
 		</ul>
 	</div>
-
-
+</div>
+<div class="item">
 	<div class="tit">预约接待</div>
 	<div class="con">
 		<ul>
@@ -109,6 +109,8 @@
 			</li>
 		</ul>
 	</div>
+</div>
+<div class="item">
 	<div class="tit">车间管理</div>
 	<div class="con">
 		<ul>
@@ -125,6 +127,64 @@
 			</li>
 		</ul>
 	</div>
+</div>
+<div class="item">
+	<div class="tit">客户管理</div>
+	<div class="con">
+		<ul>
+			<li>
+				<p class="name in">客户列表</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
+</p>
+				<p class="name in">获取一个用户信息</p>
+				<p class="port">
+					http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1&id=100000
+				</p>
+				<p class="name in">保存用户信息</p>
+				<p class="port">
+					http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2
+				</p>
+			</li>
+		</ul>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">用户管理</div>
+	<div class="con">
+		<ul>
+			<li>
+				<p class="name in">获取用户管理列表</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18307784030011389405_1441507270707&facilitatorID=1&companyUserID=1&pageNumber=1&pageSize=10&_=1441507270896</p>
+			</li>
+			<li>
+				<p class="name in">获取某一个用户管理详情</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18307784030011389405_1441507270707&facilitatorID=1&companyUserID=1&id=683656364&_=1441507270896</p>
+			</li>
+			<li>
+				<p class="name in">保存用户详情</p>
+				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2</p>
+			</li>
+			<li>
+				<p class="name">删除用户<span class="red">返回数据是空，没有json</span></p>
+				<p class="port">http:// 115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?facilitatorID=1&id=905506185</p>
+			</li>
+		</ul>
+	</div>
+	<div class="tit">角色管理</div>
+	<div class="con">
+		<li>
+			<p class="name in">角色列表</p>
+			<p class="port">http:// 115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10</p>
+		</li>
+		<li>
+			<p class="name in">角色添加、保存</p>
+			<p class="port">http://115.159.77.210:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4</p>
+		</li>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">推荐商品管理<span class="red">没有对应原型，属于新需求</span></div>
+	<div class="con"></div>
 </div>
 </body>
 </html>
