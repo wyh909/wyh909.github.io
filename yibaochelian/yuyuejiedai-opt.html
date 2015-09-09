@@ -13,72 +13,10 @@
 	<div class="wrap">
 		<div class="mainnav">
 		</div>
-		<div class="content">
+		<div class="content" ms-controller="yuyuejiedai" class="ms-controller">
 			<div class="opt-tit">预约单</div>
-			<div class="opt">
-				<div class="item">
-					<label>单 号：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>车主姓名：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>车牌号：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>登记日期：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>车主电话：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>维修类别：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>预约时间：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>地 址：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>发动机号：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>进场时间：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>客户单位：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>车辆颜色：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>预计时间：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>接待员：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>品 牌：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>进场里程：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>油表状态：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item">
-					<label>车 型：</label> <input type="text" class="inpt" />
-				</div>
-				<div class="item allrow">
-					<label>备注：</label> <textarea class="textarea"></textarea>
-				</div>
-
-				<div class="allrow btns">
-					<a href="javascript:;" class="btn btn-ok">提交</a>
-					<a href="javascript:;" class="btn btn-ok">添加</a>
-					<a href="javascript:;" class="btn btn-cancel">删除</a>
-				</div>
+			<div class="opt" ms-include="edittpl">
+				<div class="loading">loading</div>
 			</div>
 			<div class="yuyue">
 				<div class="tabs">
@@ -86,142 +24,11 @@
 					<span>预约配件</span>
 				</div>
 				<div class="tabcon">
-					<div class="item on">
-						<table class="Mtable">
-							<thead>
-								<tr>
-									<th>项目代码</th>
-									<th>项目类别</th>
-									<th>班组</th>
-									<th>维修人员</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>小保养</td>
-									<td>
-										<select >
-											<option value="">班组1 - 在修</option>
-											<option value="">班组2 - 在修</option>
-											<option value="">班组3 - 在修</option>
-										</select>
-									</td>
-									<td>
-										<select >
-											<option value="">张三</option>
-											<option value="">李在修</option>
-											<option value="">张师傅</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>小保养</td>
-									<td>
-										<select >
-											<option value="">班组1 - 在修</option>
-											<option value="">班组2 - 在修</option>
-											<option value="">班组3 - 在修</option>
-										</select>
-									</td>
-									<td>
-										<select >
-											<option value="">张三</option>
-											<option value="">李在修</option>
-											<option value="">张师傅</option>
-										</select>
-									</td>
-								</tr>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>小保养</td>
-									<td>
-										<select >
-											<option value="">班组1 - 在修</option>
-											<option value="">班组2 - 在修</option>
-											<option value="">班组3 - 在修</option>
-										</select>
-									</td>
-									<td>
-										<select >
-											<option value="">张三</option>
-											<option value="">李在修</option>
-											<option value="">张师傅</option>
-										</select>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+					<div class="item on"  ms-controller="yuyuexiangmu" ms-include="'tpl'">
+						
 					</div>
-					<div class="item">
-						<table class="Mtable">
-							<thead>
-								<tr>
-									<th>商品编号</th>
-									<th>商品名称</th>
-									<th>结算类型</th>
-									<th>单位</th>
-									<th>车型</th>
-									<th>产地</th>
-									<th>分类</th>
-									<th>数量</th>
-									<th>单价</th>
-									<th>备注</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>机滤</td>
-									<td>客户</td>
-									<td>个</td>
-									<td>宝马X3</td>
-									<td>德国</td>
-									<td>机能用品</td>
-									<td>2</td>
-									<td>40</td>
-									<td>无</td>
-								</tr>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>机滤</td>
-									<td>客户</td>
-									<td>个</td>
-									<td>宝马X3</td>
-									<td>德国</td>
-									<td>机能用品</td>
-									<td>2</td>
-									<td>40</td>
-									<td>无</td>
-								</tr>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>机滤</td>
-									<td>客户</td>
-									<td>个</td>
-									<td>宝马X3</td>
-									<td>德国</td>
-									<td>机能用品</td>
-									<td>2</td>
-									<td>40</td>
-									<td>无</td>
-								</tr>
-								<tr>
-									<td class="tleft">YB-001</td>
-									<td>机滤</td>
-									<td>客户</td>
-									<td>个</td>
-									<td>宝马X3</td>
-									<td>德国</td>
-									<td>机能用品</td>
-									<td>2</td>
-									<td>40</td>
-									<td>无</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+					<!-- <div class="item" ms-controller="yuyuepeiliao" ms-include="'tpl'">
+					</div> -->
 				</div>	
 			</div>
 		</div>
@@ -232,7 +39,9 @@
 		
 	</div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/avalon.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/yuyuejiedai.js"></script>
 </body>
 </html>
