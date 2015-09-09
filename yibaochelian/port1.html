@@ -239,9 +239,9 @@ Callback使用的函数需要前端传入
 			</div>
 		</div>
 		<div class="item">
-			<div class="name">8 （5、维修单下面的维修项目列表：）</div>
+			<div class="name">8 （5、维修单下面的维修项目列表：）<span class="red">mainId 获取错误SR.201509080003 | <strong>NO.201508100004</strong> 显示数据为空</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=jQuery183019620985072106123_1441820064292&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509080003&pageSize=10&_=1441820064362
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
@@ -362,9 +362,9 @@ Callback使用的函数需要前端传入
 			</div>
 		</div>
 		<div class="item">
-			<div class="name">12 (7、列出已经选好的领用材料)</div>
+			<div class="name">12 (7、列出已经选好的领用材料) <span class="red">mainId 获取错误SR.201509080003 | <strong>NO.201508100004</strong> 显示数据为空</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=jQuery183019620985072106123_1441820064293&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509080003&pageSize=10&_=1441820064365
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=NO.201508100004
@@ -460,21 +460,21 @@ Callback使用的函数需要前端传入
 			<div class="tips"></div>
 		</div>
 		<div class="item">
-			<div class="name">63 维修下面的单据信息</div>
+			<div class="name">63 维修下面的单据信息 <span class="red">返回数据为保存成功</span></div>
 			<div class="userport">
 				
 			</div>
 			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery18306087536234408617_1441777559088&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777590427</div>
 		</div>
 		<div class="item">
-			<div class="name">64 维修下面的费用合计</div>
+			<div class="name">64 维修下面的费用合计<span class="red">返回数据为保存成功</span></div>
 			<div class="userport">
 				
 			</div>
 			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18306087536234408617_1441777559089&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777594251</div>
 		</div>
 		<div class="item">
-			<div class="name">15 (10、维修进度查看（在下面找）)</div>
+			<div class="name">15 (10、维修进度查看（在下面找）) <span class="red">那个是进度接口</span></div>
 			<div class="userport">
 				
 			</div>
@@ -494,8 +494,8 @@ Callback使用的函数需要前端传入
 		
 		<div class="item">
 			<div class="name">16 (11、预约列表)</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?callback=jQuery18307041006851941347_1441819595427&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441819595486
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?facilitatorID=1&status=0
@@ -531,9 +531,9 @@ Callback使用的函数需要前端传入
 			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号，真实姓名，车牌号，电话，类别，状态</div>
 		</div>
 		<div class="item">
-			<div class="name">17 （12、打开预约单）</div>
+			<div class="name">17 （12、打开预约单）<span class="red">code为2，没有此预约单号，传参问题：appId</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?callback=jQuery183013314012251794338_1441819627090&status=0&appId=NO.201508100010&facilitatorID=1&companyUserID=1&_=1441819627132
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1
@@ -818,8 +818,8 @@ Callback使用的函数需要前端传入
 	<div class="con">
 		<div class="item">
 			<div class="name">26 （20、角色的添加）</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?callback=jQuery18307939896429888904_1441820374924&roleId=1&name=%E8%A7%92%E8%89%B21&auIDS=0%3B0%3B0%3B0%3B0%3B0&desc=&facilitatorID=1&companyUserID=1&_=1441820419714
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4
@@ -833,8 +833,8 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">27 （21、角色列表：）</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/roleList.do?callback=jQuery18307939896429888904_1441820374925&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441820375008
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10
@@ -872,8 +872,8 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">29 登录接口</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery1830667362570296973_1441819566589&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441819566703
 			</div>
 			<div class="port">
 				对应参数：username用户名，  pwd密码<br/>
@@ -886,7 +886,7 @@ Callback使用的函数需要前端传入
 			<div class="tips"></div>
 		</div>
 		<div class="item">
-			<div class="name">30 检查用户名是否可用</div>
+			<div class="name">30 检查用户名是否可用<span class="red">需要获取用哦过户信息</span></div>
 			<div class="userport">
 				
 			</div>
@@ -1652,8 +1652,8 @@ Callback使用的函数需要前端传入
 	<div class="con">
 		<div class="item">
 			<div class="name">59 用户列表：</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18304039819505997002_1441819211868&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441819211990
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?pageSize=5&pageNumber=1&facilitatorID=1 
@@ -1697,8 +1697,10 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">60 增加/修改单条数据</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				65 获取单条数据：http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18304039819505997002_1441819211868&id=54449494&facilitatorID=1&companyUserID=1&_=1441819249897
+				<br/>
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?callback=jQuery18304039819505997002_1441819211868&id=54449494&name=1&dept=aa&account=&rolename=%E8%A7%92%E8%89%B21&duty=&facilitatorID=1&companyUserID=1&_=1441819270688
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2
@@ -1726,8 +1728,8 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">60 删除用户</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?callback=jQuery18304039819505997002_1441819211868&id=54449494&facilitatorID=1&companyUserID=1&_=1441819363659
 			</div>
 			<div class="port">
 				http:// 115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?facilitatorID=1&id=905506185
@@ -1751,7 +1753,10 @@ Callback使用的函数需要前端传入
 	<div class="con">
 		<div class="item">
 			<div class="name">61 车间列表：</div>
-			<div class="userport">
+			<div class="userport green">
+				<p>66 查看单条数据：</p>
+				<p>单条：http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18305537156756035984_1441819422627&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441819422742</p>
+				<p>所有：http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18304875986962579191_1441819396247&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441819396307</p>
 				
 			</div>
 			<div class="port">
@@ -1855,7 +1860,7 @@ Callback使用的函数需要前端传入
 			<div class="tips"></div>
 		</div>
 		<div class="item">
-			<div class="name">62 删除某条进度数据</div>
+			<div class="name">62 删除某条进度数据 <span>没有车间管理的删除接口，删除进度数据？</span>	</div>
 			<div class="userport">
 				
 			</div>
