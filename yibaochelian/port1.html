@@ -20,7 +20,7 @@
 			font-weight: bold;
 		}
 		.userport {
-			color: #099;
+			color: #669;
 		}
 		.part{
 
@@ -33,7 +33,7 @@
 			color: blue;
 		}
 		.green {
-			color: green;
+			color: #0a0;
 		}
 		.red {
 			color: red;
@@ -53,11 +53,11 @@ Callback使用的函数需要前端传入
 	<div class="con">
 		<div class="item">
 			<div class="name">1、维修接待列表接口：</div>
-			<div class="userport">
+			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183009372910228557885_1441777948181&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441777949795
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
 			</div>
 			<div class="param">
 				/**
@@ -92,11 +92,12 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">2、维修单点击新建按钮，生成一个维修单号</div>
-			<div class="userport">
+			<div class="userport green">
 				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery18305936984638683498_1441810608006&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441810608089
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">/**
 				 * 
@@ -113,12 +114,12 @@ Callback使用的函数需要前端传入
 			</div>
 		</div>
 		<div class="item">
-			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存</div>
+			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存<span class="red">500错误</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=jQuery18306573136087972671_1441807300319&truename=&platenumber=11a&phone=18511581157&maintaintype=%E4%BF%9D%E5%85%BB&status=2&usedComponents=&mainId=SR.201509080003&facilitatorID=1&companyUserID=1&_=1441807326952
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=saveOrUpdate&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=saveOrUpdate&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				页面上提交的时候按照如下参数提交：
@@ -154,10 +155,9 @@ Callback使用的函数需要前端传入
 		<div class="item">
 			<div class="name">4 维修项目的添加：</div>
 			<div class="userport">
-				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表：
@@ -190,10 +190,10 @@ Callback使用的函数需要前端传入
 		<div class="item">
 			<div class="name">5 勾选以后点击确定，保存添加数据</div>
 			<div class="userport">
-				
+
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0//enterprise/serviceItemDoSave.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=SR.201508200005&itemIds=20015080001;20015080005 
+				http://115.159.77.210:8080/ybcl2.0//enterprise/serviceItemDoSave.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=SR.201508200005&itemIds=20015080001;20015080005 
 			</div>
 			<div class="param">
 				temIds=勾选的羡慕的id用“;”分割
@@ -202,11 +202,11 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">6 维修单取消按钮</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=jQuery18305274461160879582_1441810529178&mainId=SR.201509090001&facilitatorID=1&companyUserID=1&_=1441810538542
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=cancel&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=cancel&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				/**
@@ -225,7 +225,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformDelete.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=11
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDelete.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=11
 			</div>
 			<div class="param">
 				/**
@@ -244,7 +244,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
 			</div>
 			<div class="param">
 				/**
@@ -276,7 +276,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/serviceItemInput.do?callback=listdetail&&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?callback=listdetail&&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				/**
@@ -309,7 +309,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/serviceItemDoSave.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201509010002&itemIds=20015080005;20015082987 
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemDoSave.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201509010002&itemIds=20015080005;20015082987 
 			</div>
 			<div class="param">
 				/**
@@ -325,11 +325,11 @@ Callback使用的函数需要前端传入
 		</div>
 		<div class="item">
 			<div class="name">11 （6、打开某个维修单）</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183012371835694648325_1441806126870&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441806127029
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005
 			</div>
 			<div class="param">
 				参数列表：
@@ -367,7 +367,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=NO.201508100004
+				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=NO.201508100004
 
 			</div>
 			<div class="param">
@@ -400,7 +400,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表：
@@ -443,7 +443,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/usedCompentDoSave.do?callback=listdetail&facilitatorID=1&mainId=SR.201508200005&productIds=YS-T0019;YS-T0016 
+				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompentDoSave.do?callback=listdetail&facilitatorID=1&mainId=SR.201508200005&productIds=YS-T0019;YS-T0016 
 			</div>
 			<div class="param">
 				productIds=选择的商品的ID
@@ -498,7 +498,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/appointmentList.do?facilitatorID=1&status=0
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?facilitatorID=1&status=0
 			</div>
 			<div class="param">
 				参数列表：
@@ -536,7 +536,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表
@@ -579,7 +579,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?facilitatorID=1&oil=1&status=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?facilitatorID=1&oil=1&status=1&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表：
@@ -619,7 +619,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表
@@ -648,12 +648,12 @@ Callback使用的函数需要前端传入
 			</div>
 		</div>
 		<div class="item">
-			<div class="name">20 (15、预约推荐项目：)</div>
+			<div class="name">20 (15、预约推荐项目：) <span class="red">文档中给的显示到页面上的参数和接口不符</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?callback=jQuery18305492809156421572_1441818384659&facilitatorID=1&companyUserID=1&pageNum=1&mainId=NO.201508100003&pageSize=10&_=1441818384807
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/recommendItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
 				参数列表：
@@ -714,7 +714,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/SelectDayInput.do?companyUserID=1&facilitatorID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/SelectDayInput.do?companyUserID=1&facilitatorID=1
 			</div>
 			<div class="param">
 				参数列表：
@@ -741,7 +741,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/appointmentDelete.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDelete.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
 			</div>
 			<div class="param">
 				参数列表：
@@ -756,7 +756,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/facilitatorList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
+				http://115.159.77.210:8080/ybcl2.0/enterprise/facilitatorList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
 			</div>
 			<div class="param">
 				参数列表：
@@ -774,7 +774,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/facilitatorSaveOrUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&privice=%E6%96%B0%E7%96%86&city=%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90&name=%E6%9F%A5%E5%93%88%E7%9A%84%E6%B1%BD%E4%BF%AE&shortName=chd
+				http://115.159.77.210:8080/ybcl2.0/enterprise/facilitatorSaveOrUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&privice=%E6%96%B0%E7%96%86&city=%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90&name=%E6%9F%A5%E5%93%88%E7%9A%84%E6%B1%BD%E4%BF%AE&shortName=chd
 			</div>
 			<div class="param">
 				参数列表
@@ -789,7 +789,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/provinceList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&provinceName=%E6%B2%B3%E5%8C%97&pageNum=1&pageSize=10
+				http://115.159.77.210:8080/ybcl2.0/enterprise/provinceList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&provinceName=%E6%B2%B3%E5%8C%97&pageNum=1&pageSize=10
 			</div>
 			<div class="param">
 				参数列表：
@@ -797,12 +797,12 @@ Callback使用的函数需要前端传入
 				返回值：
 				Name 省名
 				界面上显示省名
-				市的选择列表http://localhost:8080/ybcl2.0/enterprise/cityList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&cityName=%E4%BF%9D%E5%AE%9A&pageNum=1&pageSize=10
+				市的选择列表http://115.159.77.210:8080/ybcl2.0/enterprise/cityList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&cityName=%E4%BF%9D%E5%AE%9A&pageNum=1&pageSize=10
 				参数：cityName 市名
 				返回值：
 				Name 市名
 				界面上显示市名
-				取得选择列表http://localhost:8080/ybcl2.0/enterprise/zoneList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&zoneName=%E6%9C%9D%E9%98%B3&pageNum=1&pageSize=10
+				取得选择列表http://115.159.77.210:8080/ybcl2.0/enterprise/zoneList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&zoneName=%E6%9C%9D%E9%98%B3&pageNum=1&pageSize=10
 				参数：zoneName
 				返回值：
 				Name 区名
@@ -822,7 +822,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4
+				http://115.159.77.210:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4
 			</div>
 			<div class="param">
 				参数列表
@@ -837,7 +837,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10
+				http://115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10
 			</div>
 			<div class="param">
 				
@@ -863,7 +863,7 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="port">
 				对应参数：name用户名，pwd密码<br/>
-				http://localhost:8080/ybcl2.0/enterprise/com.register.do?name=123456@qq.com&pwd=123456
+				http://115.159.77.210:8080/ybcl2.0/enterprise/com.register.do?name=123456@qq.com&pwd=123456
 			</div>
 			<div class="param">
 				
@@ -877,7 +877,7 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="port">
 				对应参数：username用户名，  pwd密码<br/>
-				http://localhost:8080/ybcl2.0/ enterprise/com.logon.do?username=7&pwd=7
+				http://115.159.77.210:8080/ybcl2.0/enterprise/com.logon.do?username=7&pwd=7
 
 			</div>
 			<div class="param">
@@ -892,7 +892,7 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="port">
 				对应参数：facname用户名<br/>
-				http://localhost:8080/ybcl2.0/ enterprise/com.check.name.do?facname=7
+				http://115.159.77.210:8080/ybcl2.0/enterprise/com.check.name.do?facname=7
 			</div>
 			<div class="param">
 				注：登录和检查是最开始做的现在有些问题，我正在修改，如果不影响测试请忽略！！
@@ -913,7 +913,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/listUsedComPage.do?maintId=NO.201508100004&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsedComPage.do?maintId=NO.201508100004&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
 				
@@ -932,7 +932,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/addDeliveryform.do?maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addDeliveryform.do?maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
 			</div>
 			<div class="param">
 				
@@ -950,7 +950,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/addDeliveryform.do?id=9&maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addDeliveryform.do?id=9&maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
 
 			</div>
 			<div class="param">
@@ -966,8 +966,8 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?pageNumber=1&pageSize=5<br/>
-				http://localhost:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?id=9&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?pageNumber=1&pageSize=5<br/>
+				http://115.159.77.210:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?id=9&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
 				对应参数：id出库单ID
@@ -980,7 +980,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/deleteDeliveryform.do?id=9
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteDeliveryform.do?id=9
 			</div>
 			<div class="param">
 				对应参数：id出库单ID
@@ -993,7 +993,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/addStorageform.do?productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addStorageform.do?productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
 			</div>
 			<div class="param">
 				对应参数：productName商品名称，productID商品编号，account商品数量，unit单位，
@@ -1008,7 +1008,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/addStorageform.do?id=8&productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addStorageform.do?id=8&productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
 				
 			</div>
 			<div class="param">
@@ -1023,8 +1023,8 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/listStorageformByPage.do?pageNumber=1&pageSize=5<br/>
-				http://localhost:8080/ybcl2.0/enterprise/listStorageformByPage.do?id=17&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listStorageformByPage.do?pageNumber=1&pageSize=5<br/>
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listStorageformByPage.do?id=17&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
 				对应参数：id入库单ID
@@ -1037,7 +1037,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/deleteStorageform.do?id=17
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteStorageform.do?id=17
 			</div>
 			<div class="param">
 				对应参数：id入库单ID
@@ -1056,7 +1056,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="port">
-				http://localhost:8080/ybcl2.0/enterprise/listSupplierByPage.do?pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listSupplierByPage.do?pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
 								商品
@@ -1064,7 +1064,7 @@ Callback使用的函数需要前端传入
 				对应参数：productName商品名称，productID商品编号，origin产地，type分类，
 				carModle车型
 				查询条件为：productName， productID， origin， type， carModle
-				http://localhost:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
 			</div>
 			<div class="tips"></div>
 		</div>
@@ -1432,8 +1432,10 @@ Callback使用的函数需要前端传入
 	<div class="con">
 		<div class="item">
 			<div class="name">53 查询客户列表：</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				所有：http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?callback=jQuery18305135084968060255_1441805692481&status=0&mainId=100000&facilitatorID=1&companyUserID=1&_=1441805692668<br/>
+				单条：http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?callback=jQuery18305135084968060255_1441805692481&status=0&mainId=100000&id=100000&facilitatorID=1&companyUserID=1&_=1441805692668
+
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
@@ -1488,10 +1490,11 @@ Callback使用的函数需要前端传入
    				对应原型：客户管理-查看页面（查询时传递主键id参数）
 			</div>
 		</div>
+
 		<div class="item">
-			<div class="name">54 修改/添加客户数据：</div>
+			<div class="name">54 修改/添加客户数据：<span class="red">修改了name，提交接口成功，但获取数据还是原来的</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addCustomer.do?callback=jQuery18305135084968060255_1441805692481&carOwner=%E5%BC%A0%E4%B8%89a&carNum=%E4%BA%ACA23456&carBrand=%E5%AE%9D%E9%A9%AC&carType=X3&orderTime=2015-06-07+00%3A00%3A00.0&coast=2000&state=%E9%9C%80%E4%BF%9D%E5%85%BB&orderNum=YB22334555&recordDate=2015-06-04+00%3A00%3A00.0&carOwnTel=15389378504&orderItem=%E4%BF%9D%E5%85%BB&engineNum=35677&enterTime=2015-05-04+00%3A00%3A00.0&carColor=%E7%BA%A2%E8%89%B2&custDept=%E4%BA%A6%E5%AE%9D%E8%BD%A6%E8%81%94&servCatlog=2&exeptTime=2015-07-01+00%3A00%3A00.0&receiveCar=%E6%9D%8E%E5%9B%9B&mileIntoFactory=32424&statOil=%E5%9B%9B%E5%88%86%E4%B9%8B%E4%B8%89&arrears=%E6%AC%A02444&isVip=0&servEvaluate=%E9%9D%9E%E5%B8%B8%E6%BB%A1%E6%84%8F&note=%E5%93%88%E5%93%88&facilitatorID=1&companyUserID=1&_=1441805715970
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addCustomer.do?facilitatorID=1&carOwner=hehehehheheh...
@@ -1823,9 +1826,9 @@ Callback使用的函数需要前端传入
 			</div>
 		</div>
 		<div class="item">
-			<div class="name">62 增加/修改单条数据 </div>
+			<div class="name">62 增加/修改单条数据 <span class="red">显示的数据与保存时传递的参数都不对应，无法获取保存的哪些参数</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18309377890829928219_1441813681846&truename=%E8%91%9B%E6%B5%B7%E9%9C%9E&motorNumber=%E4%BA%ACNXXXX&date=1438832172000&phone=195115611567&maintaintype=%E4%BF%9D%E5%85%BB&platenumber=&arriveTime=1438659963000&color=&series=&brand=&miles=50000&oil=1&maintainID=NO.201508065&facilitatorID=1&companyUserID=1&_=1441813753492
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80
