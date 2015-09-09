@@ -1,0 +1,1878 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>所有接口</title>
+	<style type="text/css">
+		.item {
+			padding: 10px 0;
+		}
+		.tit {
+			font-weight: bold;
+			font-size: 20px;
+		}
+		.con {
+			font-size: 14px;
+		}
+		.name {
+			color: #990;
+			font-size: 14px;
+			font-weight: bold;
+		}
+		.userport {
+			color: #099;
+		}
+		.part{
+
+		}
+		/*参数*/
+		.param{
+			color: #ccc;
+		}
+		.tips {
+			color: blue;
+		}
+		.green {
+			color: green;
+		}
+		.red {
+			color: red;
+		}
+		.oragen {
+			color: orange;
+		}
+	</style>
+</head>
+<body>
+每个请求uri中都会包含这三个固定参数：
+facilitatorID参数是用户登录以后在整个session生命周期中一直携带的参数，选择的服务商ID
+companyUserID登录用户的id，登陆以后在整个session中存在
+Callback使用的函数需要前端传入
+<div class="item">
+	<div class="tit">维修接待</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">1、维修接待列表接口：</div>
+			<div class="userport">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183009372910228557885_1441777948181&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441777949795
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
+			</div>
+			<div class="param">
+				/**
+				 * 维修单列表
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param date 日期
+				 * @param maintainfortNum 维修单号
+				 * @param phone 电话
+				 * @param platenumber 车牌
+				 * @param status 状态 （0全部1预约2未修3在修5已修6内部交车7结算8交车）
+				 * @param truename 客户真实名
+				 * @param pageSize 页长度
+				 * @param pageNum 页码
+				 * @param callback
+				 * @return  code 
+							 Message
+							Data
+				 */
+				 返回的data参数： [{
+				param1: " maintainfortNum ", //预约单号
+							param2: " phone "  //电话
+							param3 " platenumber", //车牌
+							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+
+				param4: " truename "  //客户真实名
+				
+				param4: " maintaintype "  //类别
+						  }]
+				 <p class="tips">显示到页面上：顺序号（页面自己生产），维修单号，真实姓名，车牌号，电话，类别，状态</p>
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">2、维修单点击新建按钮，生成一个维修单号</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">/**
+				 * 
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @return
+				 */
+			返回的data参数： [{
+			param1:”maintainformNum”//维修单号
+			param2:”status”//状态
+			param3:”types”//维修类型
+			}]
+			界面是维修单的添加界面，初始化一下维修单号，状态，维修类型
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=saveOrUpdate&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				页面上提交的时候按照如下参数提交：
+				saveOrUpdate(Long companyUserID,Long facilitatorID,String facilitatorName,String maintainformNum,
+							String maintainformType,String truename,Integer status,String motorNumber,Integer oil,Long miles,
+							String platenumber,String qqid,String phone,String color,String brand,String series,Date arriveTime)
+
+				/**
+					 * 
+					 * @param companyUserID 登录用户ID
+					 * @param facilitatorID 企业ID
+					 * @param facilitatorName 企业名称
+					 * @param maintainformNum 维修单ID
+					 * @param maintainformType 维修类型（保养，维修，美容）
+					 * @param truename 客户真实姓名
+					 * @param status 状态
+					 * @param motorNumber 发动机码
+					 * @param oil 油表状态 1满0半满
+					 * @param miles 公里数
+					 * @param platenumber 车牌
+					 * @param qqid QQ
+					 * @param phone 手机
+					 * @param color 颜色
+					 * @param brand 车品牌
+					 * @param series 车系
+					 * @param arriveTime 接车时间
+					 * @return
+					 */
+
+				页面返回到列表，没有返回值
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">4 维修项目的添加：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表：
+				/**
+					 * 列出维修项目
+					 * @param itemId 维修项目ID
+					 * @param itemName 维修项目名称
+					 * @param pageSize
+					 * @param pageNum
+					 * @return
+					 */
+				返回值：list表
+				返回的data参数: [{
+							param1: "id", //主键id
+							param2: "itemId"  //推荐项目id
+							param3: "itemName", //推荐项目名称
+							param4: "workType", //工种
+							param5: "faultCode", //错误代码
+							param6: "orderNum", //顺序号
+							param7: "standardWorkTime", //标准工时
+							param8: "standardUnitPrice", //标准单价
+							param9: "coastWorkTime", //工时花费
+					}]
+				<div class="tips">
+					需要在页面显示的字：
+				推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">5 勾选以后点击确定，保存添加数据</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0//enterprise/serviceItemDoSave.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=SR.201508200005&itemIds=20015080001;20015080005 
+			</div>
+			<div class="param">
+				temIds=勾选的羡慕的id用“;”分割
+				没有返回值，不需要界面
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">6 维修单取消按钮</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=cancel&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				/**
+					 * 点击取消按钮的时候，如果是新建取消的话，需要取消maintainform和usedCompent，serverItem等的维护关系
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param maintainformNum 维修单ID
+					 * @return
+					 */
+				没有返回值，不需要界面
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">7 (4、维修单删除)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformDelete.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=11
+			</div>
+			<div class="param">
+				/**
+					 * 
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param mainId 维修单ID
+					 * @return
+					 */
+				没有返回值，不需要界面
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">8 （5、维修单下面的维修项目列表：）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
+			</div>
+			<div class="param">
+				/**
+				 * 列出已经选好的维修项目数据
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param mainId 维修单ID
+				 * @return
+				 */
+			返回参数：
+			返回的data参数: [{
+						param1: "id", //主键id
+						param2: "itemId"  //推荐项目id
+						param3: "itemName", //推荐项目名称
+						param4: "workType", //工种
+						param5: "faultCode", //错误代码
+						param6: "orderNum", //顺序号
+						param7: "standardWorkTime", //标准工时
+						param8: "standardUnitPrice", //标准单价
+						param9: "coastWorkTime", //工时花费
+				}]
+				<div class="tips"> 显示在主页面上的：顺序号，推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费 </div>
+			
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">9 勾选维修项目的窗口列表</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/serviceItemInput.do?callback=listdetail&&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				/**
+				 * 列出维修项目
+				 * @param itemId 维修项目ID
+				 * @param itemName 维修项目名称
+				 * @param pageSize
+				 * @param pageNum
+				 * @return
+				 */
+
+			 返回的data参数: [{
+						param1: "id", //主键id
+						param2: "itemId"  //推荐项目id
+						param3: "itemName", //推荐项目名称
+						param4: "workType", //工种
+						param5: "faultCode", //错误代码
+						param6: "orderNum", //顺序号
+						param7: "standardWorkTime", //标准工时
+						param8: "standardUnitPrice", //标准单价
+						param9: "coastWorkTime", //工时花费
+			param10:”total”,总页数
+				}]
+			 显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">10 保存维修单相关的项目</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/serviceItemDoSave.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201509010002&itemIds=20015080005;20015082987 
+			</div>
+			<div class="param">
+				/**
+					 * 保存维修单相关的项目，同时修改单据信息和费用合计内容
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param mainId 维修单ID
+					 * @param itemIds 维修项目ID串，用;分割
+					 * @return
+					 */
+				添加之后在异步的在维修单的维修项目中显示，添加窗口还可以继续添加
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">11 （6、打开某个维修单）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005
+			</div>
+			<div class="param">
+				参数列表：
+				mainId维修单号
+				facilitatorID 企业单号
+				返回的data参数： [{
+							param1: " appointmentNum ", //预约单号
+							param2: " phone "  //电话
+							param3 " platenumber", //车牌
+							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+
+				param5: " truename "  //客户真实名
+				
+				param6: " maintaintype "  //类别
+				param7: " serviceItems "  //已经选好的维修项目，这个参数中返回值是个对象列表内容有： [{
+							param1: "id", //主键id
+							param2: "itemId"  //推荐项目id
+							param3: "itemName", //推荐项目名称
+							param4: "workType", //工种
+							param5: "faultCode", //错误代码
+							param6: "orderNum", //顺序号
+							param7: "standardWorkTime", //标准工时
+							param8: "standardUnitPrice", //标准单价
+							param9: "coastWorkTime", //工时花费
+					}]
+
+						  }]
+				<div class="tips">界面上显示的内容，维修单的页面，和维修单的维修项目；维修项目的显示内容：
+				顺序号，项目编码，项目名称，工种，错误代码，标准工时，标准单价，工时花费，</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">12 (7、列出已经选好的领用材料)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=NO.201508100004
+
+			</div>
+			<div class="param">
+				/**
+					 * 列出已经选好的材料
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param maintId 维修单ID
+					 * @return
+					 */
+				返回值：
+				返回的data参数： [{
+							param1: " productID ", //商品编码
+							param2: " productname "  //商品名称
+							param3 " unit ", //单位
+							param4: " productnum " 数量
+				param5: " unitprice "  //单价
+				param5: " maintenanceMan"  //领料人
+
+				}]
+				<div class="tips">
+					界面上显示的内容：
+					商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
+				</div>
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">13 (8、选择领用材料)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表：
+				(Long companyUserID,Long facilitatorID,String productId,
+							String productName,Integer pageSize,Integer pageNum)
+				/**
+					 * 
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param productId 配件ID
+					 * @param productName 配件名称
+					 * @param pageSize
+					 * @param pageNum
+					 * @return
+					 */
+				返回的data参数： [{
+				param1: " productID", //商品编码
+							param2: " productname "  //商品名称
+							param3 " unit ", //单位
+							param4: " productnum " 数量
+				param5: " unitprice "  //单价
+				param5: " maintenanceMan"  //领料人
+				origin产地
+				type分类
+				lastdeliveryDate最近出货时间
+				lastpurchaseDate最近进货时间
+				account商品可售数量
+				repertory仓库名称
+
+				}]
+			</div>
+			<div class="tips">
+				页面显示：(这些数据是按照仓库是棵树，点击那个参考显示那个仓库的数据)
+				商品编号,商品名称,产地,分类, 车型, 最近出货时间, 最近进货时间, 商品可售数量, 单位（升，个）, 安全数量, 建议购买价格, 建议销售价格, repertory仓库名称
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">14 (9、勾选好领用材料，保存)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/usedCompentDoSave.do?callback=listdetail&facilitatorID=1&mainId=SR.201508200005&productIds=YS-T0019;YS-T0016 
+			</div>
+			<div class="param">
+				productIds=选择的商品的ID
+				/**
+					 * 
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param mainId 维修单ID
+					 * @param productIds 选用材料ID串，用;分割
+					 * @return
+					 */
+				没有返回值和页面
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">63 维修下面的单据信息</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery18306087536234408617_1441777559088&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777590427</div>
+		</div>
+		<div class="item">
+			<div class="name">64 维修下面的费用合计</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18306087536234408617_1441777559089&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777594251</div>
+		</div>
+		<div class="item">
+			<div class="name">15 (10、维修进度查看（在下面找）)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">预约接待</div>
+	<div class="con">
+		
+		<div class="item">
+			<div class="name">16 (11、预约列表)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/appointmentList.do?facilitatorID=1&status=0
+			</div>
+			<div class="param">
+				参数列表：
+				/**
+					 * 
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param date 日期
+					 * @param appointmentNum
+					 * @param phone 电话
+					 * @param platenumber 车牌号
+					 * @param status 状态
+					 * @param truename 真实名称
+					 * @param pageSize
+					 * @param pageNum
+					 * @return
+
+				返回的data参数： [{
+							param1: " appointmentNum ", //预约单号
+							param2: " phone "  //电话
+							param3 " platenumber", //车牌
+							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+
+				param4: " truename "  //客户真实名
+				param4: " maintaintype "  //类别
+				param4: " maintainfortNum "  //类别
+
+						  }]
+			</div>
+			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号，真实姓名，车牌号，电话，类别，状态</div>
+		</div>
+		<div class="item">
+			<div class="name">17 （12、打开预约单）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表
+				(Long companyUserID,Long facilitatorID,String appId)
+				返回的data参数： [{
+							param1: " appointmentNum ", //预约单号
+							param2: " phone "  //电话
+							param3 " platenumber", //车牌
+							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+
+				param5: " truename "  //客户真实名
+				
+				param6: " maintaintype "  //类别
+				param7: " maintainfortNum ", //维修单号
+				param8: " serviceItems "  //已经选好的维修项目，这个参数中返回值是个对象列表内容有： [{
+							param1: "id", //主键id
+							param2: "itemId"  //推荐项目id
+							param3: "itemName", //推荐项目名称
+							param4: "workType", //工种
+							param5: "faultCode", //错误代码
+							param6: "orderNum", //顺序号
+							param7: "standardWorkTime", //标准工时
+							param8: "standardUnitPrice", //标准单价
+							param9: "coastWorkTime", //工时花费
+					}]
+
+						  }]
+			</div>
+			<div class="tips">界面上显示的内容，预约单的页面（预约单和维修单的区别就是有预约单上有预约单号），和预约单的维修项目；维修项目的显示内容：
+			顺序号，项目编码，项目名称，工种，错误代码，标准工时，标准单价，工时花费，</div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">个人预约</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">18 (13、保存预约表)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?facilitatorID=1&oil=1&status=1&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表：
+				(Long companyUserID,Long facilitatorID,String facilitatorName,String appointmentNum,String appointmentTime,
+							String appointmentType,String truename,Integer status,String motorNumber,Integer oil,Long miles,
+							String platenumber,String qqid,String phone,String color,String brand,String series,String recommId,String productIds)
+				/**
+					 * 维修单列表
+					 * @param companyUserID 登录用户ID
+					 * @param facilitatorID 企业ID
+					 * @param appointmentNum 预约单号
+				* @param appointmentTime 预约时间
+				* @param appointmentType 预约类型
+					 * @param phone 电话
+					 * @param platenumber 车牌
+				* @param oil 油表状态
+				* @param Miles 公里数
+				* @param Qqid QQ
+				* @param Color 颜色
+				* @param Brand 车品牌
+				* @param Series车系
+					 * @param status 状态 （0全部1预约2未修3在修5已修6内部交车7结算8交车）
+					 * @param truename 客户真实名
+					 * @param pageSize 页长度
+					 * @param pageNum 页码
+					 * @param callback
+					 * @return  code 
+								
+					 */
+				没有返回值和页面，保存以后显示在预约列表里
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">19 (14、预约配件的选择（弹出一个窗口）)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表
+				/**
+					 * 列出已经选好的材料
+					 * @param companyUserID
+					 * @param facilitatorID
+					 * @param maintId 维修单ID
+					 * @return
+					 */
+				返回值：
+				返回的data参数： [{
+							param1: " productID ", //商品编码
+							param2: " productname "  //商品名称
+							param3 " unit ", //单位
+							param4: " productnum " 数量
+				param5: " unitprice "  //单价
+				param5: " maintenanceMan"  //领料人
+
+				}]
+			</div>
+			<div class="tips">
+				界面上显示的内容：
+				商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
+				勾选好需要的配件，返回配件id串到父窗口，id串用;分割
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">20 (15、预约推荐项目：)</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/recommendItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1
+			</div>
+			<div class="param">
+				参数列表：
+					/**
+						 * 
+						 * @param facilitatorID
+						 * @param brand 车品牌
+						 * @param series 车系
+						 * @param miles 公里数
+						 * @param pageName
+						 * @return
+						 */
+					返回值：
+					返回的data参数： [{
+								param1: " recommendItemID ", //推荐项目ID
+								param2: " pageName"  //套餐名称
+								param3 " milesMin", //最小公里数
+								param4: " milesMax" 最大公里数
+					param5: " brand"  //品牌
+					param6: " series"  //车系
+					param7: " itemList"  // 推荐项目的集合
+					这个参数中返回值是个对象列表内容有： [{
+								param1: "id", //主键id
+								param2: "itemId"  //推荐项目id
+								param3: "itemName", //推荐项目名称
+								param4: "workType", //工种
+								param5: "faultCode", //错误代码
+								param6: "orderNum", //顺序号
+								param7: "standardWorkTime", //标准工时
+								param8: "standardUnitPrice", //标准单价
+								param9: "coastWorkTime", //工时花费
+						}]
+					 
+					}]
+					在页面上显示的是，
+					推荐项目ID
+					套餐名称
+					最小公里数
+					最大公里数
+					品牌
+					车系
+					推荐项目的集合
+					这个参数中返回值是个对象列表内容有： [{
+								推荐项目id
+								推荐项目名称
+								工种
+								错误代码
+								顺序号
+								标准工时
+							    标准单价
+								工时花费
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">21 查找可以预约的时间：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/SelectDayInput.do?companyUserID=1&facilitatorID=1
+			</div>
+			<div class="param">
+				参数列表：
+			/**
+				 * 
+				 * @param facilitatorID 企业ID
+				 * @return
+				 */
+			返回值：
+			返回的data参数： [{
+						param1: " Month", //月
+						param2: " day"  //日
+						param3 " rest", //剩余预约数
+			}]
+			</div>
+			<div class="tips">
+				显示内容：
+				根据日期，剩余可以预约数，如果rest的值为0了，这个日期就不能预约了，不可选了。
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">22 （16、预约的删除）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/appointmentDelete.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
+			</div>
+			<div class="param">
+				参数列表：
+				(Long companyUserID,Long facilitatorID企业ID,String appointmentNum 预约编号)
+				没有返回值的页面
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">23 （17、服务商）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/facilitatorList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
+			</div>
+			<div class="param">
+				参数列表：
+				(Integer pageSize,Integer pageNum,String provinceName省名称,String cityName城市名称,String zoneName区名称，String name 服务商名称)
+				返回的data参数： [{
+							param1: " name", //服务商名称
+							}]
+				
+			</div>
+			<div class="tips">页面上就是一个服务商的名称列表，进行单选</div>
+		</div>
+		<div class="item">
+			<div class="name">24 （18、保存服务商）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/facilitatorSaveOrUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&privice=%E6%96%B0%E7%96%86&city=%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90&name=%E6%9F%A5%E5%93%88%E7%9A%84%E6%B1%BD%E4%BF%AE&shortName=chd
+			</div>
+			<div class="param">
+				参数列表
+				(Integer pageSize,Integer pageNum,String provinceName省名称,String cityName城市名称,String zoneName区名称，String name 服务商名称)
+				 没有返回值的页面
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">25 19、省的选择列表</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/provinceList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&provinceName=%E6%B2%B3%E5%8C%97&pageNum=1&pageSize=10
+			</div>
+			<div class="param">
+				参数列表：
+				provinecName 省名
+				返回值：
+				Name 省名
+				界面上显示省名
+				市的选择列表http://localhost:8080/ybcl2.0/enterprise/cityList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&cityName=%E4%BF%9D%E5%AE%9A&pageNum=1&pageSize=10
+				参数：cityName 市名
+				返回值：
+				Name 市名
+				界面上显示市名
+				取得选择列表http://localhost:8080/ybcl2.0/enterprise/zoneList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&zoneName=%E6%9C%9D%E9%98%B3&pageNum=1&pageSize=10
+				参数：zoneName
+				返回值：
+				Name 区名
+
+				
+			</div>
+			<div class="tips">根据省名、市名，区名，作为查询服务商的参数，选择服务商</div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">角色管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">26 （20、角色的添加）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4
+			</div>
+			<div class="param">
+				参数列表
+			(Long roleID 角色ID,String roleName角色名称,String auIDS 权限ID集合，用;分割)
+			没有返回值
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">27 （21、角色列表：）</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10
+			</div>
+			<div class="param">
+				
+				参数列表：
+				String roleName 角色名称,int pageNum 页码,int pageSize 每页多少条数据)
+				返回值：
+				返回的data参数： [{
+							param1: " name", //角色名称
+							}]
+				
+			</div>
+			<div class="tips">界面上显示角色名称，多选框进行选择。</div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">企业用户</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">28 注册接口</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				对应参数：name用户名，pwd密码<br/>
+				http://localhost:8080/ybcl2.0/enterprise/com.register.do?name=123456@qq.com&pwd=123456
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">29 登录接口</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				对应参数：username用户名，  pwd密码<br/>
+				http://localhost:8080/ybcl2.0/ enterprise/com.logon.do?username=7&pwd=7
+
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">30 检查用户名是否可用</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				对应参数：facname用户名<br/>
+				http://localhost:8080/ybcl2.0/ enterprise/com.check.name.do?facname=7
+			</div>
+			<div class="param">
+				注：登录和检查是最开始做的现在有些问题，我正在修改，如果不影响测试请忽略！！
+				存在问题为：登录用户不存在；
+				检查：用户名可用。
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">维修领料</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">31 根据维修单查询对应领料单
+			对应参数：maintId维修单号</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/listUsedComPage.do?maintId=NO.201508100004&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">出入库</div>
+	<div class="con">
+		
+		<div class="item">
+			<div class="name">32 添加出库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/addDeliveryform.do?maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
+			</div>
+			<div class="param">
+				
+			对应参数：maintainID维修单号，productName商品名称，productID商品编号，
+		  account出库数量，unit单位，suggestBuyprice出库价格，repertory仓库名称
+		  origin产地，type分类，carModle车型，receive领料人，handleMan办理人员<br/>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">33 修改出库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/addDeliveryform.do?id=9&maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
+
+			</div>
+			<div class="param">
+				对应参数：id入库单ID，maintainID维修单号，productName商品名称，productID商品编号，
+		  account出库数量，unit单位，suggestBuyprice出库价格，repertory仓库名称
+		  origin产地，type分类，carModle车型，receive领料人，handleMan办理人员
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">34 查询出库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?pageNumber=1&pageSize=5<br/>
+				http://localhost:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?id=9&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+				对应参数：id出库单ID
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">35 删除出库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/deleteDeliveryform.do?id=9
+			</div>
+			<div class="param">
+				对应参数：id出库单ID
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">36 添加入库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/addStorageform.do?productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
+			</div>
+			<div class="param">
+				对应参数：productName商品名称，productID商品编号，account商品数量，unit单位，
+		  price进价，saleprice售价，repertory仓库名称，origin产地，type分类，
+		  carModle车型，handelMan办理人员，supplierID供应商ID
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">37 修改入库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/addStorageform.do?id=8&productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
+				
+			</div>
+			<div class="param">
+				对应参数：id入库单ID，productName商品名称，productID商品编号，account商品数量，
+				unit单位，price进价，saleprice售价，repertory仓库名称，origin产地，type分类，carModle车型，handelMan办理人员，supplierID供应商ID
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">38 查询入库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/listStorageformByPage.do?pageNumber=1&pageSize=5<br/>
+				http://localhost:8080/ybcl2.0/enterprise/listStorageformByPage.do?id=17&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+				对应参数：id入库单ID
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">39 删除入库单</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/deleteStorageform.do?id=17
+			</div>
+			<div class="param">
+				对应参数：id入库单ID
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">供应商</div>
+	<div class="con">
+		
+		<div class="item">
+			<div class="name">40 查询所有供应商</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/listSupplierByPage.do?pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+								商品
+				根据条件查询商品
+				对应参数：productName商品名称，productID商品编号，origin产地，type分类，
+				carModle车型
+				查询条件为：productName， productID， origin， type， carModle
+				http://localhost:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">部门管理</div>
+	<div class="con">
+		
+		<div class="item">
+			<div class="name">41 查询部门：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listDeptByPage.do?pageSize=5&pageNumber=1&facilitatorID=1
+			</div>
+			<div class="param">
+				传参：	/**
+				 * 
+				 * @param companyUserID 用户登录ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID（可选）
+				 * @param departmentName 部门名称（可选）
+				 * @param pageNumber 页码
+				 * @param pageSize 页长
+				 * @param callback
+				 */
+			 返回的data参数： [{
+						param1: "id", //主键id
+						param2: "departmentName"  //部门名称
+					  }]
+			</div>
+			<div class="tips">
+				显示到页面上：部门名称
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">42 修改部门名称/添加新部门：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateDept.do?facilitatorID=1&id=5&departmentName=kekekek
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id（若不传入id则会添加新部门）
+				 * @param departmentName
+				 * @return code
+				 * 	    message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">43 删除部门：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteDept.do?id=5
+
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id
+				 * @return
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name"></div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div>
+<div class="item">
+	<div class="tit">车辆类型管理</div>
+	<div class="con">
+		
+		<div class="item">
+			<div class="name">44 查询车辆类型：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listVehicleTypeByPage.do?pageSize=6&pageNumber=1&facilitatorID=1
+			</div>
+			<div class="param">
+				查询参数： 	/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID（可选）
+				 * @param modelsId 车辆类型id（可选）
+				 * @param modelsName 车辆类型名（可选）
+				 * @param brand 车辆品牌名（可选）
+				 * @param pageNumber 页码
+				 * @param pageSize 页长
+				 * @param callback 
+				 */
+			 返回参数：[{
+					param1: "id", //主键ID
+					param2: "modelsId"  //车辆类型ID
+					param3: "modelsName"  //车辆类型名称
+					param4: "manufacturer"  //生产厂商
+					param5: "brand"  //品牌
+					param6: "subBrand"  //子品牌
+					param7: "carType"  //车种类（数字，例如1）
+					param8: "productTime"  //生产年份
+					param9: "orderId" //顺序号
+				}]
+			</div>
+			<div class="tips">
+				显示到页面上：车辆类型id，车辆类型名称，生产厂商，品牌，子品牌，车种类，生产年份，顺序号
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">45 车辆类型修改/添加:</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/editVehicleType.do?facilitatorID=1&modelsId=8&modelsName=hahahha&brand=fff
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID
+				 * @param modelsId 车辆类型id（必填项）
+				 * @param modelsName 车辆类型名
+				 * @param brand 车辆品牌名
+				 * @param manufacturer 生产厂商
+				 * @param carType 车型代码 
+				 * @param productTime 生产年份
+				 * @param orderId 顺序号
+				 * @param subBrand 子品牌
+				 * 
+				 * @return code
+				 * 			message
+				 */
+				若传入id在数据库中存在，则会修改该条数据，若不传入id则添加该条数据
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">46 车辆类型删除：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteVehicleTypeById.do?facilitatorID=1&id=2332423524
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID
+				 * 
+				 * @return  code
+				 * 	    message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		
+	</div>
+</div>		 
+<div class="item">
+	<div class="tit">车辆品牌管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">47 查询车辆品牌：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listBrandByPage.do?pageSize=5&pageNumber=1&facilitatorID=1
+			</div>
+			<div class="param">
+				传参：	/**
+					 * @param companyUserID 登录用户ID
+					 * @param facilitatorID 企业ID
+					 * @param id 主键id（可选）
+					 * @param brandName 车辆品牌名（可选）
+					 * @param brandId 车辆品牌id（可选）
+					 * @param brandType 车辆品牌类型（可选）
+					 * @param brandOrder 顺序（可选）
+					 * @param pageNumber 页码
+					 * @param pageSize 页长
+					 * @param callback
+					 */
+				 返回的data参数: [{
+							param1: "brandName", //车辆品牌名称
+							param2: "brandId"  //车辆品牌id
+							param3: "brandType"  //车辆品牌类型
+							param4: "brandOrder"  //顺序号
+						}]
+			</div>
+			<div class="tips">显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号</div>
+		</div>
+		<div class="item">
+			<div class="name">48 增加/修改车辆品牌：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/editBrandById.do?facilitatorID=1&brandName=heilghe&brandId=323432&brandType=heff&brandOrder=32423
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID
+				 * @param brandName 品牌名
+				 * @param brandId 品牌ID
+				 * @param brandType 品牌类型
+				 * @param brandOrder 品牌顺序
+				 * 
+				 * @return code
+				 * 			message
+				 */
+				若不传入id则增加一条记录，若传入的id值在数据库中存在则会修改该条记录
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">49 删除车辆品牌：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteBrandById.do?id=396530507&facilitatorID=1
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID
+				 * 
+				 * @return code
+				 * 			message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 
+<div class="item">
+	<div class="tit">雇员管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">50 查询雇员信息：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listEmployByPage.do?pageSize=4&pageNumber=1&&facilitatorID=1
+			</div>
+			<div class="param">
+				传参：	/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id（可选参数）
+				 * @param name（可选参数）
+				 * @param phone（可选参数）
+				 * @param title（可选参数）
+				 * @param earner（可选参数）
+				 * @param teams（可选参数）
+				 * @param email（可选参数）
+				 * @param status（可选参数）
+				 * @param QQ（可选参数）
+				 * @param departmentID（可选参数）
+				 * @param pageNumber
+				 * @param pageSize
+				 * @param callback
+				 */
+			 返回的data参数: [{
+						param1: "id", //主键id
+						param2: "name"  //雇员姓名
+						param3: "phone", //电话
+						param4: "title", //头衔
+						param5: "earner", //收入
+						param6: "teams", //班组
+						param7: "email", //邮箱
+						param8: "status", //状态
+						param9: "QQ", //QQ号码
+						param10: "department", //包括id（部门id）,departmentName(部门名称)
+					}]
+			</div>
+			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入，电话，邮箱，QQ号码，状态</div>
+		</div>
+		<div class="item">
+			<div class="name">51 添加/修改雇员信息：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateEmpolyee.do?facilitatorID=1&id=1&name=kakaka&sex=0&phone=123&title=1&earner=1&teams=1&email=1&status=1&QQ=1&departmentID=2
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id
+				 * @param name
+				 * @param sex
+				 * @param phone
+				 * @param title
+				 * @param earner
+				 * @param teams
+				 * @param email
+				 * @param status
+				 * @param QQ
+				 * @param departmentID
+				 * @return code
+				 *         message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">52 删除雇员信息：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteEmpolyee.do?facilitatorID=1&id=1
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id
+				 * @return  code
+				 * 	    message
+				 */	
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 
+<div class="item">
+	<div class="tit">客户管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">53 查询客户列表：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
+			</div>
+			<div class="param">
+				传参：	/**
+					 * @param companyUserID 用户登录ID
+					 * @param facilitatorID 企业ID
+					 * @param id 主键id（可选）
+					 * @param carOwner 车主姓名（可选）
+					 * @param carNum 车牌号（可选）
+					 * @param carBrand 车辆品牌（可选）
+					 * @param carType 车辆类型（可选）
+					 * @param carOwnTel 车主电话（可选）
+					 * @param isVip 是否是vip（可选）
+					 * @param pageNumber 页码
+					 * @param pageSize 页长
+					 * @param callback
+					 */
+
+				 返回的data参数: [{
+							param1: "id", //主键id
+							param2: "carOwner"  //车主姓名
+							param3: "carNum", //车牌号
+							param4: "carBrand", //车辆品牌
+							param5: "carType", //车辆类型
+							param6: "orderTime", //预定时间
+							param7: "coast", //花费
+							param8: "status", //状态（例如：需保养）
+							param9: "note", //备注
+							param10: "orderNum", //订单号
+							param11: "recordDate", //录入日期
+							param12: "carOwnTel", //车主电话
+							param13: "servCatlog", //维修类别
+							param14: "orderItem", //预定项目
+							param15: "engineNum", //发动机号
+							param16: "enterTime", //入场时间
+							param17: "custDept", //客户单位
+							param18: "carColor", //车辆颜色
+							param19: "exeptTime", //预计时间
+							param20: "receiveCar", //接车员
+							param21: "mileIntoFactory", //进厂里程
+							param22: "arrears", //欠帐情况
+							param23: "isVip", //是否是vip（0是，不是）
+							param24: "servEvaluate", //服务评价
+					}]
+			</div>
+			<div class="tips">
+				1.显示在主页面上的：车主姓名，车牌号，车辆品牌，车辆类型，预定项目，预定时间，花费，状态，备注
+   				对应原型：客户管理主页面（查询时不传任何可选参数）
+ 				2.显示在查看页面上的：除主键id外全部返回参数（参照客户管理-查看页面原型）
+   				对应原型：客户管理-查看页面（查询时传递主键id参数）
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">54 修改/添加客户数据：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addCustomer.do?facilitatorID=1&carOwner=hehehehheheh...
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 用户登录ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键id（若数据库中存在相同id则为修改该条数据，否则为插入一条数据）
+				 * @param carOwner 车主姓名
+				 * @param carNum 车牌号码
+				 * @param carBrand 车辆品牌
+				 * @param carType 车辆类型
+				 * @param orderTime 预定时间
+				 * @param coast 花费
+				 * @param state 状态
+				 * @param note 备注
+				 * @param orderNum 顺序号
+				 * @param recordDate 登记时间
+				 * @param carOwnTel 车主电话
+				 * @param orderItem 预定项目
+				 * @param engineNum 发动机号
+				 * @param enterTime 入场时间
+				 * @param carColor 车身颜色
+				 * @param custDept 客户单位
+				 * @param servCatlog 维修类别
+				 * @param exeptTime 预计时间
+				 * @param receiveCar 接车员
+				 * @param mileIntoFactory 进场里程
+				 * @param statOil 油表状态(四分之三)
+				 * @param arrears 欠帐情况
+				 * @param isVip 是否是VIP
+				 * @param servEvaluate 服务评价
+				 * @param provideId 服务商ID（可选）
+				 * 
+				 * @return  code
+				 * 	    message
+				 */	
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">55 删除一条数据：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/delCustomer.do?facilitatorID=1&id=664015340
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 用户登录ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键ID
+				 * 
+				 * @return  code
+				 * 	    message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 
+<div class="item">
+	<div class="tit">推荐商品管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">56 查询推荐商品列表：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/ListServiceItem.do?facilitatorID=1&pageSize=5&pageNumber=1
+			</div>
+			<div class="param">
+				传参：	/**
+				 * 
+				 * @param companyUserID  用户登录ID
+				 * @param facilitatorID  企业ID
+				 * @param id  主键ID（可选）
+				 * @param itemId  推荐项目ID
+				 * @param itemName 推荐项目名称（后玻璃贴膜。。）（可选）
+				 * @param workType  推荐项目种类（汽车美容。。）（可选）
+				 * @param orderNum  顺序号（可选）
+				 * @param pageNumber  页码
+				 * @param pageSize  页长
+				 * @param callback
+				 */
+
+			 返回的data参数: [{
+						param1: "id", //主键id
+						param2: "itemId"  //推荐项目id
+						param3: "itemName", //推荐项目名称
+						param4: "workType", //工种
+						param5: "faultCode", //错误代码
+						param6: "orderNum", //顺序号
+						param7: "standardWorkTime", //标准工时
+						param8: "standardUnitPrice", //标准单价
+						param9: "coastWorkTime", //工时花费
+				}]
+			</div>
+			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号</div>
+		</div>
+		<div class="item">
+			<div class="name">57 添加/修改推荐商品：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateItem.do?facilitatorID=1&itemId=4444&itemName=hahaha&workType=hehehehe
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID  用户登录ID
+				 * @param facilitatorID  企业ID
+				 * @param id  主键ID
+				 * @param itemId  推荐项目ID （必填项）
+				 * @param itemName 推荐项目名称（后玻璃贴膜。。）
+				 * @param workType  推荐项目种类（汽车美容。。）
+				 * @param orderNum  顺序号
+				 * @param pageNumber  页码
+				 * @param pageSize  页长
+				 * @return  code
+				 * 	    message
+				 * 	    data
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">58 删除推荐商品：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http:// 115.159.77.210:8080/ybcl2.0/enterprise/delServiceItem.do?facilitatorID=1&id=32423422
+			</div>
+			<div class="param">
+				/**
+				 * 
+				 * @param companyUserID
+				 * @param facilitatorID
+				 * @param id
+				 * @return  code
+				 * 	    message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 	
+<div class="item">
+	<div class="tit">用户管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">59 用户列表：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?pageSize=5&pageNumber=1&facilitatorID=1 
+			</div>
+			<div class="param">
+				传参： 	 /**
+						 * 用户列表
+						 * @param companyUserID 登录用户ID
+						 * @param facilitatorID 企业ID
+						 * @param id 主键id（可选）
+						 * @param name 姓名（可选）
+						 * @param account 账号（可选）
+						 * @param pageSize 页长
+						 * @param pageNumber 页码
+						 * @param callback
+						 */
+					 返回的data参数: "data":[[{
+								param1: "id", //主键id
+								param2: "account"  //账号
+								param3: "name", //姓名
+								param4: "password", //密码
+								param5: "desc", //账号描述
+								param6: "enabled", //是否可用
+								param7: "issys", 
+								param8: "dept", //部门
+								param9: "duty", //职责
+								param10: "sub_system" //子系统
+								}
+								"id1,id2..."  //关联角色ids
+								"rolename1,rolename2..." //关联角色名称
+								]]
+			</div>
+			<div class="tips">
+				1.显示在主页面上的：姓名，账号，关联角色名称，关联个数（ids和）<br/>
+					对应用户管理-账号管理<br/>
+				 2.显示在新增面上的：姓名，部门，账号，密码关联角色名称，职责<br/>
+					对应用户管理-账号管理-新增<br/>
+				 3.显示在编辑面上的：姓名，部门，关联角色名称，职责（备注）<br/>
+					对应用户管理-账号管理-编辑
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">60 增加/修改单条数据</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 用户id
+				 * @param account 用户账号
+				 * @param name 用户名
+				 * @param password 密码
+				 * @param desc 描述
+				 * @param enabled 0或1
+				 * @param issys 0或1
+				 * @param dept 部门
+				 * @param duty 职责
+				 * @param subSystem 子系统(0或1)
+				 * @param role_ids (角色id,例如 role_ids=1,2)
+				 * @return code
+				 * 		   message
+				 */
+			</div>
+			<div class="tips">其中id,account,name,password,desc,dept,role_ids是规定需要列出的字段</div>
+		</div>
+		<div class="item">
+			<div class="name">60 删除用户</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http:// 115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?facilitatorID=1&id=905506185
+			</div>
+			<div class="param">
+				/**
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param id 用户id
+				 * 
+				 * @return code
+				 *         message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 		
+<div class="item">
+	<div class="tit">车间管理</div>
+	<div class="con">
+		<div class="item">
+			<div class="name">61 车间列表：</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?facilitatorID=1&status=0
+			</div>
+			<div class="param">
+				传参： /**
+				 * @param companyUserID 用户登录ID
+				 * @param facilitatorID 企业ID
+				 * @param date 日期（可选）
+				 * @param appointmentNum 订单号（可选）
+				 * @param phone 手机号（可选）
+				 * @param platenumber 发动机号（可选）
+				 * @param status 状态（必填项 0或者其他）
+				 * @param truename 真实姓名（可选）
+				 * @param pageNumber 页码
+				 * @param pageSize 页大小
+				 *
+				 * @return code 1
+				 * @return message 检索成功
+				 * @return data
+				 */
+			 返回的data参数: "data":[[{
+						param1: "appointmentNum", //订单号
+						param2: "maintainfortNum"  //维修单号
+						param3: "maintaintype", //维修类型
+						param4: "date", //日期
+						param5: "truename", //用户名
+						param6: "arriveTime", //入场时间
+						param7: "status",//状态
+						param8: "motorNumber", //车牌号
+						param9: "oil", //油量
+						param11: "miles" //里程
+						param12: "platenumber" //发动机号
+						param13: "color" //车身颜色
+						param14: "qqid" //QQid
+						param15: "phone" //电话
+						param16: "brand" //车辆品牌
+						param17: "series" //品牌系列
+						param18: "employeeName" //雇员姓名
+						param19: "serviceItems" //推荐项目
+						param20: "usedComponents" //使用组件
+						param21: "orderDetail"
+						param22: "processonBar"
+						param23: "costSheet"
+						}{
+						param1: "id", //进度id
+						param2: "maintainID"  //维修单号
+						param3: "processNum", //进度号
+						param4: "processCount", //进度数
+						param5: "processDetail", //进度状态
+						param6: "costTime", //花费时间
+						param7: "status",//状态
+						param8: "motorNumber", //车牌号
+						{
+						param1: "id", //员工id
+						param2: "name"  //员工姓名
+						。。。
+						param : {
+						param1: "id" //部门id
+						param2: "departmentName" //部门名称
+						}
+						}
+						}
+						]]
+			</div>
+			<div class="tips">
+				1.显示在主页面上的：订单号，维修类型，日期，工时（花费时间），班组（部门），维修员（雇员姓名），状态<br/>
+					对应车间管理<br/>
+				 2.显示在车间管理-操作页面上的：订单号，车主姓名（用户名），车牌号，登记日期（日期），车主电话（电话），维修类别（维修类型），发动机号，入场时间，车辆颜色，车辆类型，车辆品牌，进厂里程，油表状态<br/>
+					对应用户管理-账号管理-新增
+			</div>
+		</div>
+		<div class="item">
+			<div class="name">62 增加/修改单条数据 </div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80
+			</div>
+			<div class="param">
+				传递的参数：
+				 /**
+				 * @param companyUserID 用户登录ID
+				 * @param facilitatorID 企业ID
+				 * @param id 主键id （可选）
+				 * @param maintainID 维修单id （必填项）
+				 * @param processNum 进度数字（必填项）
+				 * @param processCount 进度数（必填项）
+				 * @param processDetail 进度描述（必填项）
+				 * @param coastTime 花费时间（必填项）
+				 * @param employeeID 雇员id（必填项）
+				 * @param StartDate 开始时间
+				 * @param endDate 结束时间
+				 */
+				 * @return code
+				 * 	   message
+				 */
+			</div>
+			<div class="tips"></div>
+		</div>
+		<div class="item">
+			<div class="name">62 删除某条进度数据</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/delProcessById.do?id=3&facilitatorID=1
+			</div>
+			<div class="param">
+				<p>/**</p>
+				<p> * @param companyUserID 登录用户ID</p>
+				<p> * @param facilitatorID 企业ID</p>
+				<p> * @param id 主键id</p>
+				<p> * </p>
+				<p> * @return code</p>
+				<p> *         message
+				 */</p>
+			</div>
+			<div class="tips"></div>
+		</div>
+	</div>
+</div> 
+</body>
+</html>
+
