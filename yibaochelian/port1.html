@@ -41,9 +41,20 @@
 		.oragen {
 			color: orange;
 		}
+		b{
+			font-weight: bold;
+		}
 	</style>
 </head>
 <body>
+<div class="item red b" >
+	<ol>
+		<li>提交的参数不统一，<span class="b">建议唯一id号用原来的</span>，不要改mainId，有的改了，但大部分没改</li>
+		<li>接口与原型不对应，包括参数不对应及页面显示需要的接口个数，如财务管理、进出库（仓库）管理</li>
+		<li>雇员、车辆、品牌、客户等，原型中没有，</li>
+	</ol>
+</div>
+
 每个请求uri中都会包含这三个固定参数：
 facilitatorID参数是用户登录以后在整个session生命周期中一直携带的参数，选择的服务商ID
 companyUserID登录用户的id，登陆以后在整个session中存在
@@ -751,7 +762,7 @@ Callback使用的函数需要前端传入
 			<div class="tips"></div>
 		</div>
 		<div class="item">
-			<div class="name">23 （17、服务商）</div>
+			<div class="name">23 （17、服务商）<span class="red">请提供对应原型</span></div>
 			<div class="userport">
 				
 			</div>
