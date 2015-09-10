@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>所有接口</title>
 	<style type="text/css">
+	div {margin:0;padding:0;}
 		.item {
 			padding: 10px 0;
 		}
@@ -59,10 +60,11 @@
 facilitatorID参数是用户登录以后在整个session生命周期中一直携带的参数，选择的服务商ID
 companyUserID登录用户的id，登陆以后在整个session中存在
 Callback使用的函数需要前端传入
-<div class="item">
-	<div class="tit">维修接待</div>
-	<div class="con">
-		<div class="item">
+
+<div class="wrap">
+	<ol>
+		<div class="tit">维修接待</div>
+		<li>
 			<div class="name">1、维修接待列表接口：</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183009372910228557885_1441777948181&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441777949795
@@ -100,8 +102,8 @@ Callback使用的函数需要前端传入
 						  }]
 				 <p class="tips">显示到页面上：顺序号（页面自己生产），维修单号，真实姓名，车牌号，电话，类别，状态</p>
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">2、维修单点击新建按钮，生成一个维修单号</div>
 			<div class="userport green">
 				
@@ -123,8 +125,8 @@ Callback使用的函数需要前端传入
 			}]
 			界面是维修单的添加界面，初始化一下维修单号，状态，维修类型
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存<span class="red">500错误</span></div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=jQuery18306573136087972671_1441807300319&truename=&platenumber=11a&phone=18511581157&maintaintype=%E4%BF%9D%E5%85%BB&status=2&usedComponents=&mainId=SR.201509080003&facilitatorID=1&companyUserID=1&_=1441807326952
@@ -162,8 +164,8 @@ Callback使用的函数需要前端传入
 
 				页面返回到列表，没有返回值
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">4 维修项目的添加：</div>
 			<div class="userport">
 			</div>
@@ -197,8 +199,8 @@ Callback使用的函数需要前端传入
 				推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 				</div>
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">5 勾选以后点击确定，保存添加数据</div>
 			<div class="userport">
 
@@ -210,8 +212,8 @@ Callback使用的函数需要前端传入
 				temIds=勾选的羡慕的id用“;”分割
 				没有返回值，不需要界面
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">6 维修单取消按钮</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=jQuery18305274461160879582_1441810529178&mainId=SR.201509090001&facilitatorID=1&companyUserID=1&_=1441810538542
@@ -229,8 +231,8 @@ Callback使用的函数需要前端传入
 					 */
 				没有返回值，不需要界面
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">7 (4、维修单删除)</div>
 			<div class="userport">
 				
@@ -248,14 +250,14 @@ Callback使用的函数需要前端传入
 					 */
 				没有返回值，不需要界面
 			</div>
-		</div>
-		<div class="item">
-			<div class="name">8 （5、维修单下面的维修项目列表：）<span class="red">mainId 获取错误SR.201509080003 | <strong>NO.201508100004</strong> 显示数据为空</span></div>
+		</li>
+		<li>
+			<div class="name">8 （5、维修单下面的维修项目列表：）<span class="red">mainId 获取来源，多次试过 通过预约单条信息获取maintainfortNum，还是错误，此mainId是预约的id还是维修的id</span></div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=jQuery183019620985072106123_1441820064292&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509080003&pageSize=10&_=1441820064362
 			</div>
 			<div class="port">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
 			</div>
 			<div class="param">
 				/**
@@ -280,8 +282,8 @@ Callback使用的函数需要前端传入
 				<div class="tips"> 显示在主页面上的：顺序号，推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费 </div>
 			
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">9 勾选维修项目的窗口列表</div>
 			<div class="userport">
 				
@@ -313,8 +315,8 @@ Callback使用的函数需要前端传入
 				}]
 			 显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">10 保存维修单相关的项目</div>
 			<div class="userport">
 				
@@ -333,8 +335,8 @@ Callback使用的函数需要前端传入
 					 */
 				添加之后在异步的在维修单的维修项目中显示，添加窗口还可以继续添加
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">11 （6、打开某个维修单）</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183012371835694648325_1441806126870&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441806127029
@@ -371,8 +373,8 @@ Callback使用的函数需要前端传入
 				<div class="tips">界面上显示的内容，维修单的页面，和维修单的维修项目；维修项目的显示内容：
 				顺序号，项目编码，项目名称，工种，错误代码，标准工时，标准单价，工时花费，</div>
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">12 (7、列出已经选好的领用材料) <span class="red">mainId 获取错误SR.201509080003 | <strong>NO.201508100004</strong> 显示数据为空</span></div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=jQuery183019620985072106123_1441820064293&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509080003&pageSize=10&_=1441820064365
@@ -404,8 +406,8 @@ Callback使用的函数需要前端传入
 					商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
 				</div>
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">13 (8、选择领用材料)</div>
 			<div class="userport">
 				
@@ -447,8 +449,8 @@ Callback使用的函数需要前端传入
 				页面显示：(这些数据是按照仓库是棵树，点击那个参考显示那个仓库的数据)
 				商品编号,商品名称,产地,分类, 车型, 最近出货时间, 最近进货时间, 商品可售数量, 单位（升，个）, 安全数量, 建议购买价格, 建议销售价格, repertory仓库名称
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">14 (9、勾选好领用材料，保存)</div>
 			<div class="userport">
 				
@@ -469,22 +471,22 @@ Callback使用的函数需要前端传入
 				没有返回值和页面
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">63 维修下面的单据信息 <span class="red">返回数据为保存成功</span></div>
 			<div class="userport">
 				
 			</div>
 			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery18306087536234408617_1441777559088&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777590427</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">64 维修下面的费用合计<span class="red">返回数据为保存成功</span></div>
 			<div class="userport">
 				
 			</div>
 			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18306087536234408617_1441777559089&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777594251</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">15 (10、维修进度查看（在下面找）) <span class="red">那个是进度接口</span></div>
 			<div class="userport">
 				
@@ -496,14 +498,9 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">预约接待</div>
-	<div class="con">
-		
-		<div class="item">
+		</li>
+		<div class="tit">预约接待</div>
+		<li>
 			<div class="name">16 (11、预约列表)</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?callback=jQuery18307041006851941347_1441819595427&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441819595486
@@ -540,10 +537,10 @@ Callback使用的函数需要前端传入
 						  }]
 			</div>
 			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号，真实姓名，车牌号，电话，类别，状态</div>
-		</div>
-		<div class="item">
-			<div class="name">17 （12、打开预约单）<span class="red">code为2，没有此预约单号，传参问题：appId</span></div>
-			<div class="userport">
+		</li>
+		<li>
+			<div class="name">17 （12、打开预约单）</div>
+			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?callback=jQuery183013314012251794338_1441819627090&status=0&appId=NO.201508100010&facilitatorID=1&companyUserID=1&_=1441819627132
 			</div>
 			<div class="port">
@@ -578,16 +575,13 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="tips">界面上显示的内容，预约单的页面（预约单和维修单的区别就是有预约单上有预约单号），和预约单的维修项目；维修项目的显示内容：
 			顺序号，项目编码，项目名称，工种，错误代码，标准工时，标准单价，工时花费，</div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
+		
 	<div class="tit">个人预约</div>
-	<div class="con">
-		<div class="item">
-			<div class="name">18 (13、保存预约表)</div>
+		<li>
+			<div class="name">18 (13、保存预约表) <span class="red">提交虽成功，但列表数据没更新</span></div>
 			<div class="userport">
-				
+				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?callback=jQuery183017940140468999743_1441855016132&appointmentNum=NO.201508075&truename=%E6%B0%B4%E7%94%B5%E8%B4%B9&platenumber=&phone=&maintaintype=%E4%BF%9D%E5%85%BB&status=7&oil=0&usedComponents=&facilitatorID=1&companyUserID=1&_=1441855019581
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?facilitatorID=1&oil=1&status=1&companyUserID=1
@@ -623,8 +617,20 @@ Callback使用的函数需要前端传入
 				没有返回值和页面，保存以后显示在预约列表里
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
+			<div class="name">预约配件<span class="red">没有接口	</span></div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
 			<div class="name">19 (14、预约配件的选择（弹出一个窗口）)</div>
 			<div class="userport">
 				
@@ -657,11 +663,10 @@ Callback使用的函数需要前端传入
 				商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
 				勾选好需要的配件，返回配件id串到父窗口，id串用;分割
 			</div>
-		</div>
-		<div class="item">
-			<div class="name">20 (15、预约推荐项目：) <span class="red">文档中给的显示到页面上的参数和接口不符</span></div>
+		</li>
+		<li>
+			<div class="name">20 (15、预约推荐项目：) <span class="red">没有对应原型</span></div>
 			<div class="userport">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?callback=jQuery18305492809156421572_1441818384659&facilitatorID=1&companyUserID=1&pageNum=1&mainId=NO.201508100003&pageSize=10&_=1441818384807
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1
@@ -718,8 +723,8 @@ Callback使用的函数需要前端传入
 								工时花费
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">21 查找可以预约的时间：</div>
 			<div class="userport">
 				
@@ -745,8 +750,8 @@ Callback使用的函数需要前端传入
 				显示内容：
 				根据日期，剩余可以预约数，如果rest的值为0了，这个日期就不能预约了，不可选了。
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">22 （16、预约的删除）</div>
 			<div class="userport">
 				
@@ -760,8 +765,8 @@ Callback使用的函数需要前端传入
 				没有返回值的页面
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">23 （17、服务商）<span class="red">请提供对应原型</span></div>
 			<div class="userport">
 				
@@ -778,8 +783,8 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips">页面上就是一个服务商的名称列表，进行单选</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">24 （18、保存服务商）</div>
 			<div class="userport">
 				
@@ -793,8 +798,8 @@ Callback使用的函数需要前端传入
 				 没有返回值的页面
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">25 19、省的选择列表</div>
 			<div class="userport">
 				
@@ -821,13 +826,9 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips">根据省名、市名，区名，作为查询服务商的参数，选择服务商</div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">角色管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">26 （20、角色的添加）</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?callback=jQuery18307939896429888904_1441820374924&roleId=1&name=%E8%A7%92%E8%89%B21&auIDS=0%3B0%3B0%3B0%3B0%3B0&desc=&facilitatorID=1&companyUserID=1&_=1441820419714
@@ -841,8 +842,8 @@ Callback使用的函数需要前端传入
 			没有返回值
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">27 （21、角色列表：）</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/roleList.do?callback=jQuery18307939896429888904_1441820374925&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441820375008
@@ -861,13 +862,9 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips">界面上显示角色名称，多选框进行选择。</div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">企业用户</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">28 注册接口</div>
 			<div class="userport">
 				
@@ -880,8 +877,8 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">29 登录接口</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery1830667362570296973_1441819566589&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441819566703
@@ -895,9 +892,8 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips"></div>
-		</div>
-
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">30 检查用户名是否可用<span class="red">需要获取用哦过户信息</span></div>
 			<div class="userport">
 				
@@ -912,13 +908,9 @@ Callback使用的函数需要前端传入
 				检查：用户名可用。
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">维修领料</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">31 根据维修单查询对应领料单<span class="red">访问500错误</span>
 			对应参数：maintId维修单号</div>
 			<div class="userport">
@@ -931,14 +923,9 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">出入库<span class="red">原型为左侧为树，右侧为两个table列表，分别对应接口是那个</span></div>
-	<div class="con">
-		
-		<div class="item">
+		<li>
 			<div class="name">32 添加出库单</div>
 			<div class="userport">
 				
@@ -955,8 +942,8 @@ Callback使用的函数需要前端传入
 			<div class="tips">
 				
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">33 修改出库单</div>
 			<div class="userport">
 				
@@ -971,8 +958,8 @@ Callback使用的函数需要前端传入
 		  origin产地，type分类，carModle车型，receive领料人，handleMan办理人员
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">34 查询出库单</div>
 			<div class="userport">
 				
@@ -985,8 +972,8 @@ Callback使用的函数需要前端传入
 				对应参数：id出库单ID
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">35 删除出库单</div>
 			<div class="userport">
 				
@@ -998,8 +985,8 @@ Callback使用的函数需要前端传入
 				对应参数：id出库单ID
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">36 添加入库单</div>
 			<div class="userport">
 				
@@ -1013,8 +1000,8 @@ Callback使用的函数需要前端传入
 		  carModle车型，handelMan办理人员，supplierID供应商ID
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">37 修改入库单</div>
 			<div class="userport">
 				
@@ -1028,8 +1015,8 @@ Callback使用的函数需要前端传入
 				unit单位，price进价，saleprice售价，repertory仓库名称，origin产地，type分类，carModle车型，handelMan办理人员，supplierID供应商ID
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">38 查询入库单</div>
 			<div class="userport">
 				
@@ -1042,8 +1029,8 @@ Callback使用的函数需要前端传入
 				对应参数：id入库单ID
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">39 删除入库单</div>
 			<div class="userport">
 				
@@ -1055,14 +1042,9 @@ Callback使用的函数需要前端传入
 				对应参数：id入库单ID
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">供应商<span class="red">对应原型</span></div>
-	<div class="con">
-		
-		<div class="item">
+		<li>
 			<div class="name">40 查询所有供应商</div>
 			<div class="userport">
 				
@@ -1079,14 +1061,9 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">部门管理<span class="red">对应原型</span></div>
-	<div class="con">
-		
-		<div class="item">
+		<li>
 			<div class="name">41 查询部门：</div>
 			<div class="userport">
 				
@@ -1113,8 +1090,8 @@ Callback使用的函数需要前端传入
 			<div class="tips">
 				显示到页面上：部门名称
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">42 修改部门名称/添加新部门：</div>
 			<div class="userport">
 				
@@ -1134,8 +1111,8 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">43 删除部门：</div>
 			<div class="userport">
 				
@@ -1154,27 +1131,9 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
-			<div class="name"></div>
-			<div class="userport">
-				
-			</div>
-			<div class="port">
-				
-			</div>
-			<div class="param">
-				
-			</div>
-			<div class="tips"></div>
-		</div>
-	</div>
-</div>
-<div class="item">
+		</li>
 	<div class="tit">车辆类型管理</div>
-	<div class="con">
-		
-		<div class="item">
+		<li>
 			<div class="name">44 查询车辆类型：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1209,8 +1168,8 @@ Callback使用的函数需要前端传入
 			<div class="tips">
 				显示到页面上：车辆类型id，车辆类型名称，生产厂商，品牌，子品牌，车种类，生产年份，顺序号
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">45 车辆类型修改/添加:<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1238,8 +1197,8 @@ Callback使用的函数需要前端传入
 				若传入id在数据库中存在，则会修改该条数据，若不传入id则添加该条数据
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">46 车辆类型删除：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1258,14 +1217,9 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		
-	</div>
-</div>		 
-<div class="item">
+		</li>
 	<div class="tit">车辆品牌管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">47 查询车辆品牌：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1294,8 +1248,8 @@ Callback使用的函数需要前端传入
 						}]
 			</div>
 			<div class="tips">显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">48 增加/修改车辆品牌：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1319,8 +1273,8 @@ Callback使用的函数需要前端传入
 				若不传入id则增加一条记录，若传入的id值在数据库中存在则会修改该条记录
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">49 删除车辆品牌：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1339,13 +1293,9 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 
-<div class="item">
+		</li>
 	<div class="tit">雇员管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">50 查询雇员信息：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1386,8 +1336,8 @@ Callback使用的函数需要前端传入
 					}]
 			</div>
 			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入，电话，邮箱，QQ号码，状态</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">51 添加/修改雇员信息：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1416,8 +1366,8 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">52 删除雇员信息：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1436,13 +1386,9 @@ Callback使用的函数需要前端传入
 				 */	
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 
-<div class="item">
+		</li>
 	<div class="tit">客户管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">53 查询客户列表：</div>
 			<div class="userport green">
 				所有：http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?callback=jQuery18305135084968060255_1441805692481&status=0&mainId=100000&facilitatorID=1&companyUserID=1&_=1441805692668<br/>
@@ -1501,9 +1447,8 @@ Callback使用的函数需要前端传入
  				2.显示在查看页面上的：除主键id外全部返回参数（参照客户管理-查看页面原型）
    				对应原型：客户管理-查看页面（查询时传递主键id参数）
 			</div>
-		</div>
-
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">54 修改/添加客户数据：<span class="red">修改了name，提交接口成功，但获取数据还是原来的</span></div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addCustomer.do?callback=jQuery18305135084968060255_1441805692481&carOwner=%E5%BC%A0%E4%B8%89a&carNum=%E4%BA%ACA23456&carBrand=%E5%AE%9D%E9%A9%AC&carType=X3&orderTime=2015-06-07+00%3A00%3A00.0&coast=2000&state=%E9%9C%80%E4%BF%9D%E5%85%BB&orderNum=YB22334555&recordDate=2015-06-04+00%3A00%3A00.0&carOwnTel=15389378504&orderItem=%E4%BF%9D%E5%85%BB&engineNum=35677&enterTime=2015-05-04+00%3A00%3A00.0&carColor=%E7%BA%A2%E8%89%B2&custDept=%E4%BA%A6%E5%AE%9D%E8%BD%A6%E8%81%94&servCatlog=2&exeptTime=2015-07-01+00%3A00%3A00.0&receiveCar=%E6%9D%8E%E5%9B%9B&mileIntoFactory=32424&statOil=%E5%9B%9B%E5%88%86%E4%B9%8B%E4%B8%89&arrears=%E6%AC%A02444&isVip=0&servEvaluate=%E9%9D%9E%E5%B8%B8%E6%BB%A1%E6%84%8F&note=%E5%93%88%E5%93%88&facilitatorID=1&companyUserID=1&_=1441805715970
@@ -1547,8 +1492,8 @@ Callback使用的函数需要前端传入
 				 */	
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">55 删除一条数据：</div>
 			<div class="userport">
 				
@@ -1567,13 +1512,9 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 
-<div class="item">
+		</li>
 	<div class="tit">推荐商品管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">56 查询推荐商品列表：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1609,8 +1550,8 @@ Callback使用的函数需要前端传入
 				}]
 			</div>
 			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">57 添加/修改推荐商品：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1636,8 +1577,8 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">58 删除推荐商品：<span class="red">对应原型</span></div>
 			<div class="userport">
 				
@@ -1656,13 +1597,9 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 	
-<div class="item">
+		</li>
 	<div class="tit">用户管理</div>
-	<div class="con">
-		<div class="item">
+		<li>
 			<div class="name">59 用户列表：</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18304039819505997002_1441819211868&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441819211990
@@ -1706,8 +1643,8 @@ Callback使用的函数需要前端传入
 				 3.显示在编辑面上的：姓名，部门，关联角色名称，职责（备注）<br/>
 					对应用户管理-账号管理-编辑
 			</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">60 增加/修改单条数据</div>
 			<div class="userport green">
 				65 获取单条数据：http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18304039819505997002_1441819211868&id=54449494&facilitatorID=1&companyUserID=1&_=1441819249897
@@ -1737,8 +1674,8 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips">其中id,account,name,password,desc,dept,role_ids是规定需要列出的字段</div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">60 删除用户</div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?callback=jQuery18304039819505997002_1441819211868&id=54449494&facilitatorID=1&companyUserID=1&_=1441819363659
@@ -1757,17 +1694,14 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 		
-<div class="item">
+		</li>
 	<div class="tit">车间管理</div>
-	<div class="con">
-		<div class="item">
-			<div class="name">61 车间列表：<span class="red">pageNum没起作用，一共10条，但total是2条</span></div>
+		<li>
+			<div class="name">61 车间列表：注：没有修改与删除<span class="red">pageNum没起作用，一共10条，但total是2条</span></div>
 			<div class="userport green">
 				<p>66 查看单条数据：<span class="red">应该是一条，但返回的还是所有的</span></p>
-				<p>单条：http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18305537156756035984_1441819422627&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441819422742</p>
+				<p>单条：
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18305537156756035984_1441819422627&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441819422742</p>
 				<p>所有：http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18304875986962579191_1441819396247&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441819396307</p>
 				
 			</div>
@@ -1841,9 +1775,9 @@ Callback使用的函数需要前端传入
 				 2.显示在车间管理-操作页面上的：订单号，车主姓名（用户名），车牌号，登记日期（日期），车主电话（电话），维修类别（维修类型），发动机号，入场时间，车辆颜色，车辆类型，车辆品牌，进厂里程，油表状态<br/>
 					对应用户管理-账号管理-新增
 			</div>
-		</div>
-		<div class="item">
-			<div class="name">62 增加/修改单条数据 <span class="red">显示的数据与保存时传递的参数都不对应，无法获取保存的哪些参数</span></div>
+		</li>
+		<li>
+			<div class="name">62 增加/修改单条数据 注：修改进程接口，仅修改参数processDetail</div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18309377890829928219_1441813681846&truename=%E8%91%9B%E6%B5%B7%E9%9C%9E&motorNumber=%E4%BA%ACNXXXX&date=1438832172000&phone=195115611567&maintaintype=%E4%BF%9D%E5%85%BB&platenumber=&arriveTime=1438659963000&color=&series=&brand=&miles=50000&oil=1&maintainID=NO.201508065&facilitatorID=1&companyUserID=1&_=1441813753492
 			</div>
@@ -1870,8 +1804,8 @@ Callback使用的函数需要前端传入
 				 */
 			</div>
 			<div class="tips"></div>
-		</div>
-		<div class="item">
+		</li>
+		<li>
 			<div class="name">62 删除某条进度数据 <span class="red">没有车间管理的删除接口，删除进度数据？</span>	</div>
 			<div class="userport">
 				
@@ -1890,33 +1824,32 @@ Callback使用的函数需要前端传入
 				 */</p>
 			</div>
 			<div class="tips"></div>
-		</div>
-	</div>
-</div> 
-<div class="item">
-	<div class="name">68 退出登录 <span class="red">没有</span></div>
-	<div class="userport green">
-	</div>
-	<div class="port">
-	</div>
-	<div class="param">
-	</div>
-	<div class="tips">
-		
-	</div>
+		</li>
+		<li>
+			<div class="name">68 退出登录 <span class="red">没有</span></div>
+			<div class="userport">
+			</div>
+			<div class="port">
+			</div>
+			<div class="param">
+			</div>
+			<div class="tips">
+			</div>
+		</li>
+		<li>
+			<div class="name">69 获取用户登录信息 <span class="red">没有</span></div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+			</div>
+			<div class="param">
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
 </div>
-<div class="item">
-	<div class="name">69 获取用户登录信息 <span class="red">没有</span></div>
-	<div class="userport green">
-	</div>
-	<div class="port">
-	</div>
-	<div class="param">
-	</div>
-	<div class="tips">
-		
-	</div>
-</div>
+
 </body>
 </html>
 
