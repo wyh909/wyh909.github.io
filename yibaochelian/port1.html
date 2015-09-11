@@ -866,8 +866,8 @@ Callback使用的函数需要前端传入
 	<div class="tit">企业用户</div>
 		<li>
 			<div class="name">28 注册接口</div>
-			<div class="userport">
-				
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/com.register.do?name=aa@ss.com&pwd=123456
 			</div>
 			<div class="port">
 				对应参数：name用户名，pwd密码<br/>
@@ -890,6 +890,18 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="param">
 				
+			</div>
+			<div class="tips"></div>
+		</li>
+		<li>
+			<div class="name">修改密码接口</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/com.update.pwd.do?ent_id=20211&password=123123&new_password=123456
+			</div>
+			<div class="param">
+				ent_id:用户id
+				password:旧密码
+				new_password:新密码
 			</div>
 			<div class="tips"></div>
 		</li>
@@ -1699,7 +1711,7 @@ Callback使用的函数需要前端传入
 		<li>
 			<div class="name">61 车间列表：注：没有修改与删除<span class="red">pageNum没起作用，一共10条，但total是2条</span></div>
 			<div class="userport green">
-				<p>66 查看单条数据：<span class="red">应该是一条，但返回的还是所有的</span></p>
+				<p>66 查看单条数据：</p>
 				<p>单条：
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18305537156756035984_1441819422627&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441819422742</p>
 				<p>所有：http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18304875986962579191_1441819396247&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441819396307</p>
@@ -1777,9 +1789,10 @@ Callback使用的函数需要前端传入
 			</div>
 		</li>
 		<li>
-			<div class="name">62 增加/修改单条数据 注：修改进程接口，仅修改参数processDetail</div>
+			<div class="name">62 增加/修改单条数据 注：修改进程接口，仅修改参数processDetail
+			<p class="red">接口成功，但刷新数据又回到原来的了。并没有改变</p></div>
 			<div class="userport">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18309377890829928219_1441813681846&truename=%E8%91%9B%E6%B5%B7%E9%9C%9E&motorNumber=%E4%BA%ACNXXXX&date=1438832172000&phone=195115611567&maintaintype=%E4%BF%9D%E5%85%BB&platenumber=&arriveTime=1438659963000&color=&series=&brand=&miles=50000&oil=1&maintainID=NO.201508065&facilitatorID=1&companyUserID=1&_=1441813753492
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18307643718724139035_1441896324178&maintainID=SR20150807001&id=1&processCount=1&processNum=1&processDetail=%E6%AD%A3%E4%BF%AE&processParam=%E5%86%85%E9%83%A8%E4%BA%A4%E8%BD%A6&facilitatorID=1&companyUserID=1&_=1441896341467
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80
