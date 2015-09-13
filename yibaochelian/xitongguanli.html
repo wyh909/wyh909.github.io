@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>维修接待</title>
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	.tabs {
+		padding-top: 20px;
+	}
+	.tabcon .item {
+		position: relative;
+		display: block;
+	}
+	.tabcon .btns {
+		text-align: right;
+		position: absolute;
+		top: -60px;
+		right: 10px;
+	}
+	</style>
+</head>
+<body>
+	<div class="header">
+		
+	</div>
+	<div class="wrap">
+		<div class="mainnav">
+		</div>
+		<div class="content ms-controller" ms-controller="grid">
+			<div class="tabs">
+				<span ms-repeat="tab"
+					ms-class="on:curIndex === $index"
+					ms-click="changeIndex($index)"
+				>{{el}}</span>
+			</div>
+			<div class="tabcon" >
+				<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index">
+					<div class="btns tr">
+						<a href="javascript:;" ms-click="addItem" class="btn btn-ok btn-add">添 加</a>
+					</div>
+					<div ms-include="'tpl'" data-include-loaded="changeIndex(0)"></div>
+					<div class="page"></div>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<div class="footer">
+		
+		
+	</div>
+	<div class="winpop w400" ms-controller="roleedit">
+		<div class="hd">
+			<span>角色修改</span>
+			<a href="javascript:;" ms-click="hideDialog" class="close"></a>
+		</div>
+		<div class="bd-role" style="display:none" >
+			<div class="bd">
+				<div class="item">
+					<label>角色名称：</label>
+					<input type="text" class="inpt" id="rolename" />
+				</div>
+				<div class="item">
+					<label>权限分配：</label>
+					<div class="con" style="padding-left:120px;">
+						<span ms-repeat='roles' style="width: 30%; display:inline-block;padding:3px 0">
+							<input type="checkbox" name="role" ms-attr-id="$index+1" ms-attr-value="el.value" /> {{el}}
+						</span>
+					</div>
+				</div>
+				<div class="item">
+					<label style="vertical-align:top">角色描述：</label>
+					<textarea name="" id="roledesc" cols="30" rows="5"></textarea>
+					
+				</div>
+			</div>
+			<div class="btns">
+				<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" ms-click="cancelItem" class="btn btn-cancel">取 消</a>
+			</div>
+		</div>
+	</div>
+	<div class="mask"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/avalon.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="js/pager.js"></script>
+	<script type="text/javascript" src="js/head.js"></script>
+	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/xitongguanli.js"></script>
+</body>
+</html>

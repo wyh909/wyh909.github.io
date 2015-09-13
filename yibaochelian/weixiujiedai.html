@@ -13,9 +13,12 @@
 	<div class="wrap">
 		<div class="mainnav">
 		</div>
-		<div class="search"></div>
 		<div class="content" ms-controller="table" class="ms-controller">
-			<div class="manage-list" ms-include="'tpl'">
+			<div class="search"></div>
+			<div class="btns-right">
+				<a href="javascript:;" class="btn btn-ok edit-item" ms-click="addItem('add')" >添加</a>
+			</div>
+			<div class="manage-list" ms-include="'tpl'" data-include-loaded="getTr">
 				
 			</div>
 			<div class="notice">* 注：红色，已过保养期；黄色，快到保养期；绿色，正常。</div>

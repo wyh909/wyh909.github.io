@@ -5,6 +5,26 @@
 	<title>维修接待</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		.opt {
+			margin-bottom: 60px;
+		}
+		.tabcon .item {
+			display: block;
+			position: relative;
+		}
+		.item .btns {
+			position: absolute;
+			top: -60px;
+			right: 20px;
+		}
+		.search2 {
+			width: 100%;
+			position: absolute;
+			top: 35px;
+			left: 0;
+		}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -15,32 +35,28 @@
 		</div>
 		<div class="content" class="ms-controlller">
 			<div class="opt-tit">维修单</div>
-			<div class="opt" ms-controller="edit" ms-include="edittpl" >
-			</div>
-			<div class="btns">
-				<a href="javascript:;" ms-click="addItem" class="btn btn-ok">添 加</a>
-				<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
-				<a href="javascript:;" class="btn btn-cancel">取 消</a>
-			</div>
-			<div class="yuyue">
-				<div class="tabs">
-					<span class="on">预约项目</span>
-					<span>项目领料</span>
-					<span>单据信息</span>
-					<span>费用合计</span>
-					<span>项目进度</span>
+			<div class="opt" ms-controller="edit" >
+				<div ms-include="edittpl"></div>
+				<div class="btns tc">
+					<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
 				</div>
-				<div class="tabcon">
-					<div class="item on"  ms-controller="yuyuexiangmu" ms-include="'tpl'">
-						
+			</div>
+			
+			<div class="yuyue" ms-controller="childTable" class="ms-controller">
+				<div class="tabs">
+					<span ms-repeat="tab"
+						ms-class="on:curIndex === $index"
+						ms-click="changeIndex($index)"
+					>{{el}}</span>
+				</div>
+				<div class="tabcon" >
+					<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==4">
+						<div class="btns" ms-visible="curIndex===0||curIndex===1">
+							<a href="javascript:;" ms-click="addItem" class="btn btn-ok btn-add">添 加</a>
+						</div>
+						<div ms-include="'tpl'" data-include-loaded="getTr"></div>
 					</div>
-					<div class="item" ms-controller="xiangmulingliao" ms-include="'tpl'">
-					</div>
-					<div class="item" ms-controller="danjuxinxi" ms-include="'tpl'">
-					</div>
-					<div class="item" ms-controller="feiyongheji" ms-include="'tpl'">
-					</div>
-					<div class="item">
+					<div class="item" style="display:none" ms-visible="curIndex==4">
 						<div class="process-tit">
 						</div>
 						<div class="process">
@@ -64,11 +80,57 @@
 		
 		
 	</div>
-	
+	<div class="dialog">
+		<div class="hd"><span>编辑数据</span><a href="javascript:;" class="close">×</a></div>
+		<div class="bd">
+			
+			<div class="manage tl">
+				<div class="tree" id="tree" style="min-height:200px;max-height:260px;overflow:auto">
+					<ul>
+						<li><span class="close"></span>全部</li>
+						<ul class="line">
+							<li><span class="close"></span><a href="javascript:;">01:改装用品</a></li>
+							<li><span class="close"></span><a href="javascript:;">02:轮胎铝圈</a></li>
+							<li><span class="close"></span><a href="javascript:;">03:轮胎铝圈</a></li>
+							<li><span class="close"></span><a href="javascript:;">04:轮胎铝圈</a></li>
+							<li><span class="close"></span><a href="javascript:;">05:轮胎铝圈</a></li>
+						</ul>
+					</ul>
+				</div>
+				<div class="tree-con" ms-controller="table_list">
+					<div class="manage" ms-include="addProduct">
+						
+					</div>
+					<div class="btns tr">
+						<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	<div class="mask"></div>
+	<script type="avalon" id="addProduct">
+		<div class="search2" style="background:none">
+			<label>商品编号</label>
+			<input class="inpt" type="text" id="itemId">
+			<label>商品名称</label>
+			<input class="inpt" type="text" id="itemName">
+			<label>原厂编号</label>
+			<input class="inpt" type="text">
+			<a href="javascript:;" ms-click="searchFn" class="btn btn-ok">搜 索</a>
+		</div>
+		<div class="manage-list" >
+			<table class="Mtable"><thead><tr><th>序号</th><th ms-repeat="th">{{$val}}</th><th>操作</th></tr></thead><tbody><tr class="loading"><td colspan="30" style="height:150px;padding-top:50px;"><img src="img/loading.gif"/></td></tr><tr ms-repeat="tr"><td>{{$index+1}}</td><td ms-repeat="th" ms-data-id="getkey($index,$key)">{{getkey($index,$key)}}</td><td><a class="edit-item" ms-href="getId($index)" >编辑</a><a href="javascript:;" ms-click="delItem($index)" class="delete-item"> 删除</a></td></tr></tbody></table>
+		</div>
+	</script>
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
-	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="js/tree.js"></script>
+	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/weixiujiedai.js"></script>
 </body>

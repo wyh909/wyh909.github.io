@@ -15,58 +15,55 @@
 			<span><input type="radio" name="usertype" data-type="person" checked /><label>个人用户登录</label></span>
 			<span><input type="radio" name="usertype" data-type="company" /><label>企业用户登录</label></span>
 		</div>
-		<div class="reg person-reg">
+		<div class="reg person-reg on">
 			<div class="item">
 				<label>用户名1：</label>
-				<input type="text" class="inpt" />
-			</div>
-			<div class="item">
-				<label>邮箱：</label>
-				<input type="text" class="inpt" />
+				<input type="text" class="inpt" id="pUser" />
+				<div class="msg">用户名格式错误</div>
 			</div>
 			<div class="item">
 				<label>登录密码：</label>
-				<input type="text" class="inpt" />
+				<input type="text" class="inpt" id="pPwd" />
+				<div class="msg">至少6-16位</div>
 			</div>
 			<div class="item">
 				<label>确认密码：</label>
-				<input type="text" class="inpt" />
-			</div>
-			<div class="item">
-				<label></label><input type="checkbox" checked /> 我已阅读并接受《亦宝车联用户协议》
-			</div>
-			<div class="item">
-				<label></label><a href="javascript:;" class="btn btn-ok">同意以上协议，马上注册</a>
+				<input type="text" class="inpt" id="pRepwd" />
+				<div class="msg">与密码不一致</div>
 			</div>
 		</div>
-		<div class="reg company-reg" style="display:none;">
+		<div class="reg company-reg">
 			<div class="item">
 				<label>用户名2：</label>
-				<input type="text" class="inpt" />
-			</div>
-			<div class="item">
-				<label>邮箱：</label>
-				<input type="text" class="inpt" />
+				<input type="text" class="inpt" id="cUser" />
+				<div class="msg"></div>
 			</div>
 			<div class="item">
 				<label>登录密码：</label>
-				<input type="text" class="inpt" />
+				<input type="text" class="inpt" id="cPwd" />
+				<div class="msg"></div>
 			</div>
 			<div class="item">
 				<label>确认密码：</label>
-				<input type="text" class="inpt" />
-			</div>
-			<div class="item">
-				<label></label><input type="checkbox" checked /> 我已阅读并接受《亦宝车联用户协议》
-			</div>
-			<div class="item">
-				<label></label><a href="javascript:;" class="btn btn-ok">同意以上协议，马上注册</a>
+				<input type="text" class="inpt" id="cRepwd" />
+				<div class="msg"></div>
 			</div>
 		</div>
+		<div class="regbtn">
+			<div class="item">
+				<label></label><input type="checkbox" id="agreement" checked /> 我已阅读并接受《亦宝车联用户协议》
+				<div class="msg agree-msg">请先同意协议</div>
+			</div>
+			<div class="item">
+				<label></label><a href="javascript:;" class="btn btn-ok btn-reg">同意以上协议，马上注册</a>
+			</div>
+		</div>
+			
 	</div>
 	<div class="footer"></div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/reg.js"></script>
 </body>
 </html>

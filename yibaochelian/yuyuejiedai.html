@@ -15,7 +15,11 @@
 		</div>
 		<div class="content" ms-controller="table">
 			<div class="search"></div>
-			<div class="manage-list" ms-include="tpl"></div>
+			<div class="btns-right">
+				<a href="javascript:;" class="btn btn-ok edit-item" ms-click="addItem('add')" >添加</a>
+			</div>
+			<div class="manage-list" ms-include="tpl" data-include-loaded="getTr">
+			</div>
 			
 			<div class="page"></div>
 		</div>
@@ -25,10 +29,13 @@
 		
 		
 	</div>
+	<div class="dialog"></div>
+	<div class="mask"></div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
 	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
 	<script type="text/javascript" src="js/yuyuejiedai.js"></script>
 </body>

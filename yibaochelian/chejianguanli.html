@@ -13,9 +13,15 @@
 	<div class="wrap">
 		<div class="mainnav">
 		</div>
-		<div class="search">
-		</div>
-		<div class="content"  ms-controller="table" ms-include="'tpl'">
+		<div class="content"  ms-controller="table" class="ms-controller">
+			<div class="search">
+			</div>
+			<div class="btns-right">
+				<a href="javascript:;" class="btn btn-ok edit-item" ms-click="addItem('add')" >添加</a>
+			</div>
+			<div class="manage-list" ms-include="'tpl'" data-include-loaded="getTr">
+				
+			</div>
 		</div>
 		<div class="page"></div>
 

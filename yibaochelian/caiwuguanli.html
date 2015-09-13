@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>首页</title>
+	<title>维修接待</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
@@ -14,17 +14,15 @@
 		<div class="mainnav">
 		</div>
 		<div class="content" ms-controller="table" class="ms-controller">
-			<div class="search">
-			</div>
+			<div class="content"  ms-controller="table">
+			<div class="search"></div>
 			<div class="btns-right">
-				<a href="javascript:;" ms-click="addItem" class="btn btn-ok">添加</a>
+				<a href="javascript:;" class="btn btn-ok edit-item" ms-click="addItem('add')" >添加</a>
 			</div>
-			<div class="manage-list" ms-include="'tpl'" data-include-loaded="getTr">
-				
+			<div class="manage-list" ms-include="'tpl'"  data-include-loaded="getTr">
 			</div>
-			<div class="notice">* 注：红色，已过保养期；黄色，快到保养期；绿色，正常。</div>
-			<div class="page" ms-duplex="selected">
-			</div>
+			<div class="page"></div>
+		</div>
 		</div>
 
 	</div>
@@ -32,14 +30,11 @@
 		
 		
 	</div>
-	<!--<script type="text/javascript" src="js/lib/jquery/1.8.3/jquery.min.js"></script>
-	<script type="text/javascript" src="js/lib/require/2.1.11/require.js" data-main="js/app/index/0.0.1/index"></script>-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
 	<script type="text/javascript" src="js/pager.js"></script>
-	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
-	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/caiwuguanli.js"></script>
 </body>
 </html>

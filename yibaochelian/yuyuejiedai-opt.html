@@ -24,12 +24,14 @@
 			<div class="yuyue">
 				<div class="tabs">
 					<span class="on">预约项目</span>
-					<span>预约配件</span>
+					<span id="peijian">预约配件</span>
 				</div>
 				<div class="tabcon">
-					<div class="item on"  ms-controller="yuyuexiangmu" ms-include="'tpl'">
+					<div class="item on" ms-controller="yuyuexiangmu" >
+						<div class="manage-list" ms-include="'tpl'" data-include-loaded="getTr"></div>
 						
 					</div>
+					<div class="page"></div>
 					<!-- <div class="item" ms-controller="yuyuepeiliao" ms-include="'tpl'">
 					</div> -->
 				</div>	
@@ -41,10 +43,29 @@
 		
 		
 	</div>
+	<div class="winpop dialog-peijian" ms-controller="yuyuepeijian">
+		<div class="hd"><span>编辑数据</span><a href="javascript:;" class="close">×</a></div>
+		<div class="bd">
+			<div class="manage tl" ms-include="'grid2'" data-include-loaded="getTr">
+			</div>
+		</div>
+		<div class="btns">
+			<div class="btns tr">
+				<a href="javascript:;" class="btn btn-ok" id="btn-lingliao">保 存</a>
+				<a href="javascript:;" class="btn btn-cancel">取消</a>
+			</div>
+		</div>
+	</div>
+	<script type="avalon" id="grid2">
+		<table class="Mtable"><thead><tr><th></th><th ms-repeat="th">{{$val}}</th></tr></thead><tbody><tr class="loading"><td colspan="30" style="height:150px;padding-top:50px;"><img src="img/loading.gif"/></td></tr><tr ms-repeat="tr"><td><input type="checkbox" id="" /></td><td ms-repeat="th" ms-data-id="getkey($index,$key)">{{getkey($index,$key)}}</td></tr></tbody></table>
+	</script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
+	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/yuyuejiedai.js"></script>
+	
 </body>
 </html>
