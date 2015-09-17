@@ -29,6 +29,7 @@
 		/*参数*/
 		.param{
 			color: #ccc;
+			text-align: left;
 		}
 		.tips {
 			color: blue;
@@ -69,6 +70,48 @@ Callback使用的函数需要前端传入
 
 <div class="wrap">
 	<ol>
+		<div class="tit">首页</div>
+		<li>
+			<div class="name">1、首页列表（原来用维修接待的接口，没有操作）</div>
+			<div class="userport green">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183009372910228557885_1441777948181&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441777949795
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
+			</div>
+			<div class="param">
+			<pre>
+				/**
+				 * 维修单列表
+				 * @param companyUserID 登录用户ID
+				 * @param facilitatorID 企业ID
+				 * @param date 日期
+				 * @param maintainfortNum 维修单号
+				 * @param phone 电话
+				 * @param platenumber 车牌
+				 * @param status 状态 （0全部1预约2未修3在修5已修6内部交车7结算8交车）
+				 * @param truename 客户真实名
+				 * @param pageSize 页长度
+				 * @param pageNum 页码
+				 * @param callback
+				 * @return  code 
+							 Message
+							Data
+				 */
+				 返回的data参数： [{
+				param1: " maintainfortNum ", //预约单号
+							param2: " phone "  //电话
+							param3 " platenumber", //车牌
+							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+
+				param4: " truename "  //客户真实名
+				
+				param4: " maintaintype "  //类别
+						  }]
+				 <p class="tips">显示到页面上：状态，车主姓名，车牌号，车型，里程，上次保养时间，保养时间剩余</p>
+			</pre>
+			</div>
+		</li>
 		<div class="tit">维修接待</div>
 		<li>
 			<div class="name">1、维修接待列表接口：-- （首页、维修接待 添加、编辑、删除）</div>
@@ -79,6 +122,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 维修单列表
 				 * @param companyUserID 登录用户ID
@@ -107,6 +151,7 @@ Callback使用的函数需要前端传入
 				param4: " maintaintype "  //类别
 						  }]
 				 <p class="tips">显示到页面上：顺序号（页面自己生产），维修单号，真实姓名，车牌号，电话，类别，状态</p>
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -117,7 +162,8 @@ Callback使用的函数需要前端传入
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=1&companyUserID=1
 			</div>
-			<div class="param">/**
+			<div class="param">
+			<pre>/**
 				 * 
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -129,6 +175,7 @@ Callback使用的函数需要前端传入
 			param3:”types”//维修类型
 			}]
 			界面是维修单的添加界面，初始化一下维修单号，状态，维修类型
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -140,6 +187,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=saveOrUpdate&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				页面上提交的时候按照如下参数提交：
 				saveOrUpdate(Long companyUserID,Long facilitatorID,String facilitatorName,String maintainformNum,
 							String maintainformType,String truename,Integer status,String motorNumber,Integer oil,Long miles,
@@ -168,6 +216,7 @@ Callback使用的函数需要前端传入
 					 */
 
 				页面返回到列表，没有返回值
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -178,6 +227,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				/**
 					 * 列出维修项目
@@ -203,6 +253,7 @@ Callback使用的函数需要前端传入
 					需要在页面显示的字：
 				推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 				</div>
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -214,8 +265,10 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0//enterprise/serviceItemDoSave.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=SR.201508200005&itemIds=20015080001;20015080005 
 			</div>
 			<div class="param">
+			<pre>
 				temIds=勾选的羡慕的id用“;”分割
 				没有返回值，不需要界面
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -227,6 +280,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformCancel.do?callback=cancel&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				/**
 					 * 点击取消按钮的时候，如果是新建取消的话，需要取消maintainform和usedCompent，serverItem等的维护关系
 					 * @param companyUserID
@@ -235,6 +289,7 @@ Callback使用的函数需要前端传入
 					 * @return
 					 */
 				没有返回值，不需要界面
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -246,6 +301,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDelete.do?callback=cancel&facilitatorID=1&companyUserID=1&mainId=11
 			</div>
 			<div class="param">
+			<pre>
 				/**
 					 * 
 					 * @param companyUserID
@@ -254,6 +310,7 @@ Callback使用的函数需要前端传入
 					 * @return
 					 */
 				没有返回值，不需要界面
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -265,6 +322,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005 
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 列出已经选好的维修项目数据
 				 * @param companyUserID
@@ -286,6 +344,7 @@ Callback使用的函数需要前端传入
 				}]
 				<div class="tips"> 显示在主页面上的：顺序号，推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费 </div>
 			
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -297,6 +356,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?callback=listdetail&&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 列出维修项目
 				 * @param itemId 维修项目ID
@@ -320,7 +380,8 @@ Callback使用的函数需要前端传入
 				}]
 			 
 			</div>
-			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号</div>
+			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码</div>，标准工时，标准单价，工时花费，顺序号
+			</div>
 		</li>
 		<li>
 			<div class="name">10 保存维修单相关的项目 -- (维修接待-操作-项目领料-添加1)</div>
@@ -331,6 +392,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemDoSave.do?callback=listdetail&&facilitatorID=1&companyUserID=1&mainId=SR.201509010002&itemIds=20015080005;20015082987 
 			</div>
 			<div class="param">
+			<pre>
 				/**
 					 * 保存维修单相关的项目，同时修改单据信息和费用合计内容
 					 * @param companyUserID
@@ -340,6 +402,7 @@ Callback使用的函数需要前端传入
 					 * @return
 					 */
 				添加之后在异步的在维修单的维修项目中显示，添加窗口还可以继续添加
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -351,6 +414,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=1&companyUserID=1&mainId=SR.201508200005
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				mainId维修单号
 				facilitatorID 企业单号
@@ -378,6 +442,7 @@ Callback使用的函数需要前端传入
 						  }]
 				<div class="tips">界面上显示的内容，维修单的页面，和维修单的维修项目；维修项目的显示内容：
 				顺序号，项目编码，项目名称，工种，错误代码，标准工时，标准单价，工时花费，</div>
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -390,6 +455,7 @@ Callback使用的函数需要前端传入
 
 			</div>
 			<div class="param">
+			<pre>
 				/**
 					 * 列出已经选好的材料
 					 * @param companyUserID
@@ -411,6 +477,7 @@ Callback使用的函数需要前端传入
 					界面上显示的内容：
 					商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
 				</div>
+			</pre>
 			</div>
 		</li>
 		<li>
@@ -422,6 +489,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				(Long companyUserID,Long facilitatorID,String productId,
 							String productName,Integer pageSize,Integer pageNum)
@@ -455,6 +523,7 @@ Callback使用的函数需要前端传入
 				页面显示：(这些数据是按照仓库是棵树，点击那个参考显示那个仓库的数据)
 				商品编号,商品名称,产地,分类, 车型, 最近出货时间, 最近进货时间, 商品可售数量, 单位（升，个）, 安全数量, 建议购买价格, 建议销售价格, repertory仓库名称
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">14 (9、勾选好领用材料，保存)	<span class="orange">接口测试成功，但不知这个与列表页的有什么区别，明明列表都是一样的</span></div>
@@ -465,6 +534,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompentDoSave.do?callback=listdetail&facilitatorID=1&mainId=SR.201508200005&productIds=YS-T0019;YS-T0016 
 			</div>
 			<div class="param">
+			<pre>
 				productIds=选择的商品的ID
 				/**
 					 * 
@@ -476,21 +546,24 @@ Callback使用的函数需要前端传入
 					 */
 				没有返回值和页面
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">63 维修下面的单据信息 <span class="orange">明明都是数组类型，这里返回的确实对象，需要做兼容数组与对象，最好统一为数组</span></div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery183002382333530113101_1442070303224&mainId=SR.201509020006&facilitatorID=1&companyUserID=1&_=1442070308695
 			</div>
-			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery18306087536234408617_1441777559088&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777590427</div>
+			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery18306087536234408617_1441777559088&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&</pageSize=10&_=1441777590427
+			</div>
 		</li>
 		<li>
 			<div class="name">64 维修下面的费用合计<span class="orange">明明都是数组类型，这里返回的确实对象，需要做兼容数组与对象，最好统一为数组</span></div>
 			<div class="userport green">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18304440398586448282_1442070401346&mainId=SR.201509020006&facilitatorID=1&companyUserID=1&_=1442070404762
 			</div>
-			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18306087536234408617_1441777559089&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441777594251</div>
+			<div class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery18306087536234408617_1441777559089&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&</pageSize=10&_=1441777594251
+			</div>
 		</li>
 		<li>
 			<div class="name">15 (10、维修进度查看（在下面找）) <span class="orange">从维修单中获取，有单独的还要依赖于上一级，车间管理同样</span></div>
@@ -501,6 +574,7 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="param">
+			<pre>
 				
 			</div>
 			<div class="tips"></div>
@@ -515,6 +589,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?facilitatorID=1&status=0
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				/**
 					 * 
@@ -542,7 +617,8 @@ Callback使用的函数需要前端传入
 
 						  }]
 			</div>
-			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号，真实姓名，车牌号，电话，类别，状态</div>
+			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号</div>，真实姓名，车牌号，电话，类别，状态
+			</div>
 		</li>
 		<li>
 			<div class="name">17 （12、打开预约单）</div>
@@ -553,6 +629,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表
 				(Long companyUserID,Long facilitatorID,String appId)
 				返回的data参数： [{
@@ -593,6 +670,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentSaveOrUpdate.do?facilitatorID=1&oil=1&status=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				(Long companyUserID,Long facilitatorID,String facilitatorName,String appointmentNum,String appointmentTime,
 							String appointmentType,String truename,Integer status,String motorNumber,Integer oil,Long miles,
@@ -622,7 +700,8 @@ Callback使用的函数需要前端传入
 					 */
 				没有返回值和页面，保存以后显示在预约列表里
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">19 (14、预约配件的选择（弹出一个窗口）)	<span class="red">完全混乱了，这个接口究竟是预约配件的列表，还是点击预约配件时弹出窗口所调用的接口呢，那么另外一个接口呢（列表或弹窗上选择的列表），既然有勾选返回，保存的接口呢</span>	</div>
@@ -633,6 +712,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontInput.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表
 				/**
 					 * 列出已经选好的材料
@@ -657,6 +737,7 @@ Callback使用的函数需要前端传入
 				商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
 				勾选好需要的配件，返回配件id串到父窗口，id串用;分割
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">20 (15、预约推荐项目：)-- （预约接待下面的预约项目） <span class="red">实际返回数据：与给的需要显示的内容不一致
@@ -679,6 +760,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?callback=listdetail&facilitatorID=1&companyUserID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 					/**
 						 * 
@@ -732,6 +814,7 @@ Callback使用的函数需要前端传入
 							    标准单价
 								工时花费
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">21 查找可以预约的时间：<span class="red">这个接口用在什么位置</span></div>
@@ -742,6 +825,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/SelectDayInput.do?companyUserID=1&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 			/**
 				 * 
@@ -759,6 +843,7 @@ Callback使用的函数需要前端传入
 				显示内容：
 				根据日期，剩余可以预约数，如果rest的值为0了，这个日期就不能预约了，不可选了。
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">22 （16、预约的删除）</div>
@@ -769,11 +854,13 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDelete.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				(Long companyUserID,Long facilitatorID企业ID,String appointmentNum 预约编号)
 				没有返回值的页面
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">23 （17、服务商）<span class="red">服务商的名称列表，进行单选，没明白，单选做什么用，没有获取到单条数据</span><span class="orange">新加模块</span></div>
@@ -784,6 +871,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/facilitatorList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				(Integer pageSize,Integer pageNum,String provinceName省名称,String cityName城市名称,String zoneName区名称，String name 服务商名称)
 				返回的data参数： [{
@@ -791,7 +879,8 @@ Callback使用的函数需要前端传入
 							}]
 				
 			</div>
-			<div class="tips">页面上就是一个服务商的名称列表，进行单选</div>
+			</pre><div class="tips">页面上就是一个服务商的名称列表，进行单选
+			</div>
 		</li>
 		<li>
 			<div class="name">24 （18、保存服务商）<span class="red">显示保存成功，但列表数据未改变</span></div>
@@ -802,11 +891,13 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/facilitatorSaveOrUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&privice=%E6%96%B0%E7%96%86&city=%E4%B9%8C%E9%B2%81%E6%9C%A8%E9%BD%90&name=%E6%9F%A5%E5%93%88%E7%9A%84%E6%B1%BD%E4%BF%AE&shortName=chd
 			</div>
 			<div class="param">
+			<pre>
 				参数列表
 				(Integer pageSize,Integer pageNum,String provinceName省名称,String cityName城市名称,String zoneName区名称，String name 服务商名称)
 				 没有返回值的页面
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">25 19、省的选择列表<span class="red">没有原型</span></div>
@@ -817,6 +908,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/provinceList.do?callback=listdetail&facilitatorID=1&companyUserID=1&appointmentNum=11&provinceName=%E6%B2%B3%E5%8C%97&pageNum=1&pageSize=10
 			</div>
 			<div class="param">
+			<pre>
 				参数列表：
 				provinecName 省名
 				返回值：
@@ -846,11 +938,13 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4
 			</div>
 			<div class="param">
+			<pre>
 				参数列表
 			(Long roleID 角色ID,String roleName角色名称,String auIDS 权限ID集合，用;分割)
 			没有返回值
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">27 （21、角色列表：）</div>
@@ -861,6 +955,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10
 			</div>
 			<div class="param">
+			<pre>
 				
 				参数列表：
 				String roleName 角色名称,int pageNum 页码,int pageSize 每页多少条数据)
@@ -883,9 +978,11 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/com.register.do?name=123456@qq.com&pwd=123456
 			</div>
 			<div class="param">
+			<pre>
 				
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">29 登录接口</div>
@@ -898,9 +995,11 @@ Callback使用的函数需要前端传入
 
 			</div>
 			<div class="param">
+			<pre>
 				
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">修改密码接口 <span class="red">接口404</span></div>
@@ -913,11 +1012,13 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/api/enterprise/com.update.pwd.do?ent_id=20211&password=123123&new_password=123456
 			</div>
 			<div class="param">
+			<pre>
 				ent_id:用户id
 				password:旧密码
 				new_password:新密码
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">30 检查用户名是否可用<span class="red">需要获取用户信息</span></div>
@@ -929,6 +1030,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/com.check.name.do?facname=7
 			</div>
 			<div class="param">
+			<pre>
 				注：登录和检查是最开始做的现在有些问题，我正在修改，如果不影响测试请忽略！！
 				存在问题为：登录用户不存在；
 				检查：用户名可用。
@@ -945,6 +1047,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsedComPage.do?maintId=NO.201508100004&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 				
 			</div>
 			<div class="tips"></div>
@@ -959,6 +1062,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addDeliveryform.do?maintainID=1111&productName=11111&productID=1&account=1&unit=1&suggestBuyprice=1&repertory=1&origin=1&type=1&carModle=1&receive=1&handleMan=1
 			</div>
 			<div class="param">
+			<pre>
 				
 			对应参数：maintainID维修单号，productName商品名称，productID商品编号，
 		  account出库数量，unit单位，suggestBuyprice出库价格，repertory仓库名称
@@ -966,6 +1070,7 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -978,11 +1083,13 @@ Callback使用的函数需要前端传入
 
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id入库单ID，maintainID维修单号，productName商品名称，productID商品编号，
 		  account出库数量，unit单位，suggestBuyprice出库价格，repertory仓库名称
 		  origin产地，type分类，carModle车型，receive领料人，handleMan办理人员
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">34 查询出库单</div>
@@ -994,9 +1101,11 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/fandDeliveryformByPage.do?id=9&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id出库单ID
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">35 删除出库单<span class="red">返回的ret</span></div>
@@ -1007,9 +1116,11 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteDeliveryform.do?id=9
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id出库单ID
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">36 添加入库单<span class="red">500错误</span></div>
@@ -1020,11 +1131,13 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addStorageform.do?productName=8&productID=1&account=1&unit=1&price=1&saleprice=1&repertory=1&origin=1&type=1&carModle=1&handelMan=1&supplierID=1
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：productName商品名称，productID商品编号，account商品数量，unit单位，
 		  price进价，saleprice售价，repertory仓库名称，origin产地，type分类，
 		  carModle车型，handelMan办理人员，supplierID供应商ID
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">37 修改入库单<span class="red">500错误</span></div>
@@ -1036,10 +1149,12 @@ Callback使用的函数需要前端传入
 				
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id入库单ID，productName商品名称，productID商品编号，account商品数量，
 				unit单位，price进价，saleprice售价，repertory仓库名称，origin产地，type分类，carModle车型，handelMan办理人员，supplierID供应商ID
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">38 查询入库单</div>
@@ -1051,9 +1166,11 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listStorageformByPage.do?id=17&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id入库单ID
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">39 删除入库单</div>
@@ -1064,6 +1181,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteStorageform.do?id=17
 			</div>
 			<div class="param">
+			<pre>
 				对应参数：id入库单ID
 			</div>
 			<div class="tips"></div>
@@ -1089,6 +1207,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listSupplierByPage.do?pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 								商品
 				根据条件查询商品
 				对应参数：productName商品名称，productID商品编号，origin产地，type分类，
@@ -1108,6 +1227,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 				参数：/**
 			 	 * 
 			 	 * @param productName商品名称
@@ -1145,6 +1265,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listDeptByPage.do?pageSize=5&pageNumber=1&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				传参：	/**
 				 * 
 				 * @param companyUserID 用户登录ID
@@ -1163,6 +1284,7 @@ Callback使用的函数需要前端传入
 			<div class="tips">
 				显示到页面上：部门名称
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">42 修改部门名称/添加新部门：</div>
@@ -1173,6 +1295,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateDept.do?facilitatorID=1&id=5&departmentName=kekekek
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID
@@ -1183,7 +1306,8 @@ Callback使用的函数需要前端传入
 				 * 	    message
 				 */
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">43 删除部门：</div>
@@ -1195,6 +1319,7 @@ Callback使用的函数需要前端传入
 
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID
@@ -1215,6 +1340,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listVehicleTypeByPage.do?pageSize=6&pageNumber=1&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				查询参数： 	/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1241,6 +1367,7 @@ Callback使用的函数需要前端传入
 			<div class="tips">
 				显示到页面上：车辆类型id，车辆类型名称，生产厂商，品牌，子品牌，车种类，生产年份，顺序号
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">45 车辆类型修改/添加:</div>
@@ -1251,6 +1378,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/editVehicleType.do?facilitatorID=1&modelsId=8&modelsName=hahahha&brand=fff
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1269,7 +1397,8 @@ Callback使用的函数需要前端传入
 				 */
 				若传入id在数据库中存在，则会修改该条数据，若不传入id则添加该条数据
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">46 车辆类型删除：</div>
@@ -1280,6 +1409,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteVehicleTypeById.do?facilitatorID=1&id=2332423524
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1301,6 +1431,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listBrandByPage.do?pageSize=5&pageNumber=1&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				传参：	/**
 					 * @param companyUserID 登录用户ID
 					 * @param facilitatorID 企业ID
@@ -1320,7 +1451,8 @@ Callback使用的函数需要前端传入
 							param4: "brandOrder"  //顺序号
 						}]
 			</div>
-			<div class="tips">显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号</div>
+			<div class="tips"></div>显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号
+			</div>
 		</li>
 		<li>
 			<div class="name">48 增加/修改车辆品牌：</div>
@@ -1331,6 +1463,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/editBrandById.do?facilitatorID=1&brandName=heilghe&brandId=323432&brandType=heff&brandOrder=32423
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1345,7 +1478,8 @@ Callback使用的函数需要前端传入
 				 */
 				若不传入id则增加一条记录，若传入的id值在数据库中存在则会修改该条记录
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">49 删除车辆品牌：</div>
@@ -1356,6 +1490,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteBrandById.do?id=396530507&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1377,6 +1512,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listEmployByPage.do?pageSize=4&pageNumber=1&&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				传参：	/**
 				 * 
 				 * @param companyUserID
@@ -1408,7 +1544,8 @@ Callback使用的函数需要前端传入
 						param10: "department", //包括id（部门id）,departmentName(部门名称)
 					}]
 			</div>
-			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入，电话，邮箱，QQ号码，状态</div>
+			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入</div>，电话，邮箱，QQ号码，状态
+			</div>
 		</li>
 		<li>
 			<div class="name">51 添加/修改雇员信息：<span class="red">提交时应该是departmentId改为name的原因，导致保存出错</span></div>
@@ -1419,6 +1556,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateEmpolyee.do?facilitatorID=1&id=1&name=kakaka&sex=0&phone=123&title=1&earner=1&teams=1&email=1&status=1&QQ=1&departmentID=2
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID
@@ -1438,7 +1576,8 @@ Callback使用的函数需要前端传入
 				 *         message
 				 */
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">52 删除雇员信息：</div>
@@ -1449,6 +1588,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteEmpolyee.do?facilitatorID=1&id=1
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID
@@ -1472,6 +1612,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				传参：	/**
 					 * @param companyUserID 用户登录ID
 					 * @param facilitatorID 企业ID
@@ -1520,6 +1661,7 @@ Callback使用的函数需要前端传入
  				2.显示在查看页面上的：除主键id外全部返回参数（参照客户管理-查看页面原型）
    				对应原型：客户管理-查看页面（查询时传递主键id参数）
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">54 修改/添加客户数据：<span class="orange">修改了note，提交接口成功，但获取数据还是原来的，其他修改正常</span></div>
@@ -1530,6 +1672,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addCustomer.do?facilitatorID=1&carOwner=hehehehheheh...
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 用户登录ID
 				 * @param facilitatorID 企业ID
@@ -1564,7 +1707,8 @@ Callback使用的函数需要前端传入
 				 * 	    message
 				 */	
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">55 删除一条数据：</div>
@@ -1575,6 +1719,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/delCustomer.do?facilitatorID=1&id=664015340
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 用户登录ID
 				 * @param facilitatorID 企业ID
@@ -1596,6 +1741,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/ListServiceItem.do?facilitatorID=1&pageSize=5&pageNumber=1
 			</div>
 			<div class="param">
+			<pre>
 				传参：	/**
 				 * 
 				 * @param companyUserID  用户登录ID
@@ -1622,7 +1768,8 @@ Callback使用的函数需要前端传入
 						param9: "coastWorkTime", //工时花费
 				}]
 			</div>
-			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号</div>
+			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码</div>，标准工时，标准单价，工时花费，顺序号
+			</div>
 		</li>
 		<li>
 			<div class="name">57 添加/修改推荐商品：<span class="red">保存虽成功，但获取列表时没改过来</span></div>
@@ -1633,6 +1780,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateItem.do?facilitatorID=1&itemId=20015080001&itemName=hahaha&workType=hehehehe
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID  用户登录ID
@@ -1649,7 +1797,8 @@ Callback使用的函数需要前端传入
 				 * 	    data
 				 */
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">58 删除推荐商品：<span class="red">删除显示成功，但列表内容没变</span></div>
@@ -1660,6 +1809,7 @@ Callback使用的函数需要前端传入
 				http:// 115.159.77.210:8080/ybcl2.0/enterprise/delServiceItem.do?facilitatorID=1&id=32423422
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * 
 				 * @param companyUserID
@@ -1681,6 +1831,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?pageSize=5&pageNumber=1&facilitatorID=1 
 			</div>
 			<div class="param">
+			<pre>
 				传参： 	 /**
 						 * 用户列表
 						 * @param companyUserID 登录用户ID
@@ -1716,6 +1867,7 @@ Callback使用的函数需要前端传入
 				 3.显示在编辑面上的：姓名，部门，关联角色名称，职责（备注）<br/>
 					对应用户管理-账号管理-编辑
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">60 增加/修改单条数据</div>
@@ -1728,6 +1880,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1746,7 +1899,8 @@ Callback使用的函数需要前端传入
 				 * 		   message
 				 */
 			</div>
-			<div class="tips">其中id,account,name,password,desc,dept,role_ids是规定需要列出的字段</div>
+			<div class="tips">其中id,account,name,password,desc,dept,</role_ids是规定需要列出的字段
+			</div>
 		</li>
 		<li>
 			<div class="name">60 删除用户</div>
@@ -1757,6 +1911,7 @@ Callback使用的函数需要前端传入
 				http:// 115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?facilitatorID=1&id=905506185
 			</div>
 			<div class="param">
+			<pre>
 				/**
 				 * @param companyUserID 登录用户ID
 				 * @param facilitatorID 企业ID
@@ -1782,6 +1937,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?facilitatorID=1&status=0
 			</div>
 			<div class="param">
+			<pre>
 				传参： /**
 				 * @param companyUserID 用户登录ID
 				 * @param facilitatorID 企业ID
@@ -1848,6 +2004,7 @@ Callback使用的函数需要前端传入
 				 2.显示在车间管理-操作页面上的：订单号，车主姓名（用户名），车牌号，登记日期（日期），车主电话（电话），维修类别（维修类型），发动机号，入场时间，车辆颜色，车辆类型，车辆品牌，进厂里程，油表状态<br/>
 					对应用户管理-账号管理-新增
 			</div>
+			</div>
 		</li>
 		<li>
 			<div class="name">62 增加/修改单条数据 注：修改进程接口，仅修改参数processDetail
@@ -1859,6 +2016,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80
 			</div>
 			<div class="param">
+			<pre>
 				传递的参数：
 				 /**
 				 * @param companyUserID 用户登录ID
@@ -1888,6 +2046,7 @@ Callback使用的函数需要前端传入
 				http://115.159.77.210:8080/ybcl2.0/delProcessById.do?id=3&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				<p>/**</p>
 				<p> * @param companyUserID 登录用户ID</p>
 				<p> * @param facilitatorID 企业ID</p>
@@ -1897,7 +2056,8 @@ Callback使用的函数需要前端传入
 				<p> *         message
 				 */</p>
 			</div>
-			<div class="tips"></div>
+			</pre><div class="tips">
+			</div>
 		</li>
 		<li>
 			<div class="name">68 退出登录 <span class="red">没有</span></div>
@@ -1906,8 +2066,10 @@ Callback使用的函数需要前端传入
 			<div class="port">
 			</div>
 			<div class="param">
+			<pre>
 			</div>
 			<div class="tips">
+			</div>
 			</div>
 		</li>
 		<li>
@@ -1917,6 +2079,7 @@ Callback使用的函数需要前端传入
 			<div class="port">
 			</div>
 			<div class="param">
+			<pre>
 			</div>
 			<div class="tips">
 				
@@ -1928,12 +2091,14 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -1941,29 +2106,31 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/addAccount.do?facilitatorID=1&accountPayableNum=1&supplierId=1&amount=1&amountPaid=1&unpaidAmount=1&thisPayment=1&note=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addAccount.do?facilitatorID=1&accountPayableNum=1&supplierId=1&amount=1&amountPaid=1&unpaidAmount=1&thisPayment=1&note=1
 			</div>
 			<div class="param">
-				<pre>
-					对应参数
-					/**
-					 * 
-					 * @param id	ID
-					 * @param accountPayableNum	单号
-					 * @param startDate		开单日期
-					 * @param supplierId		供应商id
-					 * @param amount		总金额
-					 * @param amountPaid		已付金额
-					 * @param unpaidAmount		未付金额
-					 * @param thisPayment		本次付款
-					 * @param note			备注
-					 * @return
-					 */
-					传入ID则修改
-				</pre>
+			<pre>
+<pre>
+对应参数
+/**
+ * 
+ * @param id	ID
+ * @param accountPayableNum	单号
+ * @param startDate		开单日期
+ * @param supplierId		供应商id
+ * @param amount		总金额
+ * @param amountPaid		已付金额
+ * @param unpaidAmount		未付金额
+ * @param thisPayment		本次付款
+ * @param note			备注
+ * @return
+ */
+传入ID则修改
+</pre>
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -1971,12 +2138,14 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -1984,12 +2153,14 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/listCollectionByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listCollectionByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
+			<pre>
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -1997,30 +2168,32 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/addCollection.do?facilitatorID=1&collectionNum=1&useId=1&type=1&amount=1&amountReceived=1&outstandingAmount=1&thisCollection=1&note=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addCollection.do?facilitatorID=1&collectionNum=1&useId=1&type=1&amount=1&amountReceived=1&outstandingAmount=1&thisCollection=1&note=1
 			</div>
 			<div class="param">
-				<pre>
-					对应参数
-						/**
-						 * 
-						 * @param id			ID
-						 * @param startDate		开单日期
-						 * @param useId			用户
-						 * @param collectionNum		单号
-						 * @param type			业务类型
-						 * @param amount		总金额
-						 * @param amountReceived	已收金额	
-						 * @param outstandingAmount	未收金额
-						 * @param thisCollection	本次收款
-						 * @param note			备注
-						 * @return
-						 */
-						传入ID则修改
-				</pre>
+			<pre>
+<pre>
+对应参数
+/**
+ * 
+ * @param id			ID
+ * @param startDate		开单日期
+ * @param useId			用户
+ * @param collectionNum		单号
+ * @param type			业务类型
+ * @param amount		总金额
+ * @param amountReceived	已收金额	
+ * @param outstandingAmount	未收金额
+ * @param thisCollection	本次收款
+ * @param note			备注
+ * @return
+ */
+传入ID则修改
+</pre>
 			</div>
 			<div class="tips">
 				
+			</div>
 			</div>
 		</li>
 		<li>
@@ -2028,9 +2201,10 @@ Callback使用的函数需要前端传入
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://localhost:8080/api/enterprise/deleteCollection.do?id=2&facilitatorID=1
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleteCollection.do?id=2&facilitatorID=1
 			</div>
 			<div class="param">
+			<pre>
 				
 			</div>
 			<div class="tips">

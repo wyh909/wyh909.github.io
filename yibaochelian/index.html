@@ -29,6 +29,10 @@
 		
 		
 	</div>
+	<div class="dialog"></div>
+	<script type="avalon" id="tpl">
+	<table class="Mtable"><thead><tr><th>序号</th><th ms-repeat="th">{{$val}}</th></tr></thead><tbody><tr class="loading"><td colspan="30" style="height:150px;padding-top:50px;" ms-duplex="nodata"></td></tr><tr ms-repeat="tr"><td>{{$index+1}}</td><td ms-repeat="th" ms-data-id="getkey($index,$key)" ms-html="getkey($index,$key)" ></td></tr></tbody></table>
+	</script>
 	<!--<script type="text/javascript" src="js/lib/jquery/1.8.3/jquery.min.js"></script>
 	<script type="text/javascript" src="js/lib/require/2.1.11/require.js" data-main="js/app/index/0.0.1/index"></script>-->
 	<script type="text/javascript" src="js/jquery.min.js"></script>

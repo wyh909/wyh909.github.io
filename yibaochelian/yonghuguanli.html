@@ -36,10 +36,10 @@
 								<tr ms-repeat="tr">
 									<td>{{$index+1}}</td>
 									<td ms-repeat="th">{{getkey($index,$key)}}</td>
-									<td><span  ms-repeat-elem="el[1]">{{elem}}/</span></td>
-									<td><span  ms-repeat-elem="el[2]">{{elem}}/</span></td>
+									<td><span  ms-repeat-elem="el.roles">{{elem.name}}<span ms-if="!$last">/</span> </span></td>
+									<td><span>{{el.roles.length}}</span></td>
 									
-									<td><a class="edit-item" ms-click="editItem(el[0].id)" >编辑</a><a href="javascript:;" ms-click="delItem(el[0].id)" class="delete-item"> 删除</a></td>
+									<td><a class="edit-item" ms-click="editItem(el.id)" >编辑</a><a href="javascript:;" ms-click="delItem(el.id)" class="delete-item"> 删除</a></td>
 								</tr>
 							</tbody>
 						</table>
