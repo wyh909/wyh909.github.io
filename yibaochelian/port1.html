@@ -1922,6 +1922,121 @@ Callback使用的函数需要前端传入
 				
 			</div>
 		</li>
+		<div class="tit">财务管理</div>
+		<li>
+			<div class="name">查询所有应付账单</div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">添加应付账单</div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/addAccount.do?facilitatorID=1&accountPayableNum=1&supplierId=1&amount=1&amountPaid=1&unpaidAmount=1&thisPayment=1&note=1
+			</div>
+			<div class="param">
+				<pre>
+					对应参数
+					/**
+					 * 
+					 * @param id	ID
+					 * @param accountPayableNum	单号
+					 * @param startDate		开单日期
+					 * @param supplierId		供应商id
+					 * @param amount		总金额
+					 * @param amountPaid		已付金额
+					 * @param unpaidAmount		未付金额
+					 * @param thisPayment		本次付款
+					 * @param note			备注
+					 * @return
+					 */
+					传入ID则修改
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">删除应付账单<span class="red">此删除有些问题，现在修改中</span></div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">查询所有应收账单</div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/listCollectionByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+			</div>
+			<div class="param">
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">添加应收账单</div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/addCollection.do?facilitatorID=1&collectionNum=1&useId=1&type=1&amount=1&amountReceived=1&outstandingAmount=1&thisCollection=1&note=1
+			</div>
+			<div class="param">
+				<pre>
+					对应参数
+						/**
+						 * 
+						 * @param id			ID
+						 * @param startDate		开单日期
+						 * @param useId			用户
+						 * @param collectionNum		单号
+						 * @param type			业务类型
+						 * @param amount		总金额
+						 * @param amountReceived	已收金额	
+						 * @param outstandingAmount	未收金额
+						 * @param thisCollection	本次收款
+						 * @param note			备注
+						 * @return
+						 */
+						传入ID则修改
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">删除应收账单</div>
+			<div class="userport green">
+			</div>
+			<div class="port">
+				http://localhost:8080/api/enterprise/deleteCollection.do?id=2&facilitatorID=1
+			</div>
+			<div class="param">
+				
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
 </div>
 
 </body>
