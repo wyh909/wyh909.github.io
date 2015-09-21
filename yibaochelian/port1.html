@@ -72,42 +72,56 @@ Callback使用的函数需要前端传入
 	<ol>
 		<div class="tit">首页</div>
 		<li>
-			<div class="name">1、首页列表（原来用维修接待的接口，没有操作）</div>
+			<div class="name">1、首页列表（原来用维修接待的接口，没有操作，先用客户管理）</div>
 			<div class="userport green">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?callback=jQuery183009372910228557885_1441777948181&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1441777949795
+				http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?callback=jQuery183035478489473462105_1442539873289&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10&_=1442539873561
 			</div>
 			<div class="port">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=1&companyUserID=1&phone=13241776508&&pageSize=10&pageNum=1&truename=%E6%9D%A8%E9%98%B3%E6%B4%8B&callback=list
+				http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
 			</div>
 			<div class="param">
 			<pre>
-				/**
-				 * 维修单列表
-				 * @param companyUserID 登录用户ID
-				 * @param facilitatorID 企业ID
-				 * @param date 日期
-				 * @param maintainfortNum 维修单号
-				 * @param phone 电话
-				 * @param platenumber 车牌
-				 * @param status 状态 （0全部1预约2未修3在修5已修6内部交车7结算8交车）
-				 * @param truename 客户真实名
-				 * @param pageSize 页长度
-				 * @param pageNum 页码
-				 * @param callback
-				 * @return  code 
-							 Message
-							Data
-				 */
-				 返回的data参数： [{
-				param1: " maintainfortNum ", //预约单号
-							param2: " phone "  //电话
-							param3 " platenumber", //车牌
-							param4: " status "  //状态（0全部1预约2未修3在修5已修6内部交车7结算8交车）
+				传参：	/**
+					 * @param companyUserID 用户登录ID
+					 * @param facilitatorID 企业ID
+					 * @param id 主键id（可选）
+					 * @param carOwner 车主姓名（可选）
+					 * @param carNum 车牌号（可选）
+					 * @param carBrand 车辆品牌（可选）
+					 * @param carType 车辆类型（可选）
+					 * @param carOwnTel 车主电话（可选）
+					 * @param isVip 是否是vip（可选）
+					 * @param pageNumber 页码
+					 * @param pageSize 页长
+					 * @param callback
+					 */
 
-				param4: " truename "  //客户真实名
-				
-				param4: " maintaintype "  //类别
-						  }]
+				 返回的data参数: [{
+							param1: "id", //主键id
+							param2: "carOwner"  //车主姓名
+							param3: "carNum", //车牌号
+							param4: "carBrand", //车辆品牌
+							param5: "carType", //车辆类型
+							param6: "orderTime", //预定时间
+							param7: "coast", //花费
+							param8: "status", //状态（例如：需保养）
+							param9: "note", //备注
+							param10: "orderNum", //订单号
+							param11: "recordDate", //录入日期
+							param12: "carOwnTel", //车主电话
+							param13: "servCatlog", //维修类别
+							param14: "orderItem", //预定项目
+							param15: "engineNum", //发动机号
+							param16: "enterTime", //入场时间
+							param17: "custDept", //客户单位
+							param18: "carColor", //车辆颜色
+							param19: "exeptTime", //预计时间
+							param20: "receiveCar", //接车员
+							param21: "mileIntoFactory", //进厂里程
+							param22: "arrears", //欠帐情况
+							param23: "isVip", //是否是vip（0是，不是）
+							param24: "servEvaluate", //服务评价
+					}]
 				 <p class="tips">显示到页面上：状态，车主姓名，车牌号，车型，里程，上次保养时间，保养时间剩余</p>
 			</pre>
 			</div>
@@ -179,7 +193,29 @@ Callback使用的函数需要前端传入
 			</div>
 		</li>
 		<li>
-			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存--（首页-操作）<span class="red">接口报500错误</span></div>
+			<div class="name">3、维修单的保存:填写了维修单的各项数据以后提交，进行保存--（首页-操作）<span class="red">需要改接口参数，否则接口报500错误，找了半天才发现原来是参数提交的问题，返回的是maintaintype,提交时需要改为maintainformType<br/>
+			一个维修单号竟然用了三个字段：maintainformNum、maintainfortNum、mainId<br/>
+			字段名：brand 车品牌，分别对应：
+			<pre>
+brandId: "111"
+brandName: "aaa"
+brandOrder: "222"
+brandType: "1112"
+id: 1
+			</pre>
+
+			字段名：series 车系,分别对应
+			<pre>
+brand: "宝马"
+carType: "1"
+id: 2332423523
+manufacturer: "宝马"
+modelsId: 2
+modelsName: "宝马X3"
+orderId: 2
+productTime: "2015"
+subBrand: null
+			</pre></span></div>
 			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?callback=jQuery18306573136087972671_1441807300319&truename=&platenumber=11a&phone=18511581157&maintaintype=%E4%BF%9D%E5%85%BB&status=2&usedComponents=&mainId=SR.201509080003&facilitatorID=1&companyUserID=1&_=1441807326952
 			</div>
@@ -249,11 +285,11 @@ Callback使用的函数需要前端传入
 							param8: "standardUnitPrice", //标准单价
 							param9: "coastWorkTime", //工时花费
 					}]
+			</pre>
 				<div class="tips">
 					需要在页面显示的字：
 				推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 				</div>
-			</pre>
 			</div>
 		</li>
 		<li>
@@ -378,7 +414,7 @@ Callback使用的函数需要前端传入
 						param9: "coastWorkTime", //工时花费
 			param10:”total”,总页数
 				}]
-			 
+			 </pre>
 			</div>
 			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码</div>，标准工时，标准单价，工时花费，顺序号
 			</div>
@@ -1208,12 +1244,24 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="param">
 			<pre>
-								商品
-				根据条件查询商品
-				对应参数：productName商品名称，productID商品编号，origin产地，type分类，
-				carModle车型
-				查询条件为：productName， productID， origin， type， carModle
-				http://115.159.77.210:8080/ybcl2.0/enterprise/listProductByPage.do?productName=123&pageNumber=1&pageSize=5
+页面显示：/**
+* 
+ 		 * @param name供应商名称
+ 		 * @param address供应商地址
+ 		 * @param contactman供应商联系人
+ 		 * @param telephone供应商电话
+ 		 * @param phone供应商phone
+ 		 * @param fax供应商传真
+ 		 * @param note备注
+ 		 * @return
+ 		 */
+页面显示：*  name供应商名称
+ 		  *  address供应商地址
+ 		  *  contactman供应商联系人
+ 		  *  telephone供应商电话
+ 		  *  phone供应商phone
+ 		  *  fax供应商传真
+ 		  *  note备注
 			</div>
 			<div class="tips"></div>
 		</li>
@@ -1942,7 +1990,7 @@ Callback使用的函数需要前端传入
 				 * @param companyUserID 用户登录ID
 				 * @param facilitatorID 企业ID
 				 * @param date 日期（可选）
-				 * @param appointmentNum 订单号（可选）
+				 * @param appointmentNum 维修单号（可选）
 				 * @param phone 手机号（可选）
 				 * @param platenumber 发动机号（可选）
 				 * @param status 状态（必填项 0或者其他）
@@ -1959,7 +2007,7 @@ Callback使用的函数需要前端传入
 						param2: "maintainfortNum"  //维修单号
 						param3: "maintaintype", //维修类型
 						param4: "date", //日期
-						param5: "truename", //用户名
+						param5: "truename", //客户名称
 						param6: "arriveTime", //入场时间
 						param7: "status",//状态
 						param8: "motorNumber", //车牌号
@@ -1999,7 +2047,7 @@ Callback使用的函数需要前端传入
 						]]
 			</div>
 			<div class="tips">
-				1.显示在主页面上的：订单号，维修类型，日期，工时（花费时间），班组（部门），维修员（雇员姓名），状态<br/>
+				1.显示在主页面上的：维修单号，客户名称，车牌号，维修类型，日期，工时（花费时间），班组（部门），维修员（雇员姓名），状态<br/>
 					对应车间管理<br/>
 				 2.显示在车间管理-操作页面上的：订单号，车主姓名（用户名），车牌号，登记日期（日期），车主电话（电话），维修类别（维修类型），发动机号，入场时间，车辆颜色，车辆类型，车辆品牌，进厂里程，油表状态<br/>
 					对应用户管理-账号管理-新增
@@ -2095,6 +2143,31 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="param">
 			<pre>
+			应付账单对应字段
+			* @param id			ID		
+			* @param accountPayableNum	单号		业务单号
+			* @param startDate		开单日期	发生日期
+			* @param supplierId		供应商id	客户编码
+			* @param amount			总金额		发生额
+			* @param amountPaid		已付金额	付款额
+			* @param unpaidAmount		未付金额	余额
+			* @param thisPayment		本次付款	添加新列
+			* @param note			备注		显示页面
+			此页面与原型不同，但相似，请对应修改
+				
+
+			应收账单对应字段
+			* @param id			ID		
+			* @param startDate		开单日期	发生日期
+			* @param useId			用户		客户编码
+			* @param collectionNum		单号		业务单号
+			* @param type			业务类型	业务类型
+			* @param amount			总金额		发生额
+			* @param amountReceived		已收金额	收款额
+			* @param outstandingAmount	未收金额	余额
+			* @param thisCollection		本次收款	添加新列
+			* @param note			备注		显示在页面
+			</pre>
 			</div>
 			<div class="tips">
 				
@@ -2205,14 +2278,58 @@ Callback使用的函数需要前端传入
 			</div>
 			<div class="param">
 			<pre>
-				
+			</pre>
 			</div>
 			<div class="tips">
 				
 			</div>
 		</li>
+		<li class="fgrey">
+			<div class="name">进度列表</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/progressList.do?pageSize=10&pageNum=1&facilitatorID=1
+			</div>
+		</li>
+		<li>
+			<div class="name">进度单条数据，用于动态图（维修接待））</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/progressionBar.do?pageSize=10&pageNum=1&facilitatorID=1&mainId=SR.201509150023
+			</div>
+		</li>
+		
+		<li>
+			<div class="name">进度保存（维修接待）</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/progressSaveorUpdate.do?brand=%E5%8C%97%E4%BA%AC%E7%8E%B0%E4%BB%A3&series=i30&miles=60000&type=%E7%BE%8E%E5%AE%B9&facilitatorID=1&stepJosn=[{name:%E6%93%A6%E8%BD%A6%EF%BC%8Csequence=1}{name:%E8%B4%B4%E8%86%9C%EF%BC%8Csequence=2}]
+			</div>
+		</li>
+		<div class="tit">进度管理</div>
+		<li>
+			<div class="name">
+				系统管理-进度管理
+			</div>
+			<div class="port">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				系统管理-进度管理
+			</div>
+			<div class="port">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				系统管理-进度管理
+			</div>
+			<div class="port">
+				
+			</div>
+		</li>
+	</ol>
 </div>
-
 </body>
 </html>
 
