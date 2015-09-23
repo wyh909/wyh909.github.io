@@ -5,6 +5,11 @@
 	<title>用户管理</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	.dialog .bd .item select {
+		height: 120px;
+	}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -23,7 +28,7 @@
 							<thead>
 								<tr>
 									<th>序号</th>
-									<th ms-repeat="th">{{$val}}</th>
+									<th ms-repeat="th">{{el.name}}</th>
 									<th>关联角色名称</th>
 									<th>关联个数</th>
 									<th>操作</th>
@@ -35,8 +40,8 @@
 								</tr>
 								<tr ms-repeat="tr">
 									<td>{{$index+1}}</td>
-									<td ms-repeat="th">{{getkey($index,$key)}}</td>
-									<td><span  ms-repeat-elem="el.roles">{{elem.name}}<span ms-if="!$last">/</span> </span></td>
+									<td ms-repeat="th">{{getkey($index,el.id)}}</td>
+									<td><span  ms-data-id="elem.id" ms-repeat-elem="el.roles">{{elem.name}}<span ms-if="!$last">/</span> </span></td>
 									<td><span>{{el.roles.length}}</span></td>
 									
 									<td><a class="edit-item" ms-click="editItem(el.id)" >编辑</a><a href="javascript:;" ms-click="delItem(el.id)" class="delete-item"> 删除</a></td>
@@ -90,8 +95,8 @@
 					<label>{{el.name}}：</label>
 					<span  ms-if="!el.type || el.type == 0"><input type="text" class="inpt" ms-attr-id="el.id" ms-attr-value="el.value" ms-on-input="change"  /></span>
 					<span ms-class="select-outer"  ms-if="el.type == 1" ms-attr-id="el.name" ms-attr-value="el.value">
-						<select class="select" ms-duplex="selected" ms-attr-id="el.id">
-							<option ms-repeat="el.option" >{{el}}</option>
+						<select class="select" ms-duplex="rolename" multiple ms-attr-id="el.id">
+							<option ms-repeat-option="el.option" ms-value="option.value" >{{option.text}}</option>
 						</select>
 					</span>
 				</div>
