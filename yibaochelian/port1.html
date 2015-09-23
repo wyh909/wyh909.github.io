@@ -256,8 +256,9 @@ subBrand: null
 			</div>
 		</li>
 		<li>
-			<div class="name">4 维修项目的添加：（维修接待-操作-预约项目（添加）参照原型：首页-操作）</div>
+			<div class="name">4 维修项目的添加：（维修接待-操作-预约项目（添加）参照原型：首页-操作）<span class="red">报500错误</span></div>
 			<div class="userport">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?callback=jQuery18301302422301378101_1442844477458&mainId=SR.201509150023&facilitatorID=1&companyUserID=1&_=1442844484610
 			</div>
 			<div class="port">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
@@ -290,6 +291,80 @@ subBrand: null
 					需要在页面显示的字：
 				推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 				</div>
+			
+		</li>
+		<li>
+			<div class="name">
+				2、维修项目的的保存单条数据的接口；(wo)
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/editItem.do?facilitatorID=1&mainId=SR.201508200005&id=1&team=%E7%BB%B4%E4%BF%AE1%E7%BB%84&maintenanceMan=%E8%91%9B%E6%B5%B7%E9%9C%9E
+			</div>
+			<div class="param">
+				<pre>
+参数列表：
+/**
+	 * 修改维修项目
+	 * @param companyUserID
+	 * @param facilitatorID
+	 * @param mainId 维修单号
+	 * @param id 要修改的维修项目的id
+	 * @return
+	 */
+返回值：
+"code", 1
+	     "message", "修改成功"
+				</pre>
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				3、维修领料：班组：teams,领料人添加这两个（wo）<br/>
+				维修领料的修改接口：
+			</div>
+			<div class="port">
+				localhost:8080/ybcl2.0/enterprise/editUsedCompent.do?facilitatorID=1&mainId=SR.201508200005&id=2&productnum=20&unitprice=9999.9999&maintenanceMan=范冰冰
+
+			</div>
+			<div class="param">
+				<pre>
+参数：
+facilitatorID 服务商ID
+companyUserID 登录用户ID
+mainId 维修单编码
+id 要修改的维修领料的数据的id
+productnum 商品个数
+unitprice 商品单价
+maintenanceMan 领料人
+返回值：
+Code 1
+Message:修改成功
+班组的接口：
+http://localhost:8080/ybcl2.0/enterprise/listTeams.do?facilitatorID=1& companyUserID=1
+参数：facilitatorID
+companyUserID 登录用户ID
+
+返回值：
+"message":"修改成功",
+"data":["钣金1组","钣金2组","钣金3组","机修1组","机修2组","机修3组","机修3组","喷漆1组","喷漆2组","喷漆3组"],
+"code":1
+
+				</pre>
+			</div>
+		</li>
+		<li>
+			<div class="name">领料人的接口：</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0//enterprise/listMaintenanceMans.do?facilitatorID=1&team=%E7%BB%B4%E4%BF%AE1%E7%BB%84&companyUserID=1
+			</div>
+			<div class="param">
+			<pre>
+参数：
+facilitatorID 服务商ID
+companyUserID 登录用户ID
+team 所选的班组
+</pre>
+
 			</div>
 		</li>
 		<li>
@@ -417,7 +492,7 @@ subBrand: null
 			 </pre>
 			</div>
 			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码</div>，标准工时，标准单价，工时花费，顺序号
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">10 保存维修单相关的项目 -- (维修接待-操作-项目领料-添加1)</div>
@@ -559,7 +634,6 @@ subBrand: null
 				页面显示：(这些数据是按照仓库是棵树，点击那个参考显示那个仓库的数据)
 				商品编号,商品名称,产地,分类, 车型, 最近出货时间, 最近进货时间, 商品可售数量, 单位（升，个）, 安全数量, 建议购买价格, 建议销售价格, repertory仓库名称
 			</div>
-			</div>
 		</li>
 		<li>
 			<div class="name">14 (9、勾选好领用材料，保存)	<span class="orange">接口测试成功，但不知这个与列表页的有什么区别，明明列表都是一样的</span></div>
@@ -653,7 +727,7 @@ subBrand: null
 
 						  }]
 			</div>
-			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号</div>，真实姓名，车牌号，电话，类别，状态
+			<div class="tips"> 显示到页面上：顺序号（页面自己生产），预约编号，维修单号，真实姓名，车牌号，电话，类别，状态
 			</div>
 		</li>
 		<li>
@@ -735,8 +809,9 @@ subBrand: null
 								
 					 */
 				没有返回值和页面，保存以后显示在预约列表里
-			</div>
-			</pre><div class="tips">
+			
+			</pre>
+			<div class="tips">
 			</div>
 		</li>
 		<li>
@@ -772,7 +847,6 @@ subBrand: null
 				界面上显示的内容：
 				商品编码，商品名称，单位，数量，单价，领料班组（这个在界面上显示保留，目前没值），领料人
 				勾选好需要的配件，返回配件id串到父窗口，id串用;分割
-			</div>
 			</div>
 		</li>
 		<li>
@@ -850,7 +924,7 @@ subBrand: null
 							    标准单价
 								工时花费
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">21 查找可以预约的时间：<span class="red">这个接口用在什么位置</span></div>
@@ -879,7 +953,7 @@ subBrand: null
 				显示内容：
 				根据日期，剩余可以预约数，如果rest的值为0了，这个日期就不能预约了，不可选了。
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">22 （16、预约的删除）</div>
@@ -1107,7 +1181,7 @@ subBrand: null
 			<div class="tips">
 				
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">33 修改出库单<span class="red">500错误</span></div>
@@ -1332,7 +1406,7 @@ subBrand: null
 			<div class="tips">
 				显示到页面上：部门名称
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">42 修改部门名称/添加新部门：</div>
@@ -1415,7 +1489,7 @@ subBrand: null
 			<div class="tips">
 				显示到页面上：车辆类型id，车辆类型名称，生产厂商，品牌，子品牌，车种类，生产年份，顺序号
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">45 车辆类型修改/添加:</div>
@@ -1499,7 +1573,7 @@ subBrand: null
 							param4: "brandOrder"  //顺序号
 						}]
 			</div>
-			<div class="tips"></div>显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号
+			<div class="tips">显示到页面上：车辆品牌id，车辆品牌名称，车辆品牌类型，顺序号
 			</div>
 		</li>
 		<li>
@@ -1592,7 +1666,7 @@ subBrand: null
 						param10: "department", //包括id（部门id）,departmentName(部门名称)
 					}]
 			</div>
-			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入</div>，电话，邮箱，QQ号码，状态
+			<div class="tips"> 显示在页面上的：雇员姓名，头衔，班组，部门（名称），收入，电话，邮箱，QQ号码，状态
 			</div>
 		</li>
 		<li>
@@ -1709,7 +1783,7 @@ subBrand: null
  				2.显示在查看页面上的：除主键id外全部返回参数（参照客户管理-查看页面原型）
    				对应原型：客户管理-查看页面（查询时传递主键id参数）
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">54 修改/添加客户数据：<span class="orange">修改了note，提交接口成功，但获取数据还是原来的，其他修改正常</span></div>
@@ -1816,7 +1890,7 @@ subBrand: null
 						param9: "coastWorkTime", //工时花费
 				}]
 			</div>
-			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码</div>，标准工时，标准单价，工时花费，顺序号
+			<div class="tips">显示在主页面上的：推荐项目id，推荐项目名称，工种，错误代码，标准工时，标准单价，工时花费，顺序号
 			</div>
 		</li>
 		<li>
@@ -1915,7 +1989,7 @@ subBrand: null
 				 3.显示在编辑面上的：姓名，部门，关联角色名称，职责（备注）<br/>
 					对应用户管理-账号管理-编辑
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">60 增加/修改单条数据</div>
@@ -2052,7 +2126,7 @@ subBrand: null
 				 2.显示在车间管理-操作页面上的：订单号，车主姓名（用户名），车牌号，登记日期（日期），车主电话（电话），维修类别（维修类型），发动机号，入场时间，车辆颜色，车辆类型，车辆品牌，进厂里程，油表状态<br/>
 					对应用户管理-账号管理-新增
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">62 增加/修改单条数据 注：修改进程接口，仅修改参数processDetail
@@ -2118,7 +2192,7 @@ subBrand: null
 			</div>
 			<div class="tips">
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">69 获取用户登录信息 <span class="red">没有</span></div>
@@ -2133,56 +2207,49 @@ subBrand: null
 				
 			</div>
 		</li>
-		<div class="tit">财务管理</div>
+		<div class="tit">财务管理<span class="red">编辑时获取单条数据不用分页参数、保存需指定数字及分类的内容</span></div>
 		<li>
 			<div class="name">查询所有应付账单</div>
 			<div class="userport green">
 			</div>
 			<div class="port">
-				http://115.159.77.210:8080/ybcl2.0/enterprise/listAccountByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listCollectionByPage.do?facilitatorID=1&pageNumber=1&pageSize=5
 			</div>
 			<div class="param">
 			<pre>
-			应付账单对应字段
-			* @param id			ID		
-			* @param accountPayableNum	单号		业务单号
-			* @param startDate		开单日期	发生日期
-			* @param supplierId		供应商id	客户编码
-			* @param amount			总金额		发生额
-			* @param amountPaid		已付金额	付款额
-			* @param unpaidAmount		未付金额	余额
-			* @param thisPayment		本次付款	添加新列
-			* @param note			备注		显示页面
-			此页面与原型不同，但相似，请对应修改
-				
+			查询条件对应参数：/**
+	 	  * 
+	 	  * @param id				ID
+	 	  * @param useId				用户编号
+	 	  * @param collectionNum		单号
+	 	  * @param startDate			开单日期
+	 	  * @return
+	 	  */
+参数不同查询条件不同，不传参数则查询全部
+左侧页面显示：
+useId				用户编号
+useName				用户名称
+amount				发生额
+amountReceived		收款额
+outstandingAmount	余额
+outstandingAmount	超额 注：超额与余额为同一字段
 
-			应收账单对应字段
-			* @param id			ID		
-			* @param startDate		开单日期	发生日期
-			* @param useId			用户		客户编码
-			* @param collectionNum		单号		业务单号
-			* @param type			业务类型	业务类型
-			* @param amount			总金额		发生额
-			* @param amountReceived		已收金额	收款额
-			* @param outstandingAmount	未收金额	余额
-			* @param thisCollection		本次收款	添加新列
-			* @param note			备注		显示在页面
 			</pre>
 			</div>
 			<div class="tips">
 				
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">添加应付账单</div>
 			<div class="userport green">
 			</div>
 			<div class="port">
+				左侧：<br/>
 				http://115.159.77.210:8080/ybcl2.0/enterprise/addAccount.do?facilitatorID=1&accountPayableNum=1&supplierId=1&amount=1&amountPaid=1&unpaidAmount=1&thisPayment=1&note=1
 			</div>
 			<div class="param">
-			<pre>
 <pre>
 对应参数
 /**
@@ -2204,6 +2271,34 @@ subBrand: null
 			<div class="tips">
 				
 			</div>
+			<div class="name">
+				右侧页面显示：<br/>
+				传入参数为：useId			用户编号
+
+			</div>
+			<div class="port">
+				右侧：<br/>
+				http://115.159.77.210:8080/ybcl2.0/enterprise/addAccount.do?facilitatorID=1&accountPayableNum=1&supplierId=1&amount=1&amountPaid=1&unpaidAmount=1&thisPayment=1&note=1
+			</div>
+			<div class="param">
+				<pre>
+右面界面为 点左面某个用户，显示该用户的收款单。根据用户编号查询
+startDate				开单日期
+amount				发生额
+amountReceived		收款额
+outstandingAmount	余额
+collectionNum			单号
+type					业务类型
+note					备注
+原型下方显示：
+amount				应收总额
+amountReceived		已收总额
+thisCollection			本次合计
+thisCollection			实际收款
+reviewer				审核人
+startDate				审核日期
+
+				</pre>
 			</div>
 		</li>
 		<li>
@@ -2219,7 +2314,7 @@ subBrand: null
 			<div class="tips">
 				
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">查询所有应收账单</div>
@@ -2234,7 +2329,7 @@ subBrand: null
 			<div class="tips">
 				
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">添加应收账单</div>
@@ -2267,7 +2362,7 @@ subBrand: null
 			<div class="tips">
 				
 			</div>
-			</div>
+			
 		</li>
 		<li>
 			<div class="name">删除应收账单</div>
@@ -2299,35 +2394,447 @@ subBrand: null
 		
 		<li>
 			<div class="name">进度保存（维修接待）</div>
-			<div class="port">
+			<div class="userport">
 				http://115.159.77.210:8080/ybcl2.0/enterprise/progressSaveorUpdate.do?brand=%E5%8C%97%E4%BA%AC%E7%8E%B0%E4%BB%A3&series=i30&miles=60000&type=%E7%BE%8E%E5%AE%B9&facilitatorID=1&stepJosn=[{name:%E6%93%A6%E8%BD%A6%EF%BC%8Csequence=1}{name:%E8%B4%B4%E8%86%9C%EF%BC%8Csequence=2}]
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/progressionBarSaveOrUpdate.do?facilitatorID=1&mainId=SR.201509020001&processNum=4
 			</div>
 		</li>
 		<div class="tit">进度管理</div>
 		<li>
 			<div class="name">
-				系统管理-进度管理
+				系统管理-维修进度管理-进度的增删改查--增加和修改接口
 			</div>
 			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/progressSaveorUpdate.do?brand=%E5%8C%97%E4%BA%AC%E7%8E%B0%E4%BB%A3&series=i30&miles=60000&type=%E7%BE%8E%E5%AE%B9&facilitatorID=1&stepJosn=[{name:%E6%93%A6%E8%BD%A6%EF%BC%8Csequence=1}{name:%E8%B4%B4%E8%86%9C%EF%BC%8Csequence=2}]
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				系统管理-进度管理-删除接口：
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/progressdelete.do?facilitatorID=1&id=36
+			</div>
+			<div class="param">
+				<pre>
+					参数：
+					Id 要删除的进度的id
+
+				</pre>
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				系统管理-进度管理-列表接口：
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/progressList.do?facilitatorID=1&brand=%E5%8C%97%E4%BA%AC%E7%8E%B0%E4%BB%A3&series=i30&type=%E7%BE%8E%E5%AE%B9&pageSize=10&pageNum=1
+			</div>
+			<div class="param">
+				<pre>
+					参数：
+					facilitatorID 服务商ID
+					brand 车品牌
+					series 车系
+					type 维修类型
+					pageSize 一页多少数据
+					pagesNum 第几页
+					返回值：
+					Code：1
+					Data：
+					Id:id值
+					Brand 品牌
+					Series 车系
+					 Miles 公里数
+					Type 维修类型
+					Note备注
+					Steps 步骤
+				</pre>
+			</div>
+			<div class="tips">
+				页面上显示内容：序号 品牌   车系  公里数   维修类型
+				<br/>Message：检索成功
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				进度管理中的进度的详细细览页面，这个页面显示出进度的步骤：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/progressget.do?facilitatorID=1&brand=%E5%A5%94%E9%A9%B0&series=c200&miles=20000&type=%E4%BF%9D%E5%85%BB
+			</div>
+			<div class="param">
+facilitatorID 服务商ID
+brand 车品牌
+series 车系
+type 维修类型
+pageSize 一页多少数据
+pagesNum 第几页
+返回值：
+Code：1
+Data：
+Id:id值
+Brand 品牌
+Series 车系
+ Miles 公里数
+Type 维修类型
+Note备注
+
+Steps 步骤
+步骤的数据：
+ｉｄ　		ｉｄ号
+Sequence　	序号
+Name　		名称
+costTime　	耗时
+ｎｏｔｅ		备注
+
+			</div>
+			<div class="tips">
+				在页面显示的时候，显示步骤的序号，名称，耗时，备注
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				维修单的进度条的修改接口：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://localhost:8080/ybcl2.0/enterprise/progressionBarSaveOrUpdate.do?facilitatorID=1& mainId= SR.201509020001&processNum=4&costTime=66
+
+			</div>
+		</li>
+		<div class="tit">
+			套餐估价
+		</div>
+		<li>
+			<div class="name">
+				1、套餐保存的接口
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/savedrecommendItem.do?facilitatorID=1&pageNum=test&milesMin=200&milesMax=300000&brand=test&series=test&items=1,2&products=1,3
+			</div>
+			<div class="param">
+				<pre>
+					传入的参数：facilitatorID(服务商id),companyUserID，pageNum(套餐名称)，milesMin(最小公里数),milesMax(最大公里数),brand(车辆品牌),series(车系),items(推荐商品ids)，products(产品ids)
+					其中items格式为：id1,id2,id3...
+				    product格式为：productID1,productID2...
+				    返回的数据:
+							total:页数
+							code:1
+				     	   message:保存成功
+				</pre>
+			</div>
+			<div class="tips">
 				
 			</div>
 		</li>
 		<li>
 			<div class="name">
-				系统管理-进度管理
+				2、删除某一套餐的接口为：
+			</div>
+			<div class="userport">
+				
 			</div>
 			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/deleterecommendItemById.do?facilitatorID=1&recommendItemID=55555
+			</div>
+			<div class="param">
+				<pre>
+					输入的参数：facilitatorID(服务商id)，comopanyUserID, recommendItemID (对应套餐id)
+			    返回的数据:
+					total:页数
+					code:1
+			     	message:删除成功
+				</pre>
+			</div>
+			<div class="tips">
 				
 			</div>
 		</li>
 		<li>
 			<div class="name">
-				系统管理-进度管理
+				3、查询列表接口：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?facilitatorID=1
+			</div>
+			<div class="param">
+				<pre>
+传入参数：
+     facilitatorID,companyUserID
+返回参数：
+	code:1
+	message 检索成功
+	data:
+{
+    "appointmentId": "NO.201508065",//无视它
+    "recommendItemID": "8888", //套餐id
+    "pageName": "奔驰套餐1",  //套餐名称
+    "milesMin": 10000, //最小里程数
+    "milesMax": 80000,  //最大里程数
+    "brand": "奔驰",  //车辆品牌
+    "series": "奔驰2.0",  //车系
+    "items": "20150827001,20150827002", //推荐项目号ids（推荐项目id拼装）
+    "products": "'TA-812','YS-T0019'",//产品ids（产品ids拼装）
+    "itemList": [
+        {
+            "id": 5,//主键id 无视它
+            "itemId": "20150827001",//推荐项目id
+            "itemName": "前挡风玻璃",//推荐项目名称
+            "workType": "维修",//推荐项目工作类型
+            "faultCode": "22",//推荐项目错误代码
+            "orderNum": 2,//推荐项目顺序号
+            "standardWorkTime": 2, //推荐项目标准工时
+            "standardUnitPrice": 2,//推荐项目标准单价
+            "coastWorkTime": 2//推荐项目工时花费多少
+        },
+        {
+            "id": 6,
+            "itemId": "20150827002",
+            "itemName": "左前窗",
+            "workType": "维修",
+            "faultCode": "445",
+            "orderNum": 5,
+            "standardWorkTime": 5,
+            "standardUnitPrice": 5,
+            "coastWorkTime": 3
+        }
+    ],
+    "productList": [
+        {
+            "id": 2, //主键id 无视它
+            "productName": "19寸有骨雨刷", //产品名称
+            "productID": "YS-T0019", //产品id
+            "lastdeliveryDate": "2015-08-12 11:56:39.0", //上次出货日期
+            "lastpurchaseDate": "2015-07-30 11:56:24.0",//上次购买日期
+            "account": 20, //数量
+            "unit": "个",  //单位
+            "safeaccount": 2,  //
+            "suggestBuyprice": 35,//建议购买价格
+            "suggestSaleprice": 60,//建议出售价格
+            "repertory": "1",
+            "origin": "1",
+            "type": "1", //类型
+            "carModle": "通用" //车型
+        },
+        {
+            "id": 3,
+            "productName": "812空气格",
+            "productID": "TA-812",
+            "lastdeliveryDate": "2015-08-03 18:32:18.0",
+            "lastpurchaseDate": "2015-07-28 18:32:23.0",
+            "account": 10,
+            "unit": "个",
+            "safeaccount": 2,
+            "suggestBuyprice": 30,
+            "suggestSaleprice": 50,
+            "repertory": "1",
+            "origin": "1",
+            "type": "4",
+            "carModle": "通用"
+        }
+    ]
+}
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				4、查询单条数据接口：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/recommendItemList.do?facilitatorID=1&recommendItemID=9999
+			</div>
+			<div class="param">
+				<pre>
+					传入参数：facilitatorID,companyUserID,recommendID(套餐估价id，在列表中选择某条数据后获取recommendID)
+  					返回参数同上
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<div class="tit">
+			库房管理--维修退单
+		</div>
+		<li>
+			<div class="name">
+				 查询所有领料单的接口：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listMaterialByPage.do?facilitatorID=1
+			</div>
+			<div class="param">
+				<pre>
+传入的参数：facilitatorID(服务商id),companyUserID
+    返回的数据:
+			total:页数
+			code:1
+     	   data:[
+    {
+        "id": 1, //领料单id
+        <span class="red">"orderNum": "MF.000001",  //领料单号
+        "fillDate": "2015-09-1923: 53: 08.0",  //填写日期	
+        "maintainforNum": "SR.201508200004",  //维修单号
+        "carOwner": "张三",  //客户姓名</span>
+        "merchandiser": "开单员张三",  //开单员
+        "identityNum": "000001",  //识别号
+        "plateNumber": "京A88888",  //车牌号码
+        <span class="red">"teams": "第一组",  //班组
+        "employee": "雇员王五",  //领料员
+        "depotManager": "仓管员李四",  //仓管员</span>
+        "priceScheme": null,  //售价方案
+        "note": "第一条测试用",  //备注
+        "totalNum": 6, // 数量合计
+        "saleAmount": 300,  //销售金额
+        "capitalAmount": "叁佰元整",  //大写金额
+        "auditor": "审核员张三",  //审核员
+        "auditDate": "2015-09-1922: 14: 12.0  //审核日期
+    }
+]
+  在页面上显示的数据：按照上图顺序显示（返回参数中标红色参数）其中领料单号在页面上名称改为退货单号，第二列“项目”不显示。
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				查询单条领料单的接口为：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/listMaterialByPage.do?facilitatorID=1&orderNum=MF.000001
+			</div>
+			<div class="param">
+				<pre>
+输入的参数：facilitatorID(服务商id)，comoanyUserID,orderNum(领料单号)
+    返回的数据:
+			total:页数
+			code:1
+     	   data:[
+    {
+        <span class="red">"id": 1, //领料单id
+        "orderNum": "MF.000001",  //领料单号
+        "fillDate": "2015-09-1923: 53: 08.0",  //填写日期	
+        "maintainforNum": "SR.201508200004",  //维修单号
+        "carOwner": "张三",  //客户姓名
+        "merchandiser": "开单员张三",  //开单员
+        "identityNum": "000001",  //识别号
+        "plateNumber": "京A88888",  //车牌号码
+        "teams": "第一组",  //班组
+        "employee": "雇员王五",  //领料员
+        "depotManager": "仓管员李四",  //仓管员
+        "priceScheme": null,  //售价方案
+        "note": "第一条测试用",  //备注
+        "totalNum": 6, // 数量合计
+        "saleAmount": 300,  //销售金额
+        "capitalAmount": "叁佰元整",  //大写金额
+        "auditor": "审核员张三",  //审核员
+        "auditDate": "2015-09-1922: 14: 12.0  //审核日期
+        </span>
+    }
+]
+按照上图给的信息进行显示，中间显示该领料单对应的商品列表。这些字段都是不可更改的，另外还需显示两个输入框：<span class="red">退货类型（returnMaterialType），退货原因（returnMaterialReason）</span>。
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				输入后点击退货生成退货单，接口为：
+			</div>
+			<div class="userport">
+				
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/materialReturnSaveOrUpdate.do?facilitatorID=1&id=3&usedComponentsID=4&productID=NO.201508100003&productname=test&unit=ge&carmodle=baoma&maintenanceMan=test1&productnum=1&unitprice=2.222&approve=1&recheck=0&date=2015-09-21&remark=haha&returnMaterialType=yewu&returnMaterialReason=gezhongyuanyin 
+			</div>
+			<div class="param">
+				<pre>
+传入的参数： 
+	 * @param companyUserID
+	 * @param facilitatorID
+	 * @param id 领料单id（对应上边的id字段）
+	 <span class="red">* @param usedComponentsID  商品单id</span>
+	 * @param returnMaterialType  退单类型
+	 * @param returnMaterialReason  退单原因
+	 <span class="red">* @param productID  商品id
+	 * @param productname  商品名称
+	 * @param unit  单位
+	 * @param carmodle  车型
+	 * @param maintenanceMan  维修员
+	 * @param productnum  产品数量
+	 * @param unitprice  单价
+	 * @param approve 
+	 * @param recheck
+	 * @param date  日期
+     * @param remark  备注</span>
+
+标注红色的参数数据来源为每条商品的数据
+返回参数为：
+   code:1
+   message:"退单成功"
+
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
+		</li>
+		<li>
+			<div class="name">
+				
+			</div>
+			<div class="userport">
+				
 			</div>
 			<div class="port">
 				
 			</div>
+			<div class="param">
+				<pre>
+					
+				</pre>
+			</div>
+			<div class="tips">
+				
+			</div>
 		</li>
+
+
+ 
+
+
+  
 	</ol>
 </div>
 </body>
