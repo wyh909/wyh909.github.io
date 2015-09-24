@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>维修接待</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
 		.opt {
@@ -19,7 +20,7 @@
 		}*/
 		.item .btns {
 			position: absolute;
-			top: -60px;
+			top: -55px;
 			right: 20px;
 		}
 		.search2 {
@@ -48,8 +49,8 @@
 		</div>
 		<div class="content" class="ms-controlller">
 			<div class="opt-tit">维修单<span class="fred"></span></div>
-			<div class="opt" ms-controller="edit" >
-				<div ms-include="edittpl"></div>
+			<div class="opt" ms-controller="edit">
+				<div ms-include="edittpl" data-include-rendered="getNewData"></div>
 				<div class="btns tc">
 					<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
 				</div>
@@ -63,11 +64,22 @@
 					>{{el}}</span>
 				</div>
 				<div class="tabcon" >
-					<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==4">
-						<div class="btns" ms-visible="curIndex===0||curIndex===1">
-							<a href="javascript:;" ms-click="addItem" class="btn btn-ok btn-add">添 加</a>
+					<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex==0||curIndex==1">
+						<div class="btns" >
+							<a href="javascript:;" ms-click="addItem" class="btn btn-add">添 加</a>
 						</div>
 						<div ms-include="'tpl'" style="height:300px;overflow:auto" data-include-loaded="changeIndex(0)"></div>
+					</div>
+					<div class="item" style="display:none" ms-visible="curIndex==2">
+						<div ms-controller="dd" class="opt">
+							<div ms-include="edittpl" data-include-rendered="getNewData"></div>
+							<!-- <div class="btns tc"> -->
+								<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
+							<!-- </div> -->
+						</div>
+					</div>
+					<div class="item" style="display:none" ms-visible="curIndex==3" >
+						<div ms-include="'tpl'"></div>
 					</div>
 					<div class="item" style="display:none" ms-visible="curIndex==4">
 						<div class="process-tit">
@@ -93,9 +105,31 @@
 		
 		
 	</div>
-	<div class="dialog">
+	<div class="winpop">
 		<div class="hd"><span>编辑数据</span><a href="javascript:;" class="close">×</a></div>
-		<div class="bd">
+		<div class="bd brand" ms-controller="brand">
+			<div class="manage tl">
+				<span class="label" ms-repeat="tr">
+					<input type="radio" ms-attr-value="el.brandName" name="brandradio" /> {{el.brandName}}
+				</span>
+			</div>
+			<div class="btns tr">
+				<a ms-click="saveItem" href="javascript:;" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" class="btn btn-cancel">取消</a>
+			</div>
+		</div>
+		<div class="bd series" ms-controller="series">
+			<div class="manage tl">
+				<span class="label" ms-repeat="tr">
+					<input type="radio" ms-attr-value="el.modelsName" name="seriesradio" /> {{el.modelsName}}
+				</span>
+			</div>
+			<div class="btns tr">
+				<a ms-click="saveItem" href="javascript:;" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" class="btn btn-cancel">取消</a>
+			</div>
+		</div>
+		<div class="bd addyyxm">
 			
 			<div class="manage tl">
 				<div class="tree" id="tree" style="min-height:200px;max-height:260px;overflow:auto">
@@ -122,6 +156,7 @@
 		</div>
 		
 	</div>
+	<div class="dialog"></div>
 	<div class="mask"></div>
 	<script type="avalon" id="addProduct">
 		<div class="search2" style="background:none">
@@ -133,37 +168,18 @@
 			<input class="inpt" type="text">
 			<a href="javascript:;" ms-click="searchFn" class="btn btn-ok">搜 索</a>
 		</div>
-		<div class="manage-list" ms-include="tpl" >
-			// <table class="Mtable">,
-			// 	<thead>,
-			// 		<tr>,
-			// 			<th width="80">序号</th>,
-			// 			<th ms-repeat="th" ms-attr-width="el.width">{{el.name}}</th>,
-			// 			// <th ms-visible="isOpt?true:false">{{$val}}</th>,
-			// 			<th ms-if-loop="isOpt" width="100">操作</th>,
-			// 		</tr>,
-			// 	</thead>,
-			// 	<tbody>,
-			// 		<tr class="loading">,
-			// 			<td colspan="30" style="height:150px;padding-top:50px;" ms-duplex="nodata"></td>,
-			// 		</tr>,
-			// 		<tr ms-repeat="tr">,
-			// 			<td>{{$index+1}}</td>,
-			// 			<td ms-repeat="th" ms-data-id="el.id" ms-html="getkey($index,el.id)"></td>,
-			// 			<td ms-if-loop="isOpt"><a class="edit-item" ms-href="getId($index)" >编辑</a><a href="javascript:;" ms-click="delItem($index)" class="delete-item"> 删除</a></td>,
-			// 		</tr>,
-			// 	</tbody>,
-			// </table>
-			// <table class="Mtable"><thead><tr><th>序号</th><th ms-repeat="th">{{$val}}</th><th>操作</th></tr></thead><tbody><tr class="loading"><td colspan="30" style="height:150px;padding-top:50px;"><img src="img/loading.gif"/></td></tr><tr ms-repeat="tr"><td>{{$index+1}}</td><td ms-repeat="th" ms-data-id="getkey($index,$key)">{{getkey($index,$key)}}</td><td><a class="edit-item" ms-href="getId($index)" >编辑</a><a href="javascript:;" ms-click="delItem($index)" class="delete-item"> 删除</a></td></tr></tbody></table>
+		<div class="manage-list" ms-include="'tpl'" >
+			
 		</div>
 	</script>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
+	<script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
 	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/tree.js"></script>
 	<script type="text/javascript" src="js/pager.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/common-v0.1.js"></script>
 	<script type="text/javascript" src="js/weixiujiedai.js"></script>
 </body>
 </html>

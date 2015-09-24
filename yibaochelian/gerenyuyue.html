@@ -6,6 +6,12 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+	.dialog-peijian .manage {
+		max-height: 300px;
+		overflow: auto;
+	}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -93,8 +99,10 @@
 			<div class="manage tl">
 				<table class="Stable">
 					<tr ms-repeat="tr">
-						<td><input ms-attr-value="el.name" name="fuwushang" type="radio" /></td>
+						<td><input ms-attr-value="el.name" ms-data-value="el.id" name="fuwushang" type="radio" /></td>
 						<td>{{el.privice}}</td>
+						<td>{{el.city}}</td>
+						<td>{{el.zone}}</td>
 						<td>{{el.name}}</td>
 					</tr>
 				</table>
