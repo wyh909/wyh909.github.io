@@ -34,161 +34,35 @@
 		.start {
 			color: #00a;
 		}
+		ol {list-style: number}
 	</style>
 </head>
 <body>
-<div class="item">
-	<div class="tit">
-		维修接待
-	</div>
-	<div class="con">
-		<ul>
-			<li>
-				<p class="name">列表<span class="red">查询返回的data为空</span></p>
-				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=2&pageNum=1&pageSize=10</p>
-			</li>
-			<li>
-				<p class="name">查看维修列表内容</p>
-				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformList.do?facilitatorID=2&maintainfortNum=1234</p>
-			</li>
-			<li>
-				<p class="name">新建维修</p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformInput.do?facilitatorID=2</p>
-			</li>
-			<li>
-
-				<p class="name">保存维修<span class="red">返回提示虽保存成功，但刷新页面还是原来的数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformSaveOrUpdate.do?facilitatorID=2&platenumber=11&phone=22.....</p>
-			</li>
-			<li>
-				<p class="name">删除维修<span class="red">没有删除掉数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDelete.do?facilitatorID=2&maintainformNum=123</p>
-			</li>
-			<li>
-				<p class="name">查看维修下的预约项目<span class="red">没有数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemList.do?callback=jQuery1830653513690456748_1441180170837&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171044</p>
-				<p class="tip">不明白：勾选维修项目的窗口列表<br/>
-				* http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do<br/>
-				* http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemDoSave.do
-				* 保存维修单相关的项目，同时修改单据信息和费用合计内容
-				<br/>
-				打开某个维修单<br/>
-				http://115.159.77.210:8080/ybcl2.0/enterprise/maintainformDetail.do?callback=listdetail&facilitatorID=2&mainId=SR.201508200005
-				</p>
-				
-				<p class="name">查看维修下的项目领料<span class="red">没有数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompontList.do?callback=listdetail&facilitatorID=2&mainId=SR.201508200005</p>
-				<p class="tip">
-					勾选好领用材料<br/>
-					http://115.159.77.210:8080/ybcl2.0/enterprise/usedCompentDoSave.do? callback=listdetail&facilitatorID=2&mainId=SR.201508200005&productIds=选择的商品的ID
-				</p>
-				<p class="name">查看维修下的单据信息<span class="red">没有数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/orderdetail.do?callback=jQuery1830653513690456748_1441180170839&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171050</p>
-				<p class="name">查看维修下的费用合计<span class="red">没有数据</span></p>
-				<p class="port in">http://115.159.77.210:8080/ybcl2.0/enterprise/costsheet.do?callback=jQuery1830653513690456748_1441180170840&facilitatorID=1&companyUserID=1&pageNum=1&mainid=SR.201509020010&pageSize=10&_=1441180171052</p>
-			</li>
-			<li>
-				<p class="name">不明白其他的接口维修</p>
-				<p class="port">
-					维修项目添加：serviceItemInput.do?
-					维修项目取消：maintainformCancel.do 这个没必要
-				</p>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">预约接待</div>
-	<div class="con">
-		<ul>
-			<li>
-				<p class="name">预约接待列表：</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentList.do?callback=jQuery183043228539917618036_1441186466357&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441186466539</p>
-				<p class="name">预约查看某一条的详情<span class="red">500错误</span></p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/appointmentDetail.do?facilitatorID=1&appId=NO.201508100017&companyUserID=1</p>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">车间管理</div>
-	<div class="con">
-		<ul>
-			<li>
-				<p class="name">车间列表：</p>
-				<p class="port over">http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery1830012241053627803922_1441180388622&facilitatorID=1&companyUserID=1&pageNum=1&status=0&pageSize=10&_=1441180389961</p>
-				<p class="name in">获取单条信息</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listItemInfo.do?callback=jQuery18308283175881952047_1441183481615&status=0&appointmentNum=NO.201508065&facilitatorID=1&companyUserID=1&_=1441183481745</p>
-				<p class="name">保存单条信息<span class="red">获取的单条信息里没有接口里的这些参数，还都是必填的</span></p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?facilitatorID=1&maintainID=NO.201508100003&id=2&processCount=2&processNum=2&processDetail=haha&coastTime=80</p>
-
-				<p class="name">删除单条信息</p>
-				<p class="port">取消了此功能</p>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">客户管理</div>
-	<div class="con">
-		<ul>
-			<li>
-				<p class="name in">客户列表</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1
-</p>
-				<p class="name in">获取一个用户信息</p>
-				<p class="port">
-					http://115.159.77.210:8080/ybcl2.0/enterprise/customerList.do?pageSize=5&pageNumber=1&facilitatorID=1&id=100000
-				</p>
-				<p class="name in">保存用户信息</p>
-				<p class="port">
-					http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2
-				</p>
-			</li>
-		</ul>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">用户管理</div>
-	<div class="con">
-		<ul>
-			<li>
-				<p class="name in">获取用户管理列表</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18307784030011389405_1441507270707&facilitatorID=1&companyUserID=1&pageNumber=1&pageSize=10&_=1441507270896</p>
-			</li>
-			<li>
-				<p class="name in">获取某一个用户管理详情</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/listUsersByPage.do?callback=jQuery18307784030011389405_1441507270707&facilitatorID=1&companyUserID=1&id=683656364&_=1441507270896</p>
-			</li>
-			<li>
-				<p class="name in">保存用户详情</p>
-				<p class="port">http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateUsers.do?facilitatorID=1&account=zhangsan&name=zhangsan&password=123&role_ids=1,2</p>
-			</li>
-			<li>
-				<p class="name">删除用户<span class="over">返回数据是空，没有json</span><span class="red">提示删除成功，但获取数据还是原来的数据</span></p>
-				<p class="port">http:// 115.159.77.210:8080/ybcl2.0/enterprise/deleteUsersById.do?facilitatorID=1&id=905506185</p>
-			</li>
-		</ul>
-	</div>
-	<div class="tit">角色管理</div>
-	<div class="con">
+<div class="wrap">
+	<ol>
 		<li>
-			<p class="name in">角色列表</p>
-			<p class="port">http:// 115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&pageNum=1&pageSize=10</p>
+			<div class="tit">
+				维修接待-下面的预约项目-添加 <span class="red">500错误</span>
+			</div>
+			<div class="userport">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18303140252602752298_1442845601773&mainId=SR.201509150023&processNum=2&facilitatorID=1&companyUserID=1&_=1442845651290
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/serviceItemInput.do?%20callback=cancel&facilitatorID=1&companyUserID=1
+			</div>
 		</li>
 		<li>
-			<p class="name in">角色获取单条信息</p>
-			<p class="port">http:// 115.159.77.210:8080/ybcl2.0/roleList.do?callback=listdetail&facilitatorID=1&companyUserID=1&id=1</p>
+			<div class="tit">
+				维修接待-- 下面的进度保存 <span class="red">500错误</span>
+			</div>
+			<div class="userport">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/saveOrUpdateProcessDetail.do?callback=jQuery18303140252602752298_1442845601773&mainId=SR.201509150023&processNum=2&facilitatorID=1&companyUserID=1&_=1442845651290
+			</div>
+			<div class="port">
+				http://115.159.77.210:8080/ybcl2.0/enterprise/progressionBarSaveOrUpdate.do?facilitatorID=1&mainId=SR.201509020001&processNum=4
+			</div>
 		</li>
-		<li>
-			<p class="name in">角色添加、保存</p>
-			<p class="port">http://115.159.77.210:8080/ybcl2.0/roleSaveUpdate.do?callback=listdetail&facilitatorID=1&companyUserID=1&roleId=4&auIDS=5,1,2,3,4</p>
-		</li>
-	</div>
-</div>
-<div class="item">
-	<div class="tit">推荐商品管理<span class="red">没有对应原型，属于新需求</span></div>
-	<div class="con"></div>
+	</ol>
 </div>
 </body>
 </html>

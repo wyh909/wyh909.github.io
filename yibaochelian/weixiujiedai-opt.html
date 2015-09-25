@@ -10,7 +10,7 @@
 		.opt {
 			margin-bottom: 60px;
 		}
-		.tabcon .item {
+		.tabcon .tabitem {
 			display: block;
 			position: relative;
 		}
@@ -18,7 +18,7 @@
 			height: 100px;
 			overflow: auto;
 		}*/
-		.item .btns {
+		.tabitem .btns {
 			position: absolute;
 			top: -55px;
 			right: 20px;
@@ -56,7 +56,7 @@
 				</div>
 			</div>
 			
-			<div class="yuyue" ms-controller="childTable" class="ms-controller">
+			<div class="yuyue ms-controller" ms-controller="childTable">
 				<div class="tabs">
 					<span ms-repeat="tab"
 						ms-class="on:curIndex === $index"
@@ -64,23 +64,23 @@
 					>{{el}}</span>
 				</div>
 				<div class="tabcon" >
-					<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex==0||curIndex==1">
+					<div class="tabitem" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex==0||curIndex==1||curIndex==3">
 						<div class="btns" >
 							<a href="javascript:;" ms-click="addItem" class="btn btn-add">添 加</a>
 						</div>
 						<div ms-include="'tpl'" style="height:300px;overflow:auto" data-include-loaded="changeIndex(0)"></div>
 					</div>
-					<div class="item" style="display:none" ms-visible="curIndex==2">
+					<div class="tabitem" style="display:none" ms-visible="curIndex==2">
 						<div ms-controller="dd" class="opt">
-							<div ms-include="edittpl" data-include-rendered="getNewData"></div>
+							<div ms-include="edittpl"></div>
 							<!-- <div class="btns tc"> -->
 								<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
 							<!-- </div> -->
 						</div>
 					</div>
-					<div class="item" style="display:none" ms-visible="curIndex==3" >
+					<!-- <div class="item" style="display:none" ms-visible="curIndex==3" >
 						<div ms-include="'tpl'"></div>
-					</div>
+					</div> -->
 					<div class="item" style="display:none" ms-visible="curIndex==4">
 						<div class="process-tit">
 						</div>

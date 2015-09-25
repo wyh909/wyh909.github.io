@@ -5,6 +5,20 @@
 	<title>车间管理</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		.tabs {
+		    padding-top: 20px;
+		}
+		.tabcon .tabitem {
+			display: block;
+			position: relative;
+		}
+		.tabitem .btns {
+			position: absolute;
+			top: -65px;
+			right: 20px;
+		}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -21,7 +35,7 @@
 				>{{el}}</span>
 			</div>
 			<div class="tabcon">
-				<div class="item" ms-visible="curIndex == 0">
+				<div class="tabitem" ms-visible="curIndex == 0">
 					<div class="search2">
 						<label>商品编号</label>
 						<input class="inpt" type="text">
@@ -46,7 +60,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="item" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==0">
+				<div class="tabitem" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==0">
 					<div class="search2">
 						<label>商品编号</label>
 						<input class="inpt" type="text">
@@ -61,6 +75,10 @@
 
 						<a href="javascript:;" ms-click="searchItem" class="btn btn-ok btn-search">查询</a>
 					</div>
+					<div class="btns" mms-visible="curIndex===1 || curIndex===2">
+						<a href="javascript:;" ms-click="addItem" class="btn btn-ok btn-add">添加</a>
+					</div>
+					
 					<div ms-include="'tpl'" data-include-loaded="getTr"></div>
 				</div>
 			</div>
@@ -78,7 +96,7 @@
 	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/common-v0.1.js"></script>
 	<script type="text/javascript" src="js/tree.js"></script>
 	<script type="text/javascript" src="js/kufangguanli.js"></script>
 </body>
