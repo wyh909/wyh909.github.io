@@ -38,15 +38,15 @@
 				<div class="tabitem" ms-visible="curIndex == 0">
 					<div class="search2">
 						<label>商品编号</label>
-						<input class="inpt" type="text">
+						<input class="inpt" type="text" data-id="productID">
 						<label>商品名称</label>
-						<input class="inpt" type="text">
-						<label>原厂编号</label>
-						<input class="inpt" type="text">
+						<input class="inpt" type="text" data-id="productName">
+						<label>分类</label>
+						<input class="inpt" type="text" data-id="type">
 						<label>车型</label>
-						<input class="inpt" type="text">
+						<input class="inpt" type="text" data-id="carModle">
 						<label>产地</label>
-						<input class="inpt" type="text">
+						<input class="inpt" type="text" data-id="origin">
 
 						<a href="javascript:;" ms-click="searchItem" class="btn btn-ok btn-search">查询</a>
 					</div>
@@ -62,16 +62,8 @@
 				</div>
 				<div class="tabitem" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==0">
 					<div class="search2">
-						<label>商品编号</label>
-						<input class="inpt" type="text">
-						<label>商品名称</label>
-						<input class="inpt" type="text">
-						<label>原厂编号</label>
-						<input class="inpt" type="text">
-						<label>车型</label>
-						<input class="inpt" type="text">
-						<label>产地</label>
-						<input class="inpt" type="text">
+						<!-- <label>商品编号</label> -->
+						<input class="inpt" type="text" data-id="key">
 
 						<a href="javascript:;" ms-click="searchItem" class="btn btn-ok btn-search">查询</a>
 					</div>
