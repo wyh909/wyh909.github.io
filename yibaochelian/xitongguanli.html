@@ -24,6 +24,12 @@
 		top: -60px;
 		right: 10px;
 	}
+	.winpop label,.dialog label {
+		float: left;
+	}
+	.winpop .item  {
+		text-align: left;
+	}
 	</style>
 </head>
 <body>
@@ -65,19 +71,19 @@
 			<div class="bd">
 				<div class="item">
 					<label>角色名称：</label>
-					<input type="text" class="inpt" id="rolename" />
+					<input type="text" class="inpt" ms-attr-value="rolename" />
 				</div>
 				<div class="item">
 					<label>权限分配：</label>
 					<div class="con" style="padding-left:120px;">
 						<span ms-repeat='roles' style="width: 30%; display:inline-block;padding:3px 0">
-							<input type="checkbox" name="role" ms-attr-id="$index+1" ms-attr-value="el.value" /> {{el}}
+							<input type="checkbox" name="role" ms-duplex-radio="el.checked" /> {{el.name}}
 						</span>
 					</div>
 				</div>
 				<div class="item">
 					<label style="vertical-align:top">角色描述：</label>
-					<textarea name="" id="roledesc" cols="30" rows="5"></textarea>
+					<textarea name="" ms-attr-value="roledesc" cols="30" rows="5"></textarea>
 					
 				</div>
 			</div>

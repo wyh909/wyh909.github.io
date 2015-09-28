@@ -91,12 +91,12 @@
 		<div class="hd"></div>
 		<div class="bd-user" ms-controller="useredit" >
 			<div class="bd">
-				<div class="item" ms-repeat="item">
+				<div class="item" ms-repeat="item" data-repeat-rendered="getRole">
 					<label>{{el.name}}：</label>
 					<span  ms-if="!el.type || el.type == 0"><input type="text" class="inpt" ms-attr-id="el.id" ms-attr-value="el.value" ms-on-input="change"  /></span>
 					<span ms-class="select-outer"  ms-if="el.type == 1" ms-attr-id="el.name" ms-attr-value="el.value">
 						<select class="select" ms-duplex="rolename" multiple ms-attr-id="el.id">
-							<option ms-repeat-option="el.option" ms-value="option.value" >{{option.text}}</option>
+							<option ms-repeat-option="el.option" ms-attr-value="option.value" >{{option.text}}</option>
 						</select>
 					</span>
 				</div>
@@ -107,7 +107,7 @@
 			</div>
 				
 		</div>
-		<div class="bd-role" style="display:none" ms-controller="roleedit">
+		<!-- <div class="bd-role" style="display:none" ms-controller="roleedit">
 			<div class="bd">
 				<div class="item">
 					<label>角色名称：</label>
@@ -131,7 +131,7 @@
 				<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
 				<a href="javascript:;" ms-click="cancelItem" class="btn btn-cancel">取 消</a>
 			</div>
-		</div>
+		</div> -->
 	</div>
 	<div class="mask"></div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>
