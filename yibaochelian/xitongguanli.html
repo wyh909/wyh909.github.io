@@ -28,6 +28,7 @@
 		float: left;
 	}
 	.winpop .item  {
+		clear: both;
 		text-align: left;
 	}
 	</style>
@@ -52,7 +53,7 @@
 						<a href="javascript:;" ms-click="addItem" class="btn btn-ok btn-add">添 加</a>
 					</div>
 					<div ms-include="'tpl'" data-include-loaded="changeIndex(0)"></div>
-					<div class="page"></div>
+					<div class="page" ms-class="page_{{$index}}"></div>
 				</div>
 			</div>
 		</div>
@@ -71,19 +72,19 @@
 			<div class="bd">
 				<div class="item">
 					<label>角色名称：</label>
-					<input type="text" class="inpt" ms-attr-value="rolename" />
+					<input type="text" class="inpt" id="rolename" ms-attr-value="item.name" />
 				</div>
 				<div class="item">
 					<label>权限分配：</label>
 					<div class="con" style="padding-left:120px;">
-						<span ms-repeat='roles' style="width: 30%; display:inline-block;padding:3px 0">
-							<input type="checkbox" name="role" ms-duplex-radio="el.checked" /> {{el.name}}
+						<span ms-repeat='item.roles' style="width: 49%;display:inline-block;padding:3px 0">
+							<input type="checkbox" name="role" ms-duplex-checked="el.checked" ms-attr-id="el.id" /> {{el.name}}
 						</span>
 					</div>
 				</div>
 				<div class="item">
 					<label style="vertical-align:top">角色描述：</label>
-					<textarea name="" ms-attr-value="roledesc" cols="30" rows="5"></textarea>
+					<textarea name="" id="roledesc" ms-attr-value="item.desc" cols="30" rows="5"></textarea>
 					
 				</div>
 			</div>
