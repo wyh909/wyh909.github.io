@@ -6,8 +6,27 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<style type="text/css">
-	.dialog .bd .item select {
-		height: 120px;
+	.winpop .bd .item {
+		margin-top: 5px;
+	}
+	.winpop .bd .item label{
+		
+	}
+	.winpop .bd .item .inpt{height:20px;}
+	.winpop .bd .item select {height: 28px;}
+	.winpop .bd .item select.multi {
+		height: 60px;
+	}
+	.winpop .bd {
+		text-align: left;
+		position: relative;
+	}
+	.winpop .bd .error {
+		color: #f30;
+		font-size: 12px;
+		position: absolute;
+		bottom: -5px;
+		left: 140px;
 	}
 	</style>
 </head>
@@ -18,7 +37,7 @@
 	<div class="wrap">
 		<div class="mainnav">
 		</div>
-		<div class="content" ms-controller="table">
+		<div class="content ms-controller" ms-controller="table">
 					<div class="search"></div>
 					<div class="btns-right">
 						<a href="javascript:;" class="btn btn-ok edit-item" ms-click="addItem('add')" >添加</a>
@@ -87,16 +106,16 @@
 	</div>
 	<div class="footer">
 	</div>
-	<div class="dialog w400">
+	<div class="winpop w400">
 		<div class="hd"></div>
-		<div class="bd-user" ms-controller="useredit" >
+		<div class="bd-user ms-controller" ms-controller="useredit" >
 			<div class="bd">
 				<div class="item" ms-repeat="item" data-repeat-rendered="getRole">
 					<label>{{el.name}}：</label>
 					<span  ms-if="!el.type || el.type == 0"><input type="text" class="inpt" ms-attr-id="el.id" ms-attr-value="el.value" ms-on-input="change"  /></span>
 					<span ms-class="select-outer"  ms-if="el.type == 1" ms-attr-id="el.name" ms-attr-value="el.value">
-						<select class="select" ms-duplex="rolename" multiple ms-attr-id="el.id">
-							<option ms-repeat-option="el.option" ms-attr-value="option.value" >{{option.text}}</option>
+						<select class="select" ms-duplex="rolename" ms-attr-multiple="el.isMulti" ms-class="multi:el.isMulti" ms-attr-id="el.id">
+							<option ms-repeat-option="el.options" ms-attr-value="option.value" >{{option.text}}</option>
 						</select>
 					</span>
 				</div>
@@ -139,7 +158,7 @@
 	<script type="text/javascript" src="js/dialog.js"></script>
 	<script type="text/javascript" src="js/pager.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
-	<script type="text/javascript" src="js/common.js"></script>
+	<script type="text/javascript" src="js/common-v0.1.js"></script>
 	<script type="text/javascript" src="js/yonghuguanli.js"></script>
 </body>
 </html>
