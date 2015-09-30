@@ -59,7 +59,7 @@
 								</tr>
 								<tr ms-repeat="tr">
 									<td>{{$index+1}}</td>
-									<td ms-repeat="th">{{getkey($index,el.id)}}</td>
+									<td ms-repeat="th">{{getkey($outer.$index,el.id)}}</td>
 									<td><span  ms-data-id="elem.id" ms-repeat-elem="el.roles">{{elem.name}}<span ms-if="!$last">/</span> </span></td>
 									<td><span>{{el.roles.length}}</span></td>
 									
