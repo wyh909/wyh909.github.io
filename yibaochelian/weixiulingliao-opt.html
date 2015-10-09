@@ -4,6 +4,7 @@
 	<meta charset="utf-8">
 	<title>维修领料</title>
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
@@ -15,11 +16,12 @@
 		</div>
 		<div class="content ms-controller" ms-controller="edit">
 			<div class="opt-tit">领料单</div>
-			<div class="opt" ms-include="edittpl">
+			<div class="opt" ms-include="edittpl" data-include-rendered="getNewData">
 				
 			</div>
 			<div class="btns">
 				<a href="javascript:;" ms-click="saveItem" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" class="btn btn-return">返 回</a>
 			</div>
 			<div class="manage" ms-controller="table">
 				<div ms-include="'tpl'" data-include-loaded="getTr"></div>
@@ -146,6 +148,7 @@
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/avalon.js"></script>
 	<script type="text/javascript" src="js/dialog.js"></script>
+	<script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
 	<script type="text/javascript" src="js/head.js"></script>
 	<script type="text/javascript" src="js/common-v0.1.js"></script>
 	<script type="text/javascript" src="js/weixiulingliao.js"></script>
