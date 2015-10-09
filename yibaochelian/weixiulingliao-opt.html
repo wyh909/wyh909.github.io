@@ -6,6 +6,11 @@
 	<link rel="stylesheet" type="text/css" href="css/reset.css">
 	<link rel="stylesheet" type="text/css" href="css/jquery.datetimepicker.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<style type="text/css">
+		.total {min-height: auto;}
+		.total .item label {padding: 0;}
+		.total .item em {font-style: normal;}
+	</style>
 </head>
 <body>
 	<div class="header">
@@ -25,6 +30,26 @@
 			</div>
 			<div class="manage" ms-controller="table">
 				<div ms-include="'tpl'" data-include-loaded="getTr"></div>
+			</div>
+			<div class="opt total">
+				<div class="item">
+					<label>数量合计：</label> <em class="total-total"></em>
+				</div>
+				<div class="item">
+					<label>销售金额：</label> <em class="sale-amount"></em>
+				</div>
+				<div class="item">
+					<label>大写金额：</label> <em class="chinese-amount"></em>
+				</div>
+				<div class="item">
+					<label>开单员：</label> <em class="total-name"></em>
+				</div>
+				<div class="item">
+					<label>审核员：</label> <em class="total-name"></em>
+				</div>
+				<div class="item">
+					<label>审核日期：</label> <em class="time"></em>
+				</div>
 			</div>
 			<!-- <div class="opt">
 				<div class="item">
