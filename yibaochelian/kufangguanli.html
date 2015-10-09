@@ -15,9 +15,12 @@
 		}
 		.tabitem .btns {
 			position: absolute;
-			top: -65px;
+			top: -70px;
 			right: 20px;
 		}
+		/*.search2 .inpt {
+			width: 200px;
+		}*/
 	</style>
 </head>
 <body>
@@ -63,7 +66,7 @@
 				<div class="tabitem" ms-repeat="tab" ms-if-loop="curIndex===$index" ms-visible="curIndex!==0">
 					<div class="search2">
 						<!-- <label>商品编号</label> -->
-						<input class="inpt" type="text" data-id="key">
+						<input class="inpt" type="text" data-id="key" style="width:200px">
 
 						<a href="javascript:;" ms-click="searchItem" class="btn btn-ok btn-search">查询</a>
 					</div>
