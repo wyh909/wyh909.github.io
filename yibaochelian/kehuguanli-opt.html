@@ -29,7 +29,31 @@
 		
 		
 	</div>
-
+	<div class="winpop">
+		<div class="hd"><span>编辑数据</span><a href="javascript:;" class="close">×</a></div>
+		<div class="bd brand" ms-controller="brand">
+			<div class="manage tl">
+				<span class="label" ms-repeat="tr">
+					<input type="radio" ms-attr-value="el.brandName" name="brandradio" /> {{el.brandName}}
+				</span>
+			</div>
+			<div class="btns tr">
+				<a ms-click="saveItem" href="javascript:;" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" class="btn btn-cancel">取消</a>
+			</div>
+		</div>
+		<div class="bd series" ms-controller="series">
+			<div class="manage tl">
+				<span class="label" ms-repeat="tr">
+					<input type="radio" ms-attr-value="el.modelsName" name="seriesradio" /> {{el.modelsName}}
+				</span>
+			</div>
+			<div class="btns tr">
+				<a ms-click="saveItem" href="javascript:;" class="btn btn-ok">保 存</a>
+				<a href="javascript:;" class="btn btn-cancel">取消</a>
+			</div>
+		</div>
+	</div>
 	<div class="dialog dialog-tips"></div>
 	<div class="mask"></div>
 	<script type="text/javascript" src="js/jquery.min.js"></script>

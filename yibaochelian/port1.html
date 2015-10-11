@@ -54,9 +54,13 @@
 <body>
 <div class="item red b" >
 	<ol>
-		<li>提交的参数不统一，<span class="b">建议唯一id号用原来的</span>，不要改mainId，有的改了，但大部分没改</li>
-		<li>接口与原型不对应，包括参数不对应及页面显示需要的接口个数，如财务管理、进出库（仓库）管理</li>
-		<li>雇员、车辆、品牌、客户等，原型中没有，</li>
+		<div class="tit">存在问题</div>
+		<li>库房管理-出、入库-编辑：类型指什么，都有哪些</li>
+	</ol>
+</div>
+<div class="item red b" >
+	<ol>
+		
 		<li>强烈建议，以后做接口的时候，数据格式为：<br/>
 			json{ code: 1, message: 'message', data: {total: 10, data: {....没有子集}}}<br/>
 			或者 json{ code: 1, message: 'message', data:{a:'a',<span class="red">没有子对象</span>...},total:10}</li>
