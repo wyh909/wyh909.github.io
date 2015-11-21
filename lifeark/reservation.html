@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="中赢细胞银行，中赢，细胞银行，杭州中赢生物医疗科技有限公司；" />
+<meta name="description" content="中赢细胞银行，中赢细胞，细胞银行，杭州中赢生物医疗科技有限公司中赢细胞银行即在相对年轻、健康的时候就将自己的 NK细胞提取并通过全球独家专利——IL-21（白介素21）跨骨膜体外定向扩增技术在国际 GMP标准的生物实验室进行扩增并定期回输体内。" />
+<title>专家预约--中赢细胞银行</title>
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/wpfand.css">
+<link rel="stylesheet" href="css/jquery.datetimepicker.css">
+</head>
+<body class="notIE xxl">
+<div class="topbg"></div>
+<div class="contw">
+  <header id="header" class="theme-white" style="height:400px;">
+    <nav class="" id="headerNav">    
+    </nav>
+  </header> 
+</div>
+<div class="index-container">
+    <div class="index-brick appointment">
+        <div class="w1200" style="text-align:center;padding-top:50px">
+        	<div class="item">
+                <label>姓名 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>性别 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>年龄 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>电话 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>邮箱 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>家庭住址 <span>*</span></label>  
+                <input type="text" class="inpt"> 
+            </div>
+            <div class="item">
+                <label>预约专家 <span>*</span>(请选择最多一项)</label>  
+                <div class="select-person">
+                    <div class="select-item">
+                        <img src="images/expert1.png" alt=""> 徐以兵
+                        <input type="radio" class="select-box" />
+                    </div>
+                    <div class="select-item">
+                        <img src="images/expert1.png" alt=""> 王冶陶
+                        <input type="radio" class="select-box" />
+                    </div>
+                    <div class="select-item">
+                        <img src="images/expert1.png" alt=""> 陈霖
+                        <input type="radio" class="select-box" />
+                    </div>
+                    <div class="select-item">
+                        <img src="images/expert1.png" alt=""> 刘祥麟
+                        <input type="radio" class="select-box" />
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <label>日期 <span>*</span><em>(如：2012-12-30)</em></label>  
+                <input type="text" class="inpt" id="date"> 
+            </div>
+            <div class="item">
+                <label>时间 <span>*</span></label>  
+                <input type="text" class="inpt shortinpt" id="startTime"> 
+            </div>
+            <div class="item">
+                <a class="btn-ok" href="javascript:;">提 交</a>
+            </div>
+        </div>
+    </div>
+</div>
+	<footer></footer>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/head.js"></script>
+    <script type="text/javascript" src="js/common.js"></script>
+    <script type="text/javascript" src="js/jquery.datetimepicker.js"></script>
+    <script type="text/javascript">
+        var t = new Date(),
+            now = t.toLocaleDateString().replace(/\//g, '-'),
+            times = function(){
+                var allTime = [];
+                for(var i=0; i<24; i++){
+                    if(i<10){
+                        allTime.push('0'+i+':00');
+                        allTime.push('0'+i+':30');
+                    }else{
+                        allTime.push(i+':00');
+                        allTime.push(i+':30');
+                    }
+                }
+
+                return allTime;
+            };
+
+        $('#date').datetimepicker({
+            lang: 'zh',
+            format: 'Y-m-d',
+            value: now,
+            minDate:now,
+            closeOnDateSelect: true,
+            timepicker:false,
+            scrollInput:false
+        });
+        $('#startTime').datetimepicker({
+            datepicker:false,
+            format:'H:i',
+            closeOnTimeSelect: true,
+            value: t.toTimeString().substring(0,2) + ':00'//,
+            //allowTimes: times()
+        });
+    </script>
+</body>
+</html>

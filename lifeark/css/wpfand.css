@@ -1,0 +1,98 @@
+/* CSS Document */
+.contw{height:280px;}
+.topbg{width:100%;height:280px;background:#666;position:absolute;top:-120;background:url(../images/bg_news.jpg) no-repeat center top;}
+.theme-white{width:100%;position: absolute;z-index:100;}
+.case-cn{width:1200px;margin:0 auto;padding:20px 0 60px 0;}
+.case-box{width:1200px;height:414px;margin:20px 0;}
+dl.cb-left{width:454px;height:414px;float:left;}
+dl.cb-right{width:533px;height:266px;float:right;margin-top:40px;padding:30px 50px 0 120px;background: url(../images/y01.png) no-repeat left top;color:#666666;}
+dl.cb-right dt{text-align:center;font-size:24px;height:60px;line-height:60px;}
+dl.cb-right dd{text-indent:34px;font-size:16px;line-height:28px;}
+.cc-bt{width:1200px;heigh:43px;}
+.cc-cn{width:1200px;position:relative;}
+.tishi{width:1200px;height:585px;line-height:585px;text-align:center;color:#fff;font-size:24px;opacity:0.6;-moz-opacity:0.6;filter:Alpha(Opacity=60);background:rgba(0,0,0,0.8);position:absolute;left:0;top:0;z-index:2;}
+.youth-box{width:1200px;background:#fff;padding:10px 0 50px 0;}
+.yh3{width:1200px;height:23px;padding:20px 0;}
+.youth-pic{width:1200px;height:585px;position:relative;}
+.yp-txt{width:1200px;height:152px;color:#fff;opacity:0.8;-moz-opacity:0.8;filter:Alpha(Opacity=80);background:rgba(0,0,0,0.8);position:absolute;left:0;bottom:0;padding-top:20px;}
+.yptxt02{height:240px;}
+.yp-txt dt{padding-left:80px;font-size:28px;line-height:50px;}
+.yp-txt dd{width:85%;padding:20px 0 0 120px;font-size:20px;line-height:32px;color:#dedede;}
+.yt-box{width:1100px;padding:0 50px;}
+.yt-box dl{width:500px;float:left;color:#666;}
+.yt-box dl.yt-right{float:right;}
+.yt-box dl h4{font-size:24px;height:70px;line-height:70px;text-align:center;}
+.yt-box dl p{font-size:16px;line-height:32px;}
+
+
+/* 预约专家 */
+.appointment {
+
+}
+.appointment .item {
+
+	width: 778px;
+	margin: 0 auto;
+	font-size: 14px;
+	text-align: left;
+}
+.appointment .item label {
+	height: 30px;
+	padding-top: 20px;
+	display: block;
+	font-size: 22px;
+	line-height: 30px;
+	text-align: left;
+}
+.appointment .item label span {color: #f30;padding-top: 3px;display: inline-block;vertical-align: top;}
+.appointment .item .inpt {
+	height: 50px;
+	width: 776px;
+	line-height: 50px;
+	font-size: 24px;
+	text-indent: 5px;
+	color: #666;
+	border: 1px solid #d8d8d8;
+	background: #fff;
+}
+.appointment .item .select-person {
+	border: 1px solid #fff;
+	background: #d8d8d8;
+}
+.appointment .item .select-person .select-item {
+	height: 50px;
+	clear: both;
+	border-bottom: 1px solid #fff;
+	font-size: 18px;
+	line-height: 50px;
+}
+.appointment .item .select-person .select-item img {
+	height: 32px;
+	width: 32px;
+	float: left;
+	margin: 10px 3px;
+	vertical-align: middle;
+}
+.appointment .item .select-person .select-item .select-box {
+	height: 30px;
+	width: 30px;
+	margin: 10px;
+	float: right;
+}
+.appointment .item em {
+	color: #ccc;
+}
+.appointment .item .shortinpt {
+	width: 212px;
+}
+.appointment .item .btn-ok {
+	height: 86px;
+	width: 450px;
+	display: block;
+	margin: 20px auto;
+	line-height: 86px;
+	text-align: center;
+	color: #fff;
+	font-size: 28px;
+	background: #83b3ff;
+}

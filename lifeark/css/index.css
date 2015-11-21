@@ -1,0 +1,670 @@
+body {
+	font-family: "Microsoft Yahei","微软雅黑",Arial;
+}
+header {
+	position: relative;
+	/*height: 790px*/
+}
+.wrapper {
+	width: 1240px;
+	margin: 0 auto;
+	position: relative
+}
+.hotspot {
+	text-align: center
+}
+.hotspot .col-8-24 {
+	padding-top: 20px
+}
+.hotspot .wrapper img {
+	height: 200px
+}
+.link-group {
+	text-align: center;
+	position: absolute;
+	bottom: 230px;
+	width: 100%
+}
+.link-group a {
+	display: inline-block;
+*display:inline;
+*zoom:1;
+	color: #fff;
+	padding: 12px 30px;
+	border: 1px solid #fff;
+	border-radius: 40px;
+	margin: 0 10px;
+	font-size: 20px
+}
+.link-group .fa.fa-play {
+	margin-right: 5px;
+	font-size: 17px
+}
+.link-group .fa.fa-weibo {
+	font-size: 19px;
+	margin-right: 5px
+}
+@media screen and (max-width:1280px) {
+header {
+	width: 1280px
+}
+.wrapper {
+	width: 1280px
+}
+}
+.index-brick .cont div {
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.index-container {
+  background: #f5f5f5;
+}
+.index-brick {
+  width: 1000px;
+  margin: 0 auto;
+}
+.w1200{
+	width:100%;
+	margin:0 auto;
+	overflow:hidden;
+}
+.cont{
+  margin-top: 20px;
+	padding: 0 20px;
+	height:300px;
+}
+.cont-warp{
+	width: 33.333333%;
+	overflow:hidden;
+	float:left;
+  background: #bdd6ee;
+  height: 300px;
+}
+.cont-center{
+	width:100%;
+	height:87px;
+	margin:0 0 10px 0;
+	background:#bdd6ee;
+	cursor:pointer;
+	text-align:center;
+	font-size:24px;
+}
+.cont-cg{
+	width:50%;
+	height:203px;
+	border-right: 10px solid #f5f5f5;
+	background:#ebad77;
+	float:left;
+	cursor:pointer;
+	text-align:center;
+}
+.cont-new{
+	width:100%;
+	height:300px;
+	background:#f5ac68 url("../images/bg_04.jpg") no-repeat;
+  background-size: 100% 100%;
+	float:left;
+	cursor:pointer;
+	text-align:center;
+	-webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+.cont-ts{
+	width:100%;
+	height:300px;
+	background:#d47da0 url("../images/bg_03.jpg") no-repeat;
+  background-size: 100% 100%;
+	float:right;
+	cursor:pointer;
+	text-align:center;
+}
+.cont-zg{
+	width:50%;
+	height:202px;
+	border-right: 10px solid #f5f5f5;
+	background:#ebad77;
+	float:left;
+	cursor:pointer;
+	text-align:center;
+}
+.cont-td{
+	width:50%;
+	height:202px;
+	background:#f7ddb6;
+	float:right;
+	cursor:pointer;
+	text-align:center;
+}
+.cont-hd{
+	width:100%;
+	height:300px;
+	background:#4e8cc9 url("../images/bg_05.jpg") no-repeat;
+  background-size: 100% 100%;
+	clear:both;
+	/*margin:210px 0 0 0;*/
+	cursor:pointer;
+	text-align:center;
+	font-size:24px;
+}
+.cont-center:hover .icon-center,.cont-hd:hover .icon-hd{
+	margin-top:94px;
+	transition:margin-top 0.5s;
+	-moz-transition:margin-top 0.5s; /* Firefox 4 */
+	-webkit-transition:margin-top 0.5s; /* Safari and Chrome */
+	-o-transition:margin-top 0.5s; /* Opera */
+}
+.icon-center{
+	width:60px;
+	height:60px;
+	display:inline-block;
+	background:url(../images/icon.png) left top no-repeat;
+	margin: 13px auto 0;
+	font-size:24px;
+	vertical-align: middle;
+}
+.cont-new:hover .icon-new{
+	margin-top:94px;
+	transition:margin-top 0.5s;
+	-moz-transition:margin-top 0.5s; /* Firefox 4 */
+	-webkit-transition:margin-top 0.5s; /* Safari and Chrome */
+	-o-transition:margin-top 0.5s; /* Opera */
+}
+.icon-new, .icon-ts, .icon-hd {
+	width:60px;
+	height:60px;
+	display:inline-block;
+	margin:98px 0 0 0;
+}
+.icon-new {
+  background:url(../images/icon.png) -81px top no-repeat;
+}
+.icon-ts {
+  background:url(../images/icon.png) -389px top no-repeat;
+}
+.icon-hd {
+    background:url(../images/icon.png) -465px top no-repeat;
+}
+.cont-warp p{
+	font-size:24px;
+	color:#ffffff;
+}
+.icon-cg{
+	width:60px;
+	height:60px;
+	display:inline-block;
+	margin:54px 0 0 0;
+	background:url(../images/icon.png) -310px top no-repeat;
+	
+}
+.cont-cg:hover .icon-cg,.cont-ts:hover .icon-ts,.cont-zg:hover .icon-zg,.cont-td:hover .icon-td{
+	transition:margin-top 0.5s;
+	-moz-transition:margin-top 0.5s; /* Firefox 4 */
+	-webkit-transition:margin-top 0.5s; /* Safari and Chrome */
+	-o-transition:margin-top 0.5s; /* Opera */
+	margin-top:94px;
+} 
+.cont-cg p{
+	font-size:24px;
+	color:#fff;
+}
+
+.cont-ts p{
+	font-size:24px;
+	color:#fff;
+}
+.icon-zg{
+	width:60px;
+	height:60px;
+	display:inline-block;
+	margin:54px 0 0 0;
+	background:url(../images/icon.png) -157px top no-repeat;
+	
+}
+.cont-zg p{
+	font-size:24px;
+	color:#fff;
+}
+.icon-td{
+	width:60px;
+	height:60px;
+	display:inline-block;
+	margin:54px 0 0 0;
+	background:url(../images/icon.png) -233px top no-repeat;
+	
+}
+.cont-td p{
+	font-size:24px;
+	color:#fff;
+}
+.cont-hd i,.cont-center i{
+	color:#ffffff;
+	line-height:87px;
+	vertical-align: middle;
+}
+footer {
+
+  background: #f5f5f5;
+}
+.footer{
+  width: 1000px;
+  margin: 0 auto;
+  background: #f5f5f5;
+	overflow:hidden;
+	padding:45px 30px 0;
+}
+.index_foot{padding: 45px 30px 0;} 
+.index_foot .footer {width: 100%;padding:0;}
+.ft-top{
+
+	width:100%;
+	height:200px;
+	border-bottom:1px solid #d8d8d8;
+}
+.ft-bottom{
+	width:100%;
+	height:68px;
+	padding:20px 0 0 0;	
+	border-top:1px solid #838383;
+}
+.copyright{
+	width:100%;
+	height:30px;
+	line-height:30px;
+	text-align:center;
+	font-size:14px;
+	font-family:"微软雅黑";
+}
+.ft-list{
+	width:158px;
+	overflow:hidden;
+	list-style:none;
+	float:left;
+}
+.ft-list li{
+	text-align:center;
+	line-height:40px;
+}
+.ft-list li h3{
+	font-size:16px;
+	color:#acacac;
+}
+.ft-list li a{
+	color:#acacac;
+	font-size:14px;
+}
+.ft-logo{
+	width:200px;
+	/* padding:0 0 0 75px; */
+	margin:0;
+	float:left;
+}
+.ft-logo p{
+	/* font-size: 0;
+	line-height: 0;
+	text-indent: -9999999px; */
+	font-size: 14px;
+	color: #c8c7c7;
+}
+.ft-logo img{
+	vertical-align:middle;
+	margin:0 5px 40px 0;
+}
+.erwei{
+	width:318px;
+	float: right;
+	text-align:center;
+   
+}
+.erwei .hottel {
+	padding-top: 35px;
+	float: left;
+}
+.erwei h3{
+	font-weight:bold;
+	font-size:22px;
+	color:#333333;
+	line-height:40px;
+}
+.code{width: 135px;text-align: center;float:right;}
+.code p{text-align: center;font-size: 16px;cursor:#666;margin-top: 10px;}
+
+/* nav */
+nav {
+                     position: relative;
+                     z-index: 2;
+                     -webkit-transition: background-color .5s ease-in-out;
+                     -o-transition: background-color .5s ease-in-out;
+                     transition: background-color .5s ease-in-out;
+                 }
+                 nav.toggle {
+                     background-color: rgba(255, 255, 255, 0.95);
+                     -webkit-transition: background-color .5s ease-in-out;
+                     -o-transition: background-color .5s ease-in-out;
+                     transition: background-color .5s ease-in-out;
+                 }
+                 nav.toggle .meizu-header a,
+                 nav.toggle .meizu-header-sub a,
+                 nav.toggle .meizu-header-log {
+                     color: #515151;
+                 }
+                 .meizu-header-log {
+                     color: #fff;
+                 }
+                 .meizu-header-sub {
+                     font-size: 14px;
+                     font-family: "微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体";
+                     overflow-x: hidden;
+                 }
+                 .meizu-header{font-size:14px; font-family:"微软雅黑","Microsoft Yahei",Arial,Helvetica,sans-serif,"宋体"; position:relative;}
+
+                 .meizu-header a,
+                 .meizu-header-sub a {
+                     color: #333;
+                     text-decoration: none;
+                 }
+                 .meizu-header a.hover,
+                 .meizu-header a:hover,
+                 .meizu-header-sub a.hover,
+                 .meizu-header-sub a:hover {
+                     color: #eb5e01 !important;
+                 }
+                 .meizu-header ul,
+                 .meizu-header li,
+                 .meizu-header-sub ul,
+                 .meizu-header-sub li {
+                     list-style: none;
+                     margin: 0;
+                     padding: 0;
+                 }
+                 /*.meizu-header ul{margin-right: 20px;}*/
+                 .meizu-header p,
+                 .meizu-header-sub p {
+                     margin: 0;
+                     padding: 0;
+                     width:100%;
+                     *width:100px;
+                 }
+                 .meizu-header-wrap {
+                     width: 1100px;
+                     margin: 0 auto;
+                     padding: 0 20px;
+                     overflow: hidden;
+                 }
+                 .meizu-header-wrap-1200{
+                    width:1200px; 
+                    margin:0 auto; 
+                    padding:0 20px;
+                    position:relative
+                }
+                 .meizu-header-wrap-sub {
+                     width: 1280px;
+                     margin: 0 auto;
+                 }
+                
+                 .meizu-header-logo {
+                     display: inline;
+                     float: left;
+                     padding: 20px 0;
+                 }
+                 .meizu-header-logo-img {
+                     display: block;
+				 	width: 200px;
+					height: 100px;
+					display: block;
+					background: url(../images/logo.png) no-repeat;
+				 }
+                 nav.toggle .meizu-header-logo-img {
+                    width: 200px;
+					height: 100px;
+					display: block;
+					background: url(../images/logo.png) no-repeat;
+                 }
+
+                 .meizu-header-log {
+                 padding-right: 12.5px;
+                 position:relative;
+                 z-index: 105;
+                 margin-left: 20px;
+                 }
+
+                 .meizu-log li a{
+                 position:relative;
+                 z-index: 4;
+                 }
+  
+              .meizu-log ul li {
+              font-size: 12px;
+              text-align: left;
+              display:block;
+              margin: 15px auto;
+              }
+
+              .meizu-log ul li:first-child {
+              margin-top:0;
+              }
+
+              .meizu-log ul li:last-child {
+              margin-bottom:0;
+              }
+              
+              .meizu-log .arrow {
+              padding-bottom: 7px;
+              }
+
+              .u-box {
+              display:none;
+              border: solid 1px #ccc;
+              border-bottom: none;
+              border-top: solid 3px #1395E4;
+              position:absolute;
+              height:78px;
+              width: 60px;
+              top: 0;
+              right:0;
+              background-color: #fff;
+              z-index:2;
+              }
+
+              .log-dropdown {
+              display:none;
+              position:absolute;
+              right: 0;
+              top: 0px;
+              z-index:1;
+              width:155px;
+              background-color: #fff;
+              top: 80px;
+              padding: 20px!important;
+              border: solid 1px #ccc;
+              box-sizing: border-box;
+              }
+
+
+              .log-dd-sep {
+              margin: 18px auto 15px;
+              }
+
+              .meizu-log .button.center {
+              margin: auto auto;
+              display:block;
+              padding:8px 30px;
+              }
+
+              .meizu-log .signup-help {
+              color: #999;
+              }
+
+              .meizu-log .signup-help a {
+              color: #21A9E7;
+              }
+
+              .meizu-log .msg-num {
+              color: #F80000;
+              }
+              
+                 .meizu-header-link {
+                     display: inline;
+                     float: right;
+                     overflow: visible;
+                 }
+                 .meizu-header-link li {
+                     display: inline;
+                     float: left;
+                     position: relative;
+                 }
+                 .meizu-header-link a {
+                     display: block;
+                     padding: 50px 35px 30px 35px;
+                 }
+				 .meizu-header-link a.curred{
+					 color:#eb5e01;
+					}
+                 .meizu-header-log {
+                     display: inline;
+                     float: right;
+                     padding: 48px 70px 0 0;
+                     text-align: right;
+                     font-size: 12px;
+                     position: relative;
+                 }
+                 .log-dropdown li a{color: #333!important;}
+                 .meizu-header-sub {
+                     z-index: 100;
+                     display: none;
+                     width: 100%;
+                 }
+                 .meizu-header-sub-product {
+                     display: inline;
+                     float: left;
+                     text-align: center;
+                     padding: 0 5px;
+                     position: relative
+                 }
+                 .meizu-header-sub-product a {
+                     display: block;
+                     padding: 0 11px 7px;
+                     -webkit-transition: opacity .5s ease-in-out;
+                     -o-transition: opacity .5s ease-in-out;
+                     transition: opacity .5s ease-in-out;
+                     cursor:pointer;
+                     position: relative;
+                     z-index: 99
+                 }
+                 .meizu-header-sub-product a.hover {
+                     color: #515151;
+                 }
+
+
+                 .meizu-header-sub-product a .meizu-header-sub-desc {
+                     color: #666;
+                     font-size: 12px;
+                     padding-top: 5px;
+                 }
+                 .meizu-header-wrap-sub .meizu-header-sub-products {
+                    padding-left: 393px;
+                     overflow: hidden;
+                 }
+                 #meizu-header-sub-pro .meizu-header-sub-products{padding-left: 475px;}
+                    #meizu-header-sub-pro .meizu-header-sub-desc{text-indent: -8px;}
+                 #meizu-header-sub-router .meizu-header-sub-products{padding-left: 708px}
+                #meizu-header-sub-meilan .meizu-header-sub-products{padding-left: 374px;}
+                #meizu-header-sub-accesory .meizu-header-sub-products{padding-left: 789px;}
+
+                 .meizu-header-sub-img,.meizu-header-sub-img img{
+                     position:relative;
+                     z-index:-1
+                 }
+                 .meizu-header-sub-img {
+                     height:80px;
+                     padding: 0 10px 5px 10px;    
+                 }
+                 .meizu-header-sub-img img {
+                     height:80px;
+                 }
+
+
+                 .meizu-header-sub-product .meizu-header-sub-desc {
+                     padding-bottom: 11px;
+                 }
+                 .meizu-header-link-product:hover .meizu-header-sub,
+                 .meizu-header-link-product.hover .meizu-header-sub {
+                     display: block;
+                 }
+                 .meizu-header-link-product:hover .meizu-header-link-product-a,
+                 .meizu-header-link-product.hover .meizu-header-link-product-a {
+                     color: #31a5e7;
+                 }
+                 @media screen and (max-width: 1200px) {
+                     .meizu-header {
+                         width: 1200px;
+                     }
+                 }
+                 
+                 .meizu-header-sub-img,
+                 .meizu-header-sub-img img,
+                 .meizu-header-sub-desc{display: block; white-space:nowrap;}
+                .meizu-header-sub-img{overflow: hidden;}
+
+.login-info {
+  /*height: 200px;
+  width: 190px;
+  display: none;
+  border-radius: 10px;
+  position: absolute;
+  top: 72px;
+  right: 50px;
+  color: #ccc;
+  font-size: 14px;
+  background: #fff;
+  z-index: 5;*/
+}
+.login-info .login-item {
+	padding: 8px;
+	text-align: center;
+}
+.login-info .btn-login {
+	height: 48px;
+	width: 158px;
+	display: block;
+	margin: 10px auto;
+	color: #fff!important;
+	
+	font-size: 16px;
+	text-align: center;
+	line-height: 48px;
+	background: #44b1fa;
+}
+.login-info a.btn-login:hover {
+	color: #fff!important;
+}
+.login-info .fblue {
+	color: #44b1fa!important;
+}
+.login-info .myinfo {
+	color: #999!important;
+}
+.drop {
+  width: 80%;
+  display: none;
+  position: absolute;
+  top: 72px;
+  left: 10px;
+  color: #ccc;
+  font-size: 14px;
+  text-align: center;
+  background: #fff;
+  /*opacity: 0.9;*/
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+  /*filter: alpha(opacity=90);*/
+  z-index: 5;
+}
+.drop a {
+  color: #666!important;
+  display: block;
+  padding: 8px ;
+}
+.login-info {
+  left: -23px;
+}                 

@@ -1,0 +1,127 @@
+.header {
+	height: 197px;
+	padding-top:45px;
+}
+.header-wrap {
+	width: 1200px;
+	margin: 0 auto;
+}
+.header .logo {
+	height: 94px;
+	width: 200px;
+	float: left;
+	background: url("../images/logo.png") no-repeat;
+} 
+.header .user {
+	padding-top: 15px;
+	float: right;
+	color: #333;
+}
+.header .user .on {
+	color: #f30;
+}
+.footer {
+	height: 100px;
+	border-top: 1px solid #ccc;
+	padding-top: 15px;
+}
+.footer-wrap {
+	width: 1200px;
+	margin: 0 auto;
+}
+.footer .server {
+	display: inline-block;
+	vertical-align: middle;
+	margin: 0 180px 0 70px;
+}
+.footer .pic-link {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: 0;
+	background: url("../images/login_icons.png") -5px -7px no-repeat;
+}
+.footer .pic-link a {
+	height: 32px;
+	width: 32px;
+	display: inline-block;
+	margin-right: 14px;
+	vertical-align: middle;
+}
+.wrap {
+	width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+}
+.login {
+	margin-bottom: 110px;
+}
+.reg {
+	margin-bottom: 50px;
+}
+.title {
+	height: 88px;
+	width: 340px;
+	margin: 0 auto 20px;
+	color: #666;
+	font-size: 24px;
+	text-align: center;
+}
+.reg .title span.on {
+	color: #32a5e7;
+}
+.login .title {
+	background: url("../images/login_photo.png") center center no-repeat;
+}
+.reg .title {
+	height: 40px;
+}
+.reg .title span {
+	width: 169px;
+	display: block;
+	float: left;
+	color: #666;
+}
+.reg .title span.first {border-right: 1px solid #32a5e7;}
+.reg p {
+	padding: 10px;
+}
+.item {
+	height: 50px;
+	width: 340px;
+	margin: 10px auto;
+	position: relative;
+}
+.item .inpt {
+	height: 48px;
+	width: 338px;
+	border: 1px solid #ccc;
+	text-indent: 5px;
+}
+.forgetpwd {
+	text-align: left;
+}
+.forgetpwd a {
+	color: #32a5e7;
+}
+.btn-login {
+	height: 52px;
+	width: 100%;
+	display: block;
+	color: #fff;
+	font-size: 20px;
+	line-height: 52px;
+	background: #32a5e7;
+}
+
+.item span.pin {
+	height: 36px;
+	width: 84px;
+	border-left: 1px solid #ccc;
+	position: absolute;
+	top: 7px;
+	right: 1px;
+	color: #ccc;
+	font-size: 14px;
+	line-height: 36px;
+	background: #fff;
+}
