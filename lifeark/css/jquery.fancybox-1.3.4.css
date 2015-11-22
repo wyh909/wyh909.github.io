@@ -75,7 +75,7 @@
 #fancybox-content {
 	width: 0;
 	height: 0;
-	padding: 0;
+	padding-bottom: 35px;
 	outline: none;
 	position: relative;
 	overflow: hidden;

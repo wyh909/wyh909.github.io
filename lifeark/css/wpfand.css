@@ -26,58 +26,66 @@ dl.cb-right dd{text-indent:34px;font-size:16px;line-height:28px;}
 
 
 /* 预约专家 */
-.appointment {
-
+.appointment .w1200{
+	width: 640px;
+	margin: 0 auto;
 }
 .appointment .item {
 
 	width: 778px;
+	padding-left: 100px;
 	margin: 0 auto;
 	font-size: 14px;
 	text-align: left;
 }
 .appointment .item label {
 	height: 30px;
+	width: 120px;
+	display: inline-block;
 	padding-top: 20px;
-	display: block;
-	font-size: 22px;
+	font-size: 14px;
 	line-height: 30px;
-	text-align: left;
+	text-align: right;
 }
-.appointment .item label span {color: #f30;padding-top: 3px;display: inline-block;vertical-align: top;}
+.appointment .item label span {color: #83b3ff;padding-top: 3px;display: inline-block;vertical-align: top;}
 .appointment .item .inpt {
-	height: 50px;
-	width: 776px;
-	line-height: 50px;
-	font-size: 24px;
+	height: 30px;
+	width: 248px;
+	line-height: 30px;
+	font-size: 14px;
 	text-indent: 5px;
 	color: #666;
 	border: 1px solid #d8d8d8;
 	background: #fff;
 }
 .appointment .item .select-person {
-	border: 1px solid #fff;
-	background: #d8d8d8;
+	overflow: hidden;
 }
 .appointment .item .select-person .select-item {
-	height: 50px;
-	clear: both;
-	border-bottom: 1px solid #fff;
-	font-size: 18px;
-	line-height: 50px;
-}
-.appointment .item .select-person .select-item img {
-	height: 32px;
-	width: 32px;
+	height: 160px;
+	width: 100px;
+	text-align: center;
+	margin: 5px;
 	float: left;
+	font-size: 12px;
+	line-height: 25px;
+}
+.appointment .item .select-person .select-item.on {background: #6e9ad3;}
+.appointment .item .select-person .select-item img {
+	height: 60px;
+	width: 60px;
+	border: 2px solid #999;
+	border-radius: 60px;
 	margin: 10px 3px;
 	vertical-align: middle;
 }
+.appointment .item .select-person .select-item p {
+
+}
+
 .appointment .item .select-person .select-item .select-box {
-	height: 30px;
-	width: 30px;
-	margin: 10px;
-	float: right;
+	
+
 }
 .appointment .item em {
 	color: #ccc;
@@ -86,13 +94,48 @@ dl.cb-right dd{text-indent:34px;font-size:16px;line-height:28px;}
 	width: 212px;
 }
 .appointment .item .btn-ok {
-	height: 86px;
-	width: 450px;
+	height: 40px;
+	width: 200px;
 	display: block;
-	margin: 20px auto;
-	line-height: 86px;
+	margin: 20px 0 20px 125px;
+	line-height: 40px;
 	text-align: center;
 	color: #fff;
-	font-size: 28px;
+	font-size: 20px;
 	background: #83b3ff;
+}
+/* 联系我们 */
+.hd {
+	padding: 40px 0 15px;
+	font-size: 20px;
+	text-align: center;
+}
+.bg-white {
+	background: #fff;
+}
+.bg-grey {
+	background: #f5f5f5;
+}
+.contact .index-brick {padding: 0 160px;width: 680px;}
+.contact .title {
+	font-size: 16px;
+	line-height: 30px;
+	padding-left: 20px;
+	margin-bottom: 10px;
+	background: url("../images/map-dot.jpg") left center no-repeat;
+}
+.contact .content {
+	overflow: hidden;
+	padding-bottom: 30px;
+}
+.contact .content .img {
+	width: 309px;
+	float: left;
+}
+.contact .content .info {
+	margin-left: 320px;
+	line-height: 1.5;
+}
+.contact .content .info p {
+	padding-bottom: 10px;
 }
