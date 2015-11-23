@@ -30,9 +30,9 @@
                 <div class="content">
                     <div class="con-left">
                         <div class="tabs">
-                            <span class="on">媒体报道</span>
+                            <span class="on">产品动态</span>
                             <span>企业资讯</span>
-                            <span>产品动态</span>
+                            <span>媒体报道</span>
                         </div>
                         <div class="tabcon">
                             <div class="item">
@@ -106,7 +106,7 @@
                 </div>
             </div>
             <div class="area area3">
-                <div class="area-left bg-grey">
+                <div class="area-left">
                     <div class="title">
                         总裁致辞
                         <a href="javascript:;" class="more"></a>
@@ -175,7 +175,13 @@
         $('div.slider').flexslider({
             animation: "slide",
             itemWidth: 300
-          });
+        });
+        $('div.area-left').on('mouseover', function(){
+            $('div.area-left').removeClass('bg-grey');
+            $(this).addClass('bg-grey');
+        }).on('mouseout', function(){
+            $('div.area-left').removeClass('bg-grey');
+        }); 
     });
     </script>
 </body>

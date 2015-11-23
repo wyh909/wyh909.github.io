@@ -4,7 +4,7 @@ body {
 }
 .wrap {
 	width: 1000px;
-	margin: 40px auto 0;
+	margin: 0 auto;
 	background: #fff;
 }
 .detail .item {
@@ -27,23 +27,28 @@ body {
 .detail .item .tree li{width:110px;position: relative;}
 .detail .item .tree .txt {
 	display: none;
-	height: 162px;
-	width: 188px;
+	width: 228px;
 	line-height: 1.5;
 	position: absolute;
 	top: 0;
 	z-index: 7;
 	background: url("../images/cells/box.png") no-repeat;
 }
-.detail .item .tree p.left {
-	padding: 10px 30px 10px 10px;
+.detail .item .tree div.left {
 	right: 110px;
-	background: url("../images/cells/box.png") no-repeat;
+	background: url("../images/cells/box-left-bg.png") left bottom no-repeat;
 }
-.detail .item .tree p.right {
-	padding: 10px 0px 10px 40px;
+.detail .item .tree div.right {
 	left: 110px;
-	background: url("../images/cells/box-right.png") no-repeat;
+	background: url("../images/cells/box-right-bg.png") left bottom no-repeat;
+}
+.detail .item .tree div.left p {
+	padding: 10px 30px 10px 10px;
+	background: url("../images/cells/box-left.png") left top no-repeat;
+}
+.detail .item .tree div.right p {
+	padding: 10px 5px 10px 35px;
+	background: url("../images/cells/box-right.png") right top no-repeat;
 }
 .detail .item .tree a.circle {
 	padding: 40px 10px;

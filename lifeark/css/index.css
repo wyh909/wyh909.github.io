@@ -63,6 +63,14 @@ header {
 .index-brick {
   width: 1000px;
   margin: 0 auto;
+  padding-bottom: 30px;
+  overflow: hidden;
+  background: #fff;
+}
+.index-brick h3 {
+  padding: 40px 0 15px;
+  font-size: 24px;
+  text-align: center;
 }
 .w1200{
 	width:100%;
@@ -309,7 +317,10 @@ footer {
 }
 .ft-logo img{
 	vertical-align:middle;
-	margin:0 17px 40px 0;
+	margin:0 0 40px 0;
+}
+.ft-logo .line {
+  margin: 0 23px;
 }
 .erwei{
 	width:318px;

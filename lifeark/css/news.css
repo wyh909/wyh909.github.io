@@ -1,7 +1,7 @@
 img {vertical-align: middle;}
 /* 专家团队 */
 .team .item {clear: both}
-.advantage{width:1000px;margin:0 auto;padding-bottom: 40px;padding:40px 0 0;}
+.advantage{width:1000px;margin:0 auto;padding:40px 0 40px;}
 .advantage .title{padding:10px 0 5px;font-size: 24px;text-align: center;}
 .biaoti span{float: left;display: block;width:116px;height:1px;border-top:1px solid #333;margin-top: 15px;}
 .biaoti p{float: left;font-size: 24px;color: #333;padding:0 20px;}
@@ -54,7 +54,7 @@ img {vertical-align: middle;}
 .goodnews{float: left;width: 465px;padding-top: 36px;height: 375px;overflow: hidden;}
 .goodnews h3{font-size: 24px;color: #333;text-align: left;margin-bottom: 20px;}
 .goodnews p{font-size: 18px;color: #666;line-height: 36px;text-align: left;}
-.question{margin-top: 25px;}
+.question{margin-top: 36px;}
 .question li{height: 180px;margin-bottom: 14px;position: relative;}
 .question li p{text-align: left;padding-right: 200px;}
 .question li .ask{font-size: 16px;color: #333;line-height: 56px;display: block;text-align: left;}
@@ -176,7 +176,7 @@ img {vertical-align: middle;}
 	width: 230px;
 	display: block;
 	float: left;
-	margin-right: 23px;
+	margin-right: 20px;
 }
 .bg-news .question li .img img,.bg-news .question li .img a {
 	height: 180px;
@@ -187,7 +187,7 @@ img {vertical-align: middle;}
 .bg-news .question li .info {
 	height: 100%;
 	border-bottom:1px dashed #666;
-	margin-left: 310px;
+	margin-left: 250px;
 	position: relative;
 }
 /* 公司新版 */
@@ -544,30 +544,14 @@ img {vertical-align: middle;}
 
 /* 案例 */
 .case .title {
-	padding: 70px 0 30px;
-	font-size: 16px;
+	padding-bottom: 30px;
+	font-size: 18px;
 	text-align: center;
 	line-height: 2;
 	position: relative;
 }
-
-.case .title:after {
-	content: '案例展示';
-	height: 120px;
-	width: 120px;
-	line-height: 170px;
-	border-radius: 120px;
-	display: block;
-	color: #fff;
-	font-size: 18px;
-	position: absolute;
-	top: -60px;
-	left: 50%;
-	margin-left: -60px;
-	background: #7eaeff;
-	z-index: 1;
-}
-.case .title p {
+.case h3 p {
+	margin-top: 10px;
 	font-size: 16px;
 }
 .case .flexslider {
@@ -596,7 +580,7 @@ img {vertical-align: middle;}
 	text-align: center;
 }
 .case .flexslider li .item .info {
-	height: 140px;
+	height: 155px;
 	display: none;
 	padding: 10px;
 	color: #fff;

@@ -65,7 +65,7 @@ $(function(){
 	        '<div class="ft-top">',
 	        	'<div class="ft-logo">',
 	            	'<a href=""><img src="images/fz.png"></a>',
-	                '<img src="images/line.jpg">',
+	                '<img class="line" src="images/line.jpg">',
 	                '<a href=""><img src="images/xb.png"></a>',
 	                '<p>为自己的青春与健康做一份定投</p>',
 	            '</div>',
