@@ -1,0 +1,232 @@
+/**
+* @desc 	公用的头部与底部
+* @author 	wangyanhong
+* @date 	2015-11-23
+* @version 	v0.0.1
+*/
+$fgrey: #555454;
+.wrap {width: 1166px;margin: 0 auto;position: relative;z-index: 5;}
+.header {
+	height: 106px;
+	color: #fff;
+	font-size: 14px;
+	background: #292929;
+	.top {
+		height: 36px;
+		font-size: 14px;
+		line-height: 36px;
+		text-align: right;
+		background: #4d4d4d;
+		position: relative;
+		z-index: 6;
+		li {
+			display: inline-block;
+			width: 80px;
+			text-align: center;
+			position: relative;
+			&.help:after {
+				content:'';
+				height: 0;
+				width: 0;
+				border-left: 5px solid transparent;
+				border-right: 5px solid transparent;
+				border-top: 5px solid #fff;
+				position: absolute;
+				top: 15px;
+				right: 5px;
+				z-index: 6;
+			}
+			&.on {
+				background: #37b4b3;
+			}
+		}
+		.drop {
+			width: 80px;
+			display: none;
+			position: absolute;
+			top: 36px;
+			left: 0;
+			background: #37b4b3;
+			z-index: 7;
+			a {
+				display: block;
+				line-height: 30px;
+				&:hover{
+					color: #37b4b3;
+					background:#fff;
+				}
+			}
+		}
+	}
+	.mainnav {
+		h1 {
+			float: left;
+			padding-top: 14px;
+		}
+		.nav {
+			width: 490px;
+			float: right;
+			padding-top: 20px;
+			li {
+				float: left;
+				a {
+					height: 30px;
+					display: inline-block;
+					padding: 0 20px;
+					line-height: 30px;
+
+				}
+				&.on a{
+					border-radius: 5px;
+					background: #36b4b6;
+				}
+			}
+		}
+	}
+	a {color: #fff;}
+}
+.banner {
+	height: 402px;
+	text-align: center;
+	background: #040a0f;
+}
+/* 首页 */
+.intro {
+	padding-top: 60px;
+	overflow: hidden;
+	.describe {
+		margin-bottom: 70px;
+		color: #555454;
+		font-size: 26px;
+		text-align: center;
+	}
+	li {
+		height: 220px;
+		width: 234px;
+		float: left;
+		margin: 0 76px 65px 0;
+		color: #555454;
+		font-size: 14px;
+		text-align: center;
+		&:nth-child(4),&:nth-child(8){
+			margin-right: 0;
+		}
+		.icon {
+			height: 120px;
+			width: 120px;
+			display: block;
+			margin: 0 auto;
+			background: url("../img/icons.png") no-repeat;
+		}
+		@for $i from 0 through 7 {
+		  .icon0#{$i} { 
+				background-position: -120px * $i 0;
+		  }
+		}
+		a {display:inline-block;padding: 0 10px;color: $fgrey;line-height: 20px;}
+		strong {
+			display: block;
+			padding: 30px 0 10px;
+			font-size: 18px;
+			font-weight: bold;
+			
+		}
+
+	}
+}
+.slider {
+	height: 400px;
+	line-height: 30px;
+	text-align: center;
+	overflow: hidden;
+	background: #f4f4f4;
+	position: relative;
+	.wrap {
+		width: 990px;
+	}
+	.img {
+		padding-top: 45px;
+	}
+	.info {
+		.name {
+			padding-top: 20px;
+		}
+	}
+	.flex-direction-nav a {
+		height: 38px;
+		width: 14px;
+		text-shadow: none;
+		opacity: 1;
+		text-indent: 99999px;
+		background: url("../img/arr.png") no-repeat;
+		&.flex-prev {
+			left: -85px;
+			background-position: 0 0;
+		}
+		&.flex-next {
+			right: -85px;
+			background-position: 100% 0;
+		}
+	}
+	.flex-control-nav {display: none;}
+}
+.news {
+	height: 50px;
+	background: #36b4b6;
+	.wrap {
+		height: 50px;
+		line-height: 50px;
+		border-left: 6px solid #fff;
+		text-indent: 30px;
+		&:before {
+			content: '';
+			height: 6px;
+			width: 6px;
+			display: block;
+			transform: rotate(45deg);
+			position: absolute;
+			top: 22px;
+			left:-3px;
+			background: #fff;
+		}
+		a {
+			color: #fff;
+			font-size: 14px;
+		}
+	}
+}
+.footer {
+	padding-top: 60px;
+	overflow: hidden;
+	color: #fff;
+	background: #292929;
+	a {color: #fff;}
+	.foot-logo {
+		width: 212px;
+		float: left;
+		margin-right: 20px;
+		text-align: center;
+	}
+	.foot-item {
+		float: left;
+		padding-left: 50px;
+		line-height: 30px;
+		border-left: 1px dashed #545454;
+		font-size: 14px;
+		.tit {
+			font-size: 16px;
+		}
+		ul {
+			width: 146px;
+			float: left;
+		}
+	}
+	.foot-pro {width: 300px;}
+	.foot-plan {width: 134px;}
+	.foot-about {width: 106px}
+	.copyright {
+		clear: both;
+		padding: 60px 0 20px ;
+		text-align: center;
+	}
+}
