@@ -290,6 +290,9 @@ footer {
 	list-style:none;
 	float:left;
 }
+.index_foot .ft-list {
+  width: 250px;
+}
 .ft-list li{
 	text-align:center;
 	line-height:40px;

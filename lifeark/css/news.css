@@ -39,8 +39,8 @@ img {vertical-align: middle;}
 	-moz-box-sizing: border-box;
 	-ms-box-sizing: border-box;
 	box-sizing: border-box;
-
 }
+.youshi .descript {font-size: 20px;padding-top: 50px;}
 .youshi ul {overflow: hidden;text-align: center;}
 .team li {margin:0 4px;float:left;position: relative;text-align: center;}
 .youshi li {width: 188px;}
@@ -376,7 +376,7 @@ img {vertical-align: middle;}
 }
 .flex-control-paging li a {
 	border:2px solid #fff;
-	background: #0c0c0e;
+	background: #5283c7;
 	font-size: 0;
 	box-shadow: none;
 }
