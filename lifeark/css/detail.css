@@ -18,9 +18,9 @@ body {
 	text-align: center;
 }
 .detail .item .tree {
-	height: 591px;
+	height: 620px;
 	position: relative;
-	width: 620px;
+	width: 590px;
 	float: left;
 	background: url("../images/cells/tree.png") no-repeat;
 }
@@ -29,26 +29,47 @@ body {
 	display: none;
 	width: 228px;
 	line-height: 1.5;
+	border-radius: 10px;
+	position: relative;
 	position: absolute;
 	top: 0;
 	z-index: 7;
-	background: url("../images/cells/box.png") no-repeat;
+}
+.detail .item .tree div:after {
+	content: '';
+	height: 44px;
+	width: 28px;
+	display: block;
+	background: url("../images/cells/box-arr.png") no-repeat;
+	position: absolute;
+	top: 25px;
+	z-index: 6;
+}
+.detail .item .tree div.left:after {
+	right: -27px;
+}
+.detail .item .tree div.right:after {
+	transform: rotate(-180deg);
+	left: -27px;
 }
 .detail .item .tree div.left {
-	right: 110px;
-	background: url("../images/cells/box-left-bg.png") left bottom no-repeat;
+	right: 130px;
 }
 .detail .item .tree div.right {
-	left: 110px;
-	background: url("../images/cells/box-right-bg.png") left bottom no-repeat;
+	left: 135px;
+}
+.detail .item .tree p {
+	border: 1px solid #dc6b1b;
+	border-radius: 10px;
+	position: absolute;
+	background: #fff;
+	z-index: 5;
 }
 .detail .item .tree div.left p {
-	padding: 10px 30px 10px 10px;
-	background: url("../images/cells/box-left.png") left top no-repeat;
+	padding: 10px;
 }
 .detail .item .tree div.right p {
-	padding: 10px 5px 10px 35px;
-	background: url("../images/cells/box-right.png") right top no-repeat;
+	padding: 10px;
 }
 .detail .item .tree a.circle {
 	padding: 40px 10px;

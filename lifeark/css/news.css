@@ -41,6 +41,7 @@ img {vertical-align: middle;}
 	box-sizing: border-box;
 }
 .youshi .descript {font-size: 20px;padding-top: 50px;}
+.chengguo .descript {font-size: 18px;}
 .youshi ul {overflow: hidden;text-align: center;}
 .team li {margin:0 4px;float:left;position: relative;text-align: center;}
 .youshi li {width: 188px;}
@@ -196,7 +197,7 @@ img {vertical-align: middle;}
 	height: 280px;
 }
 .bg-about .area {
-	padding: 10px 0;
+	padding: 40px 16px 0;
 	clear: both;
 	overflow: hidden;
 }
@@ -208,18 +209,18 @@ img {vertical-align: middle;}
 	height: 61px;
 }
 .bg-about .con-left .tabs span {
-	height: 42px;
-	width: 100px;
+	height: 35px;
+	width: 85px;
 	display: inline-block;
 	color: #999;
-	font-size: 18px;
+	font-size: 16px;
 	text-align: center;
-	line-height: 42px;
+	line-height: 36px;
 	cursor: pointer;
 	background: #ececec;
 }
 .bg-about .con-left .tabs span.on {
-	height: 53px;
+	height: 46px;
 	color: #fff;
 	background: url("../images/bg_tabs.png") no-repeat;
 }
@@ -244,27 +245,25 @@ img {vertical-align: middle;}
 	float: left;
 }
 .bg-about .con-center {
-	width: 260px;
+	width: 255px;
 	float: left;
-	padding-left: 20px;
+	padding-left: 10px;
 }
 .bg-about .con-center .info {
-	width: 260px;
+	width: 255px;
 	float: right;
 	display: inline-block;
-	padding-left: 10px;
 	vertical-align: top;
 	color: #999;
-	font-size: 16px;
-	line-height: 2;
+	font-size: 14px;
+	line-height: 32px;
 }
 .bg-about .con-right {
-	width: 250px;
+	width: 260px;
 	float: right;
 }
 .bg-about .con-right img {
-	height: 213px;
-	width: 333px;
+	width: 260px;
 }
 .bg-about .con-right .title {
 	height: 61px;
@@ -280,28 +279,27 @@ img {vertical-align: middle;}
 	color: #666;
 	font-size: 17px;
 }
-.bg-about .area {
-	margin-bottom: 30px;
-}
 .bg-about .title {
-	height: 50px;
-	font-size: 24px;
-	line-height: 50px;
+	height: 44px;
+	font-size: 20px;
+	line-height: 44px;
 }
 .bg-about .area2 li {
-	width: 199px;
+	width: 187px;
 	float: left;
-	margin-right: 1px;
+	margin-right: 8px;
 }
+.bg-about .area2 li.last {margin: 0;}
 .bg-about .area2 li img {
-	width: 100%;
+	height: 160px;
+	width: 187px;
 	vertical-align: middle;
 }
 .bg-about .area2 li p {
-	height: 36px;
+	height: 30px;
 	color: #999;
 	font-size: 16px;
-	line-height: 36px;
+	line-height: 30px;
 	text-align: center;
 	background: #edecec;
 }
@@ -314,25 +312,26 @@ img {vertical-align: middle;}
 	display: block;
 	cursor: pointer;
 	position: absolute;
-	top: 10px;
+	top: 5px;
 	right: 10px;
 
 	background: url("../images/more.png") no-repeat;
 }
 .bg-about .area3 .area-left {
 	width: 300px;
-	padding: 0 10px;
+	padding: 0 12px;
 	float: left;
 	margin-right: 10px;
 }
 .bg-about .area3 .area-right{
 	width: 300px;
-	padding: 0 10px;
 	float: right;
 }
 .bg-about .area3 img {
-	width: 100%;
+	height: 214px;
+	width: 300px;
 }
+.bg-about .area3 .info {padding-top: 24px;}
 .bg-about .area3 .info p {
 	text-indent: 36px;
 	padding: 5px 0;

@@ -116,24 +116,24 @@ dl.cb-right dd{text-indent:34px;font-size:16px;line-height:28px;}
 .bg-grey {
 	background: #f5f5f5;
 }
-.contact .index-brick {padding: 0 160px;width: 680px;}
+.contact .index-brick {padding: 0 15px;width: 970px;}
 .contact .title {
 	font-size: 16px;
+	font-weight: bold;
 	line-height: 30px;
-	padding-left: 20px;
 	margin-bottom: 10px;
-	background: url("../images/map-dot.jpg") left center no-repeat;
 }
 .contact .content {
 	overflow: hidden;
 	padding-bottom: 30px;
 }
 .contact .content .img {
-	width: 309px;
+	width: 565px;
 	float: left;
+	text-align: center;
 }
 .contact .content .info {
-	margin-left: 320px;
+	margin-left: 585px;
 	line-height: 1.5;
 }
 .contact .content .info p {

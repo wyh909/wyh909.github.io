@@ -106,34 +106,20 @@ $(function(){
 	];
 	$('#headerNav').html(nav.join(''));
 	$('footer').html(footer.join(''));
-	$('a', 'header').unbind().bind('mouseover', function(){
-		$('nav').addClass('toggle');
-	});
 	$('ul','div.meizu-header-log').unbind().bind('click', function(){
 		var $loginInfo = $('div.login-info');
 		$loginInfo.toggle();
 	});
 	var $nav = $('#headerNav'),
 		$drop = $('div.drop', $nav);
-	// $nav.on('mouseover', 'ul.meizu-header-link li', function(){
-	// 	var $this = $(this);
-	// 	$drop.hide();
-	// 	$this.find('div.drop').toggle();
-	// }).on('mouseout', 'ul.meizu-header-link li', function(){
-	// 	$drop.hide();
-	// }).on('click', 'div.drop a', function(){
-	// 	$drop.hide();
-	// });
 	$('ul.meizu-header-link li',$nav).hover(function(){
 		var $this = $(this);
 		$drop.hide();
-		$this.find('div.drop').toggle();
+		$this.find('div.drop').show();
 	},function(){
 		$drop.hide();
 	});
-	$('div.drop a', $nav).unbind().bind('click', function(){
-		$drop.hide();
-	});
+
 	// news tab切换
 	var $tab = $('span', 'div.tabs'),
 		$tabcon = $('div.item', 'div.tabcon');
