@@ -67,10 +67,10 @@ header {
   overflow: hidden;
   background: #fff;
 }
-.index-brick .title {
+.index-brick .title,.index-brick .hd {
   padding: 40px 0 15px;
   font-size: 24px;
-  text-align: center;
+  text-align: left;
 }
 .index-brick .title span {border-bottom: 2px solid #7c7d6d;}
 .w1200{
@@ -376,7 +376,7 @@ nav {
 
                  .meizu-header a,
                  .meizu-header-sub a {
-                     color: #333;
+                     color: #eb5e01;
                      text-decoration: none;
                  }
                  .meizu-header a.hover,

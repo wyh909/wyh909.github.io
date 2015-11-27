@@ -167,12 +167,13 @@ body {
 	margin-right: 10px;
 	background: #fff;
 }
-.detail .item .tit {
+.detail .item .hd {
 	font-size: 16px;
 	text-align: center;
 	font-weight: bold;
 	line-height: 50px;
 }
+.detail .item .hd span {text-decoration: underline;}
 .detail .item .last {margin:0;width: 394px}
 .detail .item .con {
 	padding: 20px 50px;

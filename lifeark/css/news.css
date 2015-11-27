@@ -280,6 +280,8 @@ img {vertical-align: middle;}
 	height: 44px;
 	font-size: 20px;
 	line-height: 44px;
+	padding: 0;
+	text-align: left;
 }
 .bg-about .area2 li {
 	width: 187px;
