@@ -1,0 +1,123 @@
+{echo:JS::import('form');}
+<h1 class="page_title">资源编辑</h1>
+{if:isset($content) && $content!=null}
+{set:$_expand = (unserialize($content));}
+{else:}
+{set:$_expand=array();}
+{/if}
+{set:$expand=JSON::encode($_expand);}
+<div id="obj_form" class="form2">
+    <form action="{url:/wxmanager/wx_response_save}" method="post" >
+        {if:isset($id)}<input type="hidden" name="id" value="{$id}">{/if}
+
+      <dl class="lineD">
+      <dt>资源名：</dt>
+      <dd>
+        <input name="title" type="text" pattern="required" value="{$title}">
+        <label></label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>键值：</dt>
+      <dd>
+        <input name="event_key" type="text" value="{$event_key}">
+        <label>不填写自动生成{subscribe(订阅)、unsubscribe(取消订阅),专属订阅与取消前面加上"token-",token为各公从号的token}</label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>类型：</dt>
+      <dd>
+        <select name="type" id="type">
+          <option value="text">文本</option>
+          <option value="app">程序</option>
+        </select>
+      </dd>
+      </dl>
+      <div id="expand">
+
+      </div>
+
+
+    <div style="text-align:center"><input type="submit" value="提交" class="button">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置" class="button"></div>
+    </form>
+</div>
+<script type="text/javascript">
+
+var apps = {echo: JSON::encode(WeixinService::appConfig())};
+function getAppFileds(app) {
+  var app = apps[app];
+  var appConfig = app['config'];
+  var str = '';
+  for(i in appConfig){
+    if(appConfig[i]['type']=='text' || appConfig[i]['type']=='textarea'){
+      var pattern_str = 'pattern ="required" ';
+      var alt = '';
+      if(undefined != appConfig[i]['alt'])alt = appConfig[i]['alt'];
+      if(undefined != appConfig[i]['pattern']) pattern_str = 'pattern ="'+ appConfig[i]['pattern']+'" ';
+      if(appConfig[i]['type'] == 'textarea'){
+        str += '<dl class="lineD"> <dt>'+appConfig[i]['caption']+'：</dt> <dd> <textarea name="'+appConfig[i]['field']+'" type="text" '+pattern_str+' alt="'+alt+'"></textarea> <label></label> </dd> </dl>';
+      }else{
+        str += '<dl class="lineD"> <dt>'+appConfig[i]['caption']+'：</dt> <dd> <input name="'+appConfig[i]['field']+'" type="text" '+pattern_str+' alt="'+alt+'"> <label></label> </dd> </dl>';
+      }
+    }else{
+      var options = appConfig[i]['options'];
+      options = options.split(',');
+      var option_str = '';
+      if(appConfig[i]['type']=='select'){
+        for(o in options){
+          var option =  options[o];
+          var item = option.split(':');
+          option_str +='<option value="'+item[0]+'">'+item[1]+'</option>';
+        }
+        option_str = '<select name="'+appConfig[i]['field']+'">'+option_str+'</select>';
+      }else if(appConfig[i]['type']=='checkbox'){
+        for(o in options){
+          var option =  options[o];
+          var item = option.split(':');
+          option_str +='<input type="checkbox" name="'+appConfig[i]['field']+'[]" value="'+item[0]+'"><label>'+item[1]+'</label>';
+        }
+
+      }else if(appConfig[i]['type']=='radio'){
+        for(o in options){
+          var option =  options[o];
+          var item = option.split(':');
+          option_str +='<input type="radio" name="'+appConfig[i]['field']+'" value="'+item[0]+'"><label>'+item[1]+'</label>';
+        }
+      }
+      str += '<dl class="lineD"> <dt>'+appConfig[i]['caption']+'：</dt> <dd>'+option_str+' </dd> </dl>';
+    }
+
+  }
+  return str;
+}
+function setAppSelect(){
+  $("#app").on('change',function(){
+    var app = $(this).val();
+    $("#appfields").html(getAppFileds(app));
+    var datas = {$expand};
+    delete(datas.app);
+    form.init(datas);
+  });
+}
+
+$("#type").on('change',function(){
+  var type = $(this).val();
+  if(type=='text'){
+    $("#expand").html('<dl class="lineD"> <dt>文本内容:</dt> <dd> <textarea name="content"></textarea> </dd> </dl>');
+  }else if(type=='app'){
+    $("#expand").html('<dl class="lineD"> <dt>应用：</dt> <dd> <select name="app" id="app"> {set:$apps = WeixinService::appConfig();} {list:items=$apps } <option value="{$key}">{$item["name"]}</option> {/list} </select> </dd> </dl> <div id="appfields"></div>');
+    setAppSelect();
+    FireEvent(document.getElementById('app'),'change');
+    var datas = {$expand};
+    delete(datas.app);
+    form.init(datas);
+  }
+});
+var form =  new Form();
+form.setValue('type','{$type}');
+FireEvent(document.getElementById('type'),'change');
+form.init({$expand});
+{if:isset($_expand['app'])}
+  FireEvent(document.getElementById('app'),'change');
+{/if}
+</script>

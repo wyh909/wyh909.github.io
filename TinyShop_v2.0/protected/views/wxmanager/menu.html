@@ -1,0 +1,415 @@
+<script src="http://apps.bdimg.com/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+{echo:JS::import('form');}
+{echo:JS::import('dialog?skin=brief');}
+{echo:JS::import('dialogtools');}
+<link rel="stylesheet" type="text/css" href="{url:@static/css/weixin_menu.css}">
+<div class="weixin-menu-title">
+    <h1>微信菜单管理</h1>
+</div>
+<div class="weixin-menu-setting">
+    <div class="mobile-menu-preview">
+        <div class="mobile-head-title">{$name}</div>
+        <ul class="menu-list" id="menu-list">
+            <li class="add-item extra" id="add-item">
+                <a href="javascript:;" class="menu-link" title="添加菜单"><i class="weixin-icon add-gray"></i></a>
+            </li>
+        </ul>
+    </div>
+    <div class="weixin-content">
+        <div class="item-info">
+            <form id="form-item" class="form-item" data-value="" >
+                <div class="item-head">
+                    <h4 id="current-item-name">添加子菜单</h4>
+                    <div class="item-delete"><a href="javascript:deleteItem();">删除菜单</a></div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <dl>
+                        <dt id="current-item-option"><span class="is-sub-item">子</span>菜单标题：</dt>
+                        <dd><div class="input-box"><input id="item_title" name="item-title" type="text" value=""></div></dd>
+                    </dl>
+                    <dl class="is-item">
+                        <dt id="current-item-type"><span class="is-sub-item">子</span>菜单内容：</dt>
+                        <dd><input id="type1" type="radio" name="type" value="click"><label for="type1" data-editing="1"><span class="lbl_content">发送消息</span>
+                    </label>
+                    <input id="type2" type="radio" name="type" value="view" ><label for="type2"  data-editing="1"><span class="lbl_content">跳转网页</span></label>
+                    <input id="type3" type="radio" name="type" value="scancode_push"><label for="type3" data-editing="1"><span class="lbl_content">扫码推</span></label>
+                    <input id="type4" type="radio" name="type" value="scancode_waitmsg"><label for="type4" data-editing="1"><span class="lbl_content">扫码推提示框</span></label>
+                    <input id="type5" type="radio" name="type" value="pic_sysphoto"><label for="type4" data-editing="1"><span class="lbl_content">拍照发图</span></label>
+                    <input id="type6" type="radio" name="type" value="pic_photo_or_album"><label for="type6" data-editing="1"><span class="lbl_content">拍照相册发图</span></label>
+                    <input id="type7" type="radio" name="type" value="pic_weixin"><label for="type7" data-editing="1"><span class="lbl_content">相册发图</span></label>
+                    <input id="type8" type="radio" name="type" value="location_select"><label for="type8" data-editing="1"><span class="lbl_content">地理位置选择</span></label>
+                    </dd>
+                </dl>
+                <div id="menu-content" class="is-item">
+                    <div class="viewbox is-view">
+                        <p class="menu-content-tips">订阅者点击该<span class="is-sub-item">子</span>菜单会跳到以下链接</p>
+                        <dl>
+                            <dt>页面地址：</dt>
+                            <dd><div class="input-box"><input type="text" id="url" name="url"></div>
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="clickbox is-click" style="display: none;">
+                        <input type="hidden" id="key" value="">
+                        <span class="create-click"><a href="javascript:;" id="select-resources"><i class="weixin-icon big-add-gray"></i><strong>选择现有资源</strong></a></span>
+                        <span class="create-click"><a href="javascript:;"><a href="{url:/wxmanager/wx_response_edit}" target="_blank"><i class="weixin-icon big-add-gray"></i><strong>添加新资源</strong></a></span>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+</div>
+<div class="no-weixin-content">
+    点击左侧菜单进行编辑操作
+</div>
+</div>
+<table class="btn-bar">
+<tr><td style="width: 320px;"><a href="javascript:;" id="sortMenu" class="btn">菜单排序</a> </td><td><a href="javascript:;" id="menuSyn" class="btn">保存并发布</a></td></tr>
+</table>
+<script type="text/javascript">
+String.prototype.subByte = function (start, bytes)
+{
+    for (var i=start; bytes>0; i++){
+        var code = this.charCodeAt(i);
+        bytes -= code<256 ? 1 : 2;
+    }
+    return this.slice(start,i+bytes)
+}
+var form =  new Form();
+var menu = {$menus};
+function init_menu(menu) {
+    var str = "";
+    var items = menu['button'];
+    var type = action = "";
+    for(i in items){
+        if(items[i]['sub_button'] != undefined){
+            type = action = "";
+        }else{
+            type = items[i]['type'];
+            if(items[i]['url'] != undefined) action = "url|"+items[i]['url'];
+            if(items[i]['key'] != undefined) action = "key|"+items[i]['key'];
+        }
+        str += '<li id="menu-'+i+'" class="menu-item" data-type="'+type+'" data-action="'+action+'" data-name="'+items[i]['name']+'"> <a href="javascript:;" class="menu-link"> <i class="icon-menu-dot"></i> <i class="weixin-icon sort-gray"></i> <span class="title">'+items[i]['name']+'</span> </a>';
+        var tem = '';
+        if(items[i]['sub_button'] != undefined){
+            var sub_menu = items[i]['sub_button'];
+            for(j in sub_menu){
+                type = sub_menu[j]['type'];
+                if(sub_menu[j]['url'] != undefined) action = "url|"+sub_menu[j]['url'];
+                if(sub_menu[j]['key'] != undefined) action = "key|"+sub_menu[j]['key'];
+                tem += '<li id="sub-menu-'+j+'" class="sub-menu-item" data-type="'+type+'" data-action="'+action+'" data-name="'+sub_menu[j]['name']+'"> <a href="javascript:;"> <i class="weixin-icon sort-gray"></i><span class="sub-title">'+sub_menu[j]['name']+'</span></a> </li>';
+            }
+        }
+        str += '<div class="sub-menu-box" style="'+(i!=0?'display:none;':'')+'"> <ul class="sub-menu-list">'+ tem +'<li class=" add-sub-item"><a href="javascript:;" title="添加子菜单"><span class=" "><i class="weixin-icon add-gray"></i></span></a></li> </ul> <i class="arrow arrow-out"></i> <i class="arrow arrow-in"></i></div>';
+    str += '</li>';
+    }
+    $("#add-item").before(str);
+}
+//初始化菜单
+init_menu(menu);
+//最近开发部分
+var current_item ;
+var current_link;
+var isSort = false;
+var currentItem;
+//两个排序对象
+var weixinMenuSub = new Array();
+var weixinMenu = null;
+//主菜单拖动排序
+function menuSortable() {
+weixinMenu = $("#menu-list" ).sortable({
+    revert: false,
+    axis: "x",
+    cursorAt: {left:5,bottom:5},
+    tolerance: 'intersect',
+    items: 'li.menu-item',
+    cursor: 'pointer',
+    containment: "parent",
+    scroll: false
+    });
+}
+//子菜单拖动排序
+function subMenuSortable() {
+$(".sub-menu-list").each(function(i) {
+    weixinMenuSub[i] = $(this).sortable({axis: "y",tolerance: 'intersect',containment: "parent",cursor: 'pointer', forceHelperSize: true ,scroll: false,cursorAt: 'left'});
+    if(!isSort) weixinMenuSub[i].sortable( 'disable');
+    else  weixinMenuSub[i].sortable( 'enable');
+    });
+}
+//子菜单点击事件
+function bindClickSubMenu() {
+$(".sub-menu-item").each(function(i){
+    if(i==0 && current_link == null)current_link = $(this);
+    $(this).on('click',function(){
+    current_item.removeClass('current');
+    current_link.removeClass('current');
+    $(this).addClass('current');
+    current_link = $(this);
+    clickChangeMenu(current_link)
+    currentItem = current_link;
+    showCurrentItem();
+    return false;
+    })
+});
+}
+//主菜单点击事件
+function bindClickMenu() {
+$(".menu-item").each(function(i){
+if(i==0 && current_item == null){
+    current_item =current_link =  $(this);
+}
+$(this).on('click',function(){
+    current_item.find('.sub-menu-box').hide();
+    current_item.removeClass('current');
+    $(this).find('.sub-menu-box').show();
+    current_link.removeClass('current');
+    $(this).addClass('current');
+    current_item = $(this);
+    currentItem = current_item;
+    clickChangeMenu(current_item);
+    showCurrentItem();
+    return false;
+});
+});
+}
+//菜单排序按钮事件
+$("#sortMenu").on('click',function(){
+if(isSort){
+    isSort = false;
+    weixinMenu.sortable( 'disable');
+    for(var i in weixinMenuSub) weixinMenuSub[i].sortable( 'disable');
+    $(this).text('菜单排序');
+    $('.icon-menu-dot').css('display','inline-block');
+    $('.sort-gray').css('display','none');
+    $('.add-sub-item').each(function(){
+        var sub_menu_item_total = $(this).parent().find(".sub-menu-item").size();
+        if(sub_menu_item_total<5){
+            $(this).show();
+        }else{
+            $(this).hide();
+        }
+    });
+    $('.add-item').show();
+    menuUpdate();
+}else{
+    isSort = true;
+    weixinMenu.sortable( 'enable');
+    for(var i in weixinMenuSub) weixinMenuSub[i].sortable( 'enable');
+    $(this).text('完成排序');
+    $('.icon-menu-dot').css('display','none');
+    $('.sort-gray').css('display','inline-block');
+    $('.add-sub-item').css('display','none');
+    $('.add-item').css('display','none');
+}
+});
+//添加主菜单
+$('#add-item').on('click',function(){
+var menu_item_total = $(".menu-item").size();
+if(menu_item_total<3){
+    var item='<li class="menu-item" data-type="click" data-action="key|" data-name="添加菜单" > <a href="javascript:;" class="menu-link"> <i class="icon-menu-dot"></i> <i class="weixin-icon sort-gray"></i> <span class="title">添加菜单</span> </a> <div class="sub-menu-box" style=""> <ul class="sub-menu-list"><li class=" add-sub-item"><a href="javascript:;" title="添加子菜单"><span class=" "><i class="weixin-icon add-gray"></i></span></a></li> </ul> <i class="arrow arrow-out"></i> <i class="arrow arrow-in"></i> </div></li>';
+    var itemDom = $(item);
+    itemDom.insertBefore(this);
+    menuSortable();
+    bindClickMenu();
+    bindAddSubItem();
+    itemDom.trigger("click");
+}
+});
+//添加子菜单
+function bindAddSubItem() {
+$(".add-sub-item").each(function() {
+$(this).off( "click", "**" ).on('click',function(){
+    var sub_menu_item_total = $(this).parent().find(".sub-menu-item").size();
+    if(sub_menu_item_total<5){
+    var item = '<li class="sub-menu-item" data-type="click" data-action="key|" data-name="添加子菜单"><a href="javascript:;"><span class=" "><i class="weixin-icon sort-gray"></i><span class="sub-title">添加子菜单</span></span></a></li>';
+    var itemDom = $(item);
+    itemDom.insertBefore(this);
+    subMenuSortable();
+    bindClickSubMenu();
+    //itemDom.trigger("click");
+    if(sub_menu_item_total==4){
+        $(this).hide();
+    }
+    }
+    weixinContentDisplay();
+    return false;
+})
+})
+}
+//菜单详情展示
+function showCurrentItem()
+{
+    if(currentItem == current_item){
+        if(currentItem.find(".sub-menu-item").size()>0) $(".is-item").hide();
+        else $(".is-item").show();
+        $(".is-sub-item").hide();
+    }else{
+        $(".is-item").show();
+        $(".is-sub-item").show();
+    }
+    weixinContentDisplay();
+}
+//更新内容类型
+function changeType()
+{
+    var type = form.getValue('type');
+    if(type=='view'){
+        $(".is-view").show();
+        $(".is-click").hide();
+    }else{
+        $(".is-view").hide();
+        $(".is-click").show();
+    }
+}
+function deleteItem()
+{
+    //art.dialog({'tile':''});
+    if(currentItem != null){
+        if(currentItem == current_link){
+            current_link.parent().find('.add-sub-item').show();
+        }
+        currentItem.remove();
+        updateChangeMenu();
+        currentItem = null;
+    }
+
+    weixinContentDisplay();
+}
+menuSortable();
+weixinMenu.sortable('disable');
+subMenuSortable();
+bindClickMenu();
+bindClickSubMenu();
+bindAddSubItem();
+weixinContentDisplay();
+$("form").find("input,textarea").each(function(){
+    $(this).on('change',function(){
+        if(currentItem !=null )updateChangeMenu();
+    })
+})
+function clickChangeMenu(currentMenu)
+{
+    var type = currentMenu.attr('data-type');
+    var action = currentMenu.attr('data-action');
+    var title =  currentMenu.attr('data-name');
+    actions = action.split('|');
+    form.setValue('type',type);
+    form.setValue('item-title',title);
+    $('#current-item-name').text(title);
+    if(actions[0]=='url'){
+        form.setValue('key','');
+    }else{
+        form.setValue('url','');
+    }
+    form.setValue(actions[0],actions[1]);
+    changeType();
+    weixinContentDisplay();
+}
+//更新修改与变动
+function updateChangeMenu()
+{
+    var title = form.getValue('item-title');
+    var type = form.getValue('type');
+    var key = value = '';
+    if(type=='view'){
+        key = 'url';
+    }else{
+        key = 'key';
+    }
+    value = form.getValue(key);
+    currentItem.attr('data-type',type);
+    currentItem.attr('data-action',key+"|"+value);
+
+
+    if(currentItem == current_link){
+        title = title.subByte(0,16);
+        if(title=='')title='添加子菜单';
+        currentItem.find('.sub-title').text(title);
+    }else{
+        title = title.subByte(0,8);
+        if(title=='')title='添加菜单';
+        currentItem.find('.title').text(title);
+    }
+    form.setValue('item-title',title);
+    currentItem.attr('data-name',title);
+    $('#current-item-name').text(title);
+    changeType();
+    menuUpdate();
+}
+//更新菜单数据
+function menuUpdate(){
+    $.post("{url:/wxmanager/menu_update}",{id:{$id},json:JSON.stringify(getMenuJson())},function(data){
+        if(data['status']=='success'){
+        }else{
+            alert('更新失败！');
+        }
+    },'json');
+}
+//控制详情展示
+function weixinContentDisplay()
+{
+    if(currentItem!=null){
+        $(".weixin-content").show();
+        $(".no-weixin-content").hide();
+    }else{
+        $(".weixin-content").hide();
+        $(".no-weixin-content").show();
+    }
+}
+function getMenuJson()
+{
+    var menu = {};
+    var button = new Array();
+    var sub_button = new Array();
+    var menu_i = 0;
+    var sub_menu_i = 0;
+    var item;
+    $("#menu-list li").each(function(i){
+            item = $(this);
+            var name = item.attr('data-name');
+            var type = item.attr('data-type');
+            var action = item.attr('data-action');
+            if(name!=null){
+                actions = action.split('|');
+                if(item.hasClass('menu-item')){
+                    sub_menu_i = 0;
+                    if(item.find('.sub-menu-item').size()>0){
+                        button[menu_i] = {"name":name,"sub_button":"sub_button"}
+                    }else{
+                        if(actions[0]=='url') button[menu_i] = {"name":name,"type":type,"url":actions[1]};
+                        else button[menu_i] = {"name":name,"type":type,"key":actions[1]};
+                    }
+                    if(menu_i>0){
+                        if(button[menu_i-1]['sub_button']=="sub_button") button[menu_i-1]['sub_button'] = sub_button;
+                        else button[menu_i-1]['sub_button'];
+                    }
+                    sub_button = new Array();
+                    menu_i++;
+                }else{
+                    if(actions[0]=='url') sub_button[sub_menu_i++]={"name":name,"type":type,"url":actions[1]};
+                    else sub_button[sub_menu_i++]={"name":name,"type":type,"key":actions[1]};
+                }
+            }
+    });
+    if(sub_button.length>0){
+        var len = button.length;
+        button[len-1]['sub_button'] = sub_button;
+    }
+    menu = {"button":button};
+    return menu;
+}
+$("#menuSyn").on('click',function(){
+    $.post("{url:/wxmanager/menu_syn}",{id:{$id}},function(data){
+        if(data['status']=='success'){
+            art.dialog.tips('<p class="success">菜单同步更新成功，生效时间看微信官网说明，或者你重新关注微信号！</p>',3);
+        }else{
+            art.dialog.tips('<p class="'+data['status']+'">'+data['msg']+'</p>',3);
+        }
+    },'json');
+});
+$("#select-resources").on('click',function(){
+    var event_key = $("#key").val();
+    art.dialog.open("{url:/wxmanager/select_resources/event_key/}"+event_key,{width:800,height:400});
+});
+</script>

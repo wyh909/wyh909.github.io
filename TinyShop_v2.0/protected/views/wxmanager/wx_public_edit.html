@@ -1,0 +1,65 @@
+{echo:JS::import('form');}
+<h1 class="page_title">公众号编辑</h1>
+<div id="obj_form" class="form2">
+    <form action="{url:/wxmanager/wx_public_save}" method="post" >
+        {if:isset($id)}<input type="hidden" name="id" value="{$id}">{/if}
+    <dl class="lineD">
+      <dt>类型：</dt>
+      <dd>
+        <select name="type">
+          <option value="subscribe">订阅号</option>
+          <option value="service">服务号</option>
+        </select>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>微信名：</dt>
+      <dd>
+        <input name="name" type="text" pattern="required" value="{$name}">
+        <label></label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>原始ID:</dt>
+      <dd>
+        <input name="gid" type="text" pattern="required"  value="{$gid}">
+        <label></label>
+      </dd>
+      </dl>
+      <dt>AppID：</dt>
+      <dd>
+        <input name="app_id" type="text" pattern="required" value="{$app_id}">
+        <label></label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>AppSecret:</dt>
+      <dd>
+        <input name="app_secret" type="text" pattern="required"  value="{$app_secret}">
+        <label></label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>Token：</dt>
+      <dd>
+        <input name="token" type="text"   value="{$token}" pattern="[a-zA-Z_][a-zA-Z0-9_-]*" alt="字母、数字_结合，且必需以字母开头。">
+        <label></label>
+      </dd>
+      </dl>
+      <dl class="lineD">
+      <dt>是否认证：</dt>
+      <dd>
+        <input name="certified" type="radio" checked="checked"   value="0">
+        <label>否</label>
+        <input name="certified" type="radio"    value="1">
+        <label>是</label>
+      </dd>
+      </dl>
+    <div style="text-align:center"><input type="submit" value="提交" class="button">&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="重置" class="button"></div>
+    </form>
+</div>
+<script type="text/javascript">
+var form =  new Form();
+form.setValue('type','{$type}');
+form.setValue('certified','{$certified}');
+</script>

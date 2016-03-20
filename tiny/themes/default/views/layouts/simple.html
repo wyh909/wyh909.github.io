@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="UTF-8">
+    <meta name="HandheldFriendly" content="True">
+    <link rel="shortcut icon" href="{url:@favicon.ico}"/>
+    <link rel="bookmark" href="{url:@favicon.ico}" />
+    <link rel="stylesheet" type="text/css" href="{url:#css/common.css}">
+    <link rel="stylesheet" type="text/css" href="{url:#css/simple.css}">
+    <link rel="stylesheet" type="text/css" href="{url:#css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" href="{url:#js/artdialog/tiny-dialog.css}">
+
+    <script src="{url:#js/jquery.min.js}"></script>
+    <script src="{url:#js/artdialog/dialog-plus-min.js}"></script>
+    <script src="{url:#js/common.js}"></script>
+    {echo:JS::import('form')}
+    <title>{if:isset($seo_title) && isset($site_title) && ($seo_title == $site_title)}{$seo_title}{else:}{$seo_title}-{$site_title}{/if}</title>
+</head>
+<body>
+    <!-- S 头部区域 -->
+    <div id="header">
+        <div class="container head-main">
+            <a href="{url:/index/index}" class="sub-1 logo"></a>
+        </div>
+    </div>
+    <!-- E 头部区域 -->
+
+    <!-- S 主控区域 -->
+    <div id="main" class="simple-main">
+        {__viewcontents}
+    </div>
+    <!-- E 主控区域 -->
+
+    <!-- S 底部区域 -->
+    <div id="footer">
+        <div class="copyright">
+            <!--S 济南泰创软件科技有限公司保留所有版权，非授权用户严禁删除版权信息；擅自删除，后果自负。-->
+            <div class="container bootom">
+            <div class="sub-1">
+                <div class="logo"></div>
+            </div>
+            <div class="sub-2">
+            <div>{query:name=nav where=type eq 'bottom' order=`sort` desc}
+                <a href="{if:strstr($item['link'],'http://')===false}{url:$item[link]}{else:}{$item['link']}{/if}" target="{if:$item['open_type']==1}_blank{else:}_self{/if}">{$item['name']}</a>
+                {/query}</div>
+            <span>Powered by <a href="http://www.tinyrise.com"><b style="color: #e74503">Tiny</b><b style="color: #999">Shop</b></a></span> © 2015 <a href="http://www.tinyrise.com">tinyrise.com</a> . 保留所有权利 。 </div>
+            <div class="sub-3">
+                <a target="_blank" href="#"><img src="{url:#images/v-logo-2.png}" alt="诚信网站"></a>
+                <a target="_blank" href="#"><img src="{url:#images/v-logo-1.png}" alt="诚信网站"></a>
+                <a target="_blank" href="#"><img src="{url:#images/v-logo-3.png}" alt="网上交易保障中心"></a>
+            </div>
+            </div>
+            <!--S 济南泰创软件科技有限公司保留所有版权，非授权用户严禁删除版权信息；擅自删除，后果自负。-->
+        </div>
+    </div>
+    <!-- E 底部区域 -->
+</body>
+</html>

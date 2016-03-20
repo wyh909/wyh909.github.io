@@ -1,0 +1,44 @@
+{echo:JS::import('dialog?skin=brief');}
+{echo:JS::import('dialogtools');}
+{echo:JS::import('form');}
+{set:$select = Req::args('event_key');}
+<form action="" method="post">
+<div class="tools_bar clearfix">
+    <a class="icon-delicious" href="{url:/wxmanager/select_resources}"> 全部订单</a>
+    <span class="fr"><a href='javascript:;' id="condition" class="icon-search" style="" > 筛选条件</a><input id="condition_input" type="hidden" name="condition" value="{$condition}"></span>
+</div>
+<div style="height:285px;">
+<table class="default">
+    <tr>
+        <th style="width:30px">选择</th>
+        <th>资源名</th>
+        <th style="width:160px">Key值</th>
+        <th style="width:160px">资源类型</th>
+    </tr>
+    {query:name=wx_response where=$where id=$obj page=1 pagesize=7 order= id desc }
+         <tr><td style="width:30px"><input type="radio" name="id" {if:$select==$item['event_key']} checked="checked" {/if} value="{$item['event_key']}"></td>
+        <td>{$item['title']}</td><td>{$item['event_key']}</td><td>{$item['type']}</td></tr>
+    {/query}
+</table>
+</div>
+</form>
+<div class="page_nav" >
+{echo:$obj->pageBar()}
+</div>
+<div class="alone_footer tc"><button class="button" onclick="select_key()">选择</button></div>
+<script type="text/javascript">
+$("#condition").on("click",function(){
+  $("body").Condition({input:"#condition_input",okVal:'高级搜索',callback:function(data){tools_submit({action:'{url:/order/order_list}',method:'get'});},data:{order_no:{name:'订单编号'},type:{name:'订单类型',values:{0:'普通订单',1:'团购订单',2:'限时抢购',3:'捆绑促销'}},pay_status:{name:'支付状态',values:{0:'未付款', 1:'已付款', 2:'申请退款', 3:'已退款'}},delivery_status:{name:'发货状态',values:{0:'未发货',1:'已发货', 2:'已签收', 3:'申请换货', 4:'已换货'}},'od.status':{name:'订单状态',values:{2:'等待审核',3:'已审核',4:'完成',5:'取消',6:'废除'}},payment:{name:'支付方式',values:{{$payment}}}}});
+})
+function select_key()
+{
+    var event_key = $('input[name="id"]:checked ').val();
+    if(event_key!=undefined){
+        $("#key", window.parent.document).val(event_key);
+        FireEvent($("#key", window.parent.document).get(0),"change");
+        art.dialog.close();
+    }else{
+        art.dialog.tips('<p class="error">请选择资源！</p>',3);
+    }
+}
+</script>
